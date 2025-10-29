@@ -95,7 +95,7 @@ const TestimonialsSection = () => {
 
   return (
     <div
-      className=" py-20 px-4  relative bg-cover bg-center bg-fixed"
+      className="hidden sm:flex py-20 px-4  relative bg-cover bg-center bg-fixed"
       style={{
         backgroundImage:
           'linear-gradient(rgba(255, 248, 243, 0.92), rgba(255, 248, 243, 0.92)), url("https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80")',
