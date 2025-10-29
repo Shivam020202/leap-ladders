@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* body and base text use the Ubuntu font (configured as the default sans in Tailwind) */
+  html,
+  body {
+    font-family: theme("fontFamily.sans");
+  }
+
+  /* headings use Montserrat */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: theme("fontFamily.heading");
+  }
+}
