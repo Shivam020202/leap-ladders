@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const HeroSection = () => {
   const [displayText, setDisplayText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isVisible, setIsVisible] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [animationPhase, setAnimationPhase] = useState("initial");
 
   const fullText = "Smart HR for a Smarter Workforce";
 
@@ -16,19 +16,33 @@ const HeroSection = () => {
       const timeout = setTimeout(() => {
         setDisplayText((prev) => prev + fullText[currentIndex]);
         setCurrentIndex((prev) => prev + 1);
-      }, 100);
+      }, 50);
       return () => clearTimeout(timeout);
     }
   }, [currentIndex, fullText]);
 
-  // (removed blinking cursor effect)
-
-  // Trigger animations on mount
+  // Animation phases controller
   useEffect(() => {
-    setTimeout(() => setIsVisible(true), 100);
+    const timer1 = setTimeout(() => {
+      setAnimationPhase("stacking");
+    }, 1800); // Start stacking after text animation
+
+    const timer2 = setTimeout(() => {
+      setAnimationPhase("spreading");
+    }, 3600); // Start spreading after stacking
+
+    const timer3 = setTimeout(() => {
+      setAnimationPhase("complete");
+    }, 4800); // Mark animation as complete
+
+    return () => {
+      clearTimeout(timer1);
+      clearTimeout(timer2);
+      clearTimeout(timer3);
+    };
   }, []);
 
-  // Image data for slides (ordered to match desktop boxes)
+  // Image data for slides
   const images = [
     { id: "01", alt: "ETCETRA Ladder Visual", bgColor: "#E89161" },
     {
@@ -51,8 +65,53 @@ const HeroSection = () => {
     setCurrentSlide((prev) => (prev - 1 + images.length) % images.length);
   };
 
+  // Card animation variants
+  const getCardVariants = (index) => ({
+    initial: {
+      scale: 0.3,
+      opacity: 0,
+      y: -window.innerHeight,
+      x: 0,
+      rotateZ: Math.random() * 40 - 20, // Random rotation for throwing effect
+      zIndex: 30 - index,
+    },
+    stacking: {
+      scale: 0.9,
+      opacity: 1,
+      y: 0,
+      x: index * 4, // Slight offset for stacking effect
+      rotateZ: index * 2 - 2, // Slight rotation difference in stack
+      zIndex: 30 - index,
+      transition: {
+        delay: index * 0.2,
+        duration: 0.6,
+        type: "spring",
+        stiffness: 100,
+        damping: 15,
+      },
+    },
+    spreading: {
+      scale: 1,
+      opacity: 1,
+      y: 0,
+      x: 0,
+      rotateZ: 0,
+      zIndex: 1,
+      transition: {
+        delay: index * 0.15,
+        duration: 0.8,
+        type: "spring",
+        stiffness: 80,
+        damping: 20,
+      },
+    },
+  });
+
   return (
-    <div className="" style={{ backgroundColor: "#FFF8F3" }}>
+    <div
+      className="overflow-hidden min-h-[75vh]"
+      style={{ backgroundColor: "#FFF8F3" }}
+    >
       {/* Hero Content */}
       <div className="px-4 md:px-8 lg:px-20 py-8 md:py-16">
         {/* Tagline */}
@@ -85,84 +144,154 @@ const HeroSection = () => {
           </h1>
         </motion.div>
 
-        {/* Desktop - Three Box Layout */}
-        <div className="hidden md:grid md:grid-cols-3 gap-0 max-w-7xl mx-auto">
-          {/* Box 1 */}
-          <div
-            className={`relative aspect-square transform transition-all duration-1000 ${
-              isVisible
-                ? "translate-y-0 opacity-100"
-                : "translate-y-10 opacity-0"
-            }`}
-            style={{ transitionDelay: "200ms" }}
-          >
-            <div
-              className="w-full h-full flex items-center justify-center"
-              style={{ backgroundColor: "#E89161" }}
+        {/* Desktop - Three Box Layout with Complex Animation */}
+        <div className="hidden md:block max-w-7xl mx-auto relative">
+          <div className="grid grid-cols-3 gap-0">
+            {/* Box 1 */}
+            <motion.div
+              className="relative aspect-square"
+              initial="initial"
+              animate={
+                animationPhase === "spreading" || animationPhase === "complete"
+                  ? "spreading"
+                  : animationPhase === "stacking"
+                  ? "stacking"
+                  : "initial"
+              }
+              variants={getCardVariants(0)}
+              style={{
+                position:
+                  animationPhase === "spreading" ||
+                  animationPhase === "complete"
+                    ? "relative"
+                    : "absolute",
+                left:
+                  animationPhase === "spreading" ||
+                  animationPhase === "complete"
+                    ? "auto"
+                    : "33.33%",
+                width:
+                  animationPhase === "spreading" ||
+                  animationPhase === "complete"
+                    ? "100%"
+                    : "33.33%",
+              }}
             >
-              <img
-                src="https://images.unsplash.com/photo-1606327054517-6bf0b2e84cc4?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070"
-                alt="ETCETRA Ladder Visual"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="absolute bottom-4 left-4 text-xs text-white/90 tracking-wider">
-              (01)
-            </div>
-          </div>
-
-          {/* Box 2 with centered text */}
-          <div
-            className={`relative aspect-square  transform transition-all duration-1000 ${
-              isVisible
-                ? "translate-y-0 opacity-100"
-                : "translate-y-10 opacity-0"
-            }`}
-            style={{ transitionDelay: "400ms" }}
-          >
-            <div className="w-full h-full flex flex-col items-center justify-center p-8 bg-white/90 border-px-4 border-t border-b border-l-0 border-r-0 border-[#0B5E6F]/10">
-              <p className="text-gray-700 text-center max-w-xs leading-relaxed">
-                We create simple and effective solutions that help your business
-                find new talent and grow.
-              </p>
-              <a
-                href="#"
-                className="inline-flex items-center mt-6 font-medium hover:opacity-70 transition-opacity"
-                style={{ color: "#E89161" }}
+              <div
+                className="w-full h-full flex items-center justify-center shadow-2xl"
+                style={{ backgroundColor: "#E89161" }}
               >
-                View portfolio
-                <span className="ml-1">↗</span>
-              </a>
-            </div>
-          </div>
+                <img
+                  src="https://images.unsplash.com/photo-1606327054517-6bf0b2e84cc4?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070"
+                  alt="ETCETRA Ladder Visual"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="absolute bottom-4 left-4 text-xs text-white/90 tracking-wider">
+                (01)
+              </div>
+            </motion.div>
 
-          {/* Box 3 */}
-          <div
-            className={`relative aspect-square transform transition-all duration-1000 ${
-              isVisible
-                ? "translate-y-0 opacity-100"
-                : "translate-y-10 opacity-0"
-            }`}
-            style={{ transitionDelay: "600ms" }}
-          >
-            <div
-              className="w-full h-full flex items-center justify-center"
-              style={{ backgroundColor: "#0B5E6F" }}
+            {/* Box 2 with centered text */}
+            <motion.div
+              className="relative aspect-square"
+              initial="initial"
+              animate={
+                animationPhase === "spreading" || animationPhase === "complete"
+                  ? "spreading"
+                  : animationPhase === "stacking"
+                  ? "stacking"
+                  : "initial"
+              }
+              variants={getCardVariants(1)}
+              style={{
+                position:
+                  animationPhase === "spreading" ||
+                  animationPhase === "complete"
+                    ? "relative"
+                    : "absolute",
+                left:
+                  animationPhase === "spreading" ||
+                  animationPhase === "complete"
+                    ? "auto"
+                    : "33.33%",
+                width:
+                  animationPhase === "spreading" ||
+                  animationPhase === "complete"
+                    ? "100%"
+                    : "33.33%",
+              }}
             >
-              <img
-                src="https://images.unsplash.com/photo-1606327054517-6bf0b2e84cc4?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070"
-                alt="BYOB Visual"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="absolute bottom-4 left-4 text-xs text-white/90 tracking-wider">
-              (03)
-            </div>
+              <div className="w-full h-full flex flex-col items-center justify-center p-8 bg-white/90 border-px-4 border-t border-b border-l-0 border-r-0 border-[#0B5E6F]/10 shadow-2xl">
+                <p className="text-gray-700 text-center max-w-xs leading-relaxed">
+                  We create simple and effective solutions that help your
+                  business find new talent and grow.
+                </p>
+                <a
+                  href="#"
+                  className="inline-flex items-center mt-6 font-medium hover:opacity-70 transition-opacity"
+                  style={{ color: "#E89161" }}
+                >
+                  View portfolio
+                  <span className="ml-1">↗</span>
+                </a>
+              </div>
+            </motion.div>
+
+            {/* Box 3 */}
+            <motion.div
+              className="relative aspect-square"
+              initial="initial"
+              animate={
+                animationPhase === "spreading" || animationPhase === "complete"
+                  ? "spreading"
+                  : animationPhase === "stacking"
+                  ? "stacking"
+                  : "initial"
+              }
+              variants={getCardVariants(2)}
+              style={{
+                position:
+                  animationPhase === "spreading" ||
+                  animationPhase === "complete"
+                    ? "relative"
+                    : "absolute",
+                left:
+                  animationPhase === "spreading" ||
+                  animationPhase === "complete"
+                    ? "auto"
+                    : "33.33%",
+                width:
+                  animationPhase === "spreading" ||
+                  animationPhase === "complete"
+                    ? "100%"
+                    : "33.33%",
+              }}
+            >
+              <div
+                className="w-full h-full flex items-center justify-center shadow-2xl"
+                style={{ backgroundColor: "#0B5E6F" }}
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1606327054517-6bf0b2e84cc4?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070"
+                  alt="BYOB Visual"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="absolute bottom-4 left-4 text-xs text-white/90 tracking-wider">
+                (03)
+              </div>
+            </motion.div>
           </div>
         </div>
 
-        {/* Mobile - Content and Slider */}
-        <div className="md:hidden">
+        {/* Mobile - Content and Slider (with simpler animation) */}
+        <motion.div
+          className="md:hidden"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.5 }}
+        >
           {/* Mobile text content */}
           <div className="mb-8 text-center px-4">
             <p className="text-gray-700 text-sm leading-relaxed mb-4">
@@ -266,7 +395,7 @@ const HeroSection = () => {
               ))}
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
