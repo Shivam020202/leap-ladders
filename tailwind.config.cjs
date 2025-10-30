@@ -3,11 +3,11 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        // headings use Montserrat
-        heading: ["Montserrat", "sans-serif"],
-        // default sans (body) use Ubuntu
+        // headings use Neue Montreal (local font)
+        heading: ["Neue Montreal", "sans-serif"],
+        // default sans (body) use Lato
         sans: [
-          "Ubuntu",
+          "Lato",
           "ui-sans-serif",
           "system-ui",
           "-apple-system",

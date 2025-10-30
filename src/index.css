@@ -2,14 +2,87 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Define Neue Montreal font family */
+@font-face {
+  font-family: "Neue Montreal";
+  src: url("/fonts/neue-montreal/neue-montreal-free-demo-pangram-pangram-030418/NeueMontreal-Regular.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Montreal";
+  src: url("/fonts/neue-montreal/neue-montreal-free-demo-pangram-pangram-030418/NeueMontreal-Italic.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Montreal";
+  src: url("/fonts/neue-montreal/neue-montreal-free-demo-pangram-pangram-030418/NeueMontreal-Light.otf")
+    format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Montreal";
+  src: url("/fonts/neue-montreal/neue-montreal-free-demo-pangram-pangram-030418/NeueMontreal-LightItalic.otf")
+    format("opentype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Montreal";
+  src: url("/fonts/neue-montreal/neue-montreal-free-demo-pangram-pangram-030418/NeueMontreal-Medium.otf")
+    format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Montreal";
+  src: url("/fonts/neue-montreal/neue-montreal-free-demo-pangram-pangram-030418/NeueMontreal-MediumItalic.otf")
+    format("opentype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Montreal";
+  src: url("/fonts/neue-montreal/neue-montreal-free-demo-pangram-pangram-030418/NeueMontreal-Bold.otf")
+    format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Montreal";
+  src: url("/fonts/neue-montreal/neue-montreal-free-demo-pangram-pangram-030418/NeueMontreal-BoldItalic.otf")
+    format("opentype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
 @layer base {
-  /* body and base text use the Ubuntu font (configured as the default sans in Tailwind) */
+  /* body and base text use the Lato font (configured as the default sans in Tailwind) */
   html,
   body {
     font-family: theme("fontFamily.sans");
   }
 
-  /* headings use Montserrat */
+  /* headings use Neue Montreal */
   h1,
   h2,
   h3,
@@ -18,4 +91,15 @@
   h6 {
     font-family: theme("fontFamily.heading");
   }
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }

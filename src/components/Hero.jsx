@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 const HeroSection = () => {
   const [displayText, setDisplayText] = useState("");
@@ -65,47 +65,49 @@ const HeroSection = () => {
     setCurrentSlide((prev) => (prev - 1 + images.length) % images.length);
   };
 
-  // Card animation variants
-  const getCardVariants = (index) => ({
-    initial: {
-      scale: 0.3,
-      opacity: 0,
-      y: -window.innerHeight,
-      x: 0,
-      rotateZ: Math.random() * 40 - 20, // Random rotation for throwing effect
-      zIndex: 30 - index,
-    },
-    stacking: {
-      scale: 0.9,
-      opacity: 1,
-      y: 0,
-      x: index * 4, // Slight offset for stacking effect
-      rotateZ: index * 2 - 2, // Slight rotation difference in stack
-      zIndex: 30 - index,
-      transition: {
-        delay: index * 0.2,
-        duration: 0.6,
-        type: "spring",
-        stiffness: 100,
-        damping: 15,
+  // Card animation variants - all transform based
+  const getCardVariants = (index) => {
+    return {
+      initial: {
+        scale: 0.3,
+        opacity: 0,
+        x: 0,
+        y: -800,
+        rotate: Math.random() * 40 - 20,
+        zIndex: 30 - index,
       },
-    },
-    spreading: {
-      scale: 1,
-      opacity: 1,
-      y: 0,
-      x: 0,
-      rotateZ: 0,
-      zIndex: 1,
-      transition: {
-        delay: index * 0.15,
-        duration: 0.8,
-        type: "spring",
-        stiffness: 80,
-        damping: 20,
+      stacking: {
+        scale: 0.85,
+        opacity: 1,
+        x: index * 8 - 8, // Small offset for stack visibility
+        y: index * 2,
+        rotate: index * 2 - 2,
+        zIndex: 30 - index,
+        transition: {
+          delay: index * 0.3,
+          duration: 0.7,
+          type: "spring",
+          stiffness: 100,
+          damping: 15,
+        },
       },
-    },
-  });
+      spreading: {
+        scale: 1,
+        opacity: 1,
+        x: index === 0 ? "-100%" : index === 2 ? "100%" : 0,
+        y: 0,
+        rotate: 0,
+        zIndex: index + 1,
+        transition: {
+          delay: index * 0.2,
+          duration: 1.2,
+          type: "spring",
+          stiffness: 45,
+          damping: 15,
+        },
+      },
+    };
+  };
 
   return (
     <div
@@ -137,7 +139,7 @@ const HeroSection = () => {
           className="text-center mb-8 md:mb-20"
         >
           <h1
-            className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
+            className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight"
             style={{ color: "#0B5E6F", letterSpacing: "-0.02em" }}
           >
             {displayText}
@@ -146,142 +148,99 @@ const HeroSection = () => {
 
         {/* Desktop - Three Box Layout with Complex Animation */}
         <div className="hidden md:block max-w-7xl mx-auto relative">
-          <div className="grid grid-cols-3 gap-0">
-            {/* Box 1 */}
-            <motion.div
-              className="relative aspect-square"
-              initial="initial"
-              animate={
-                animationPhase === "spreading" || animationPhase === "complete"
-                  ? "spreading"
-                  : animationPhase === "stacking"
-                  ? "stacking"
-                  : "initial"
-              }
-              variants={getCardVariants(0)}
-              style={{
-                position:
-                  animationPhase === "spreading" ||
-                  animationPhase === "complete"
-                    ? "relative"
-                    : "absolute",
-                left:
-                  animationPhase === "spreading" ||
-                  animationPhase === "complete"
-                    ? "auto"
-                    : "33.33%",
-                width:
-                  animationPhase === "spreading" ||
-                  animationPhase === "complete"
-                    ? "100%"
-                    : "33.33%",
-              }}
-            >
-              <div
-                className="w-full h-full flex items-center justify-center shadow-2xl"
-                style={{ backgroundColor: "#E89161" }}
-              >
-                <img
-                  src="https://images.unsplash.com/photo-1606327054517-6bf0b2e84cc4?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070"
-                  alt="ETCETRA Ladder Visual"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="absolute bottom-4 left-4 text-xs text-white/90 tracking-wider">
-                (01)
-              </div>
-            </motion.div>
-
-            {/* Box 2 with centered text */}
-            <motion.div
-              className="relative aspect-square"
-              initial="initial"
-              animate={
-                animationPhase === "spreading" || animationPhase === "complete"
-                  ? "spreading"
-                  : animationPhase === "stacking"
-                  ? "stacking"
-                  : "initial"
-              }
-              variants={getCardVariants(1)}
-              style={{
-                position:
-                  animationPhase === "spreading" ||
-                  animationPhase === "complete"
-                    ? "relative"
-                    : "absolute",
-                left:
-                  animationPhase === "spreading" ||
-                  animationPhase === "complete"
-                    ? "auto"
-                    : "33.33%",
-                width:
-                  animationPhase === "spreading" ||
-                  animationPhase === "complete"
-                    ? "100%"
-                    : "33.33%",
-              }}
-            >
-              <div className="w-full h-full flex flex-col items-center justify-center p-8 bg-white/90 border-px-4 border-t border-b border-l-0 border-r-0 border-[#0B5E6F]/10 shadow-2xl">
-                <p className="text-gray-700 text-center max-w-xs leading-relaxed">
-                  We create simple and effective solutions that help your
-                  business find new talent and grow.
-                </p>
-                <a
-                  href="#"
-                  className="inline-flex items-center mt-6 font-medium hover:opacity-70 transition-opacity"
-                  style={{ color: "#E89161" }}
+          <div
+            className="relative"
+            style={{ height: "calc((100vw - 160px) / 3)", maxHeight: "466px" }}
+          >
+            <div className="absolute inset-0 flex justify-center items-center">
+              {/* All three cards positioned at center, will spread using transforms */}
+              {[0, 1, 2].map((index) => (
+                <motion.div
+                  key={index}
+                  className="absolute aspect-square"
+                  initial="initial"
+                  animate={
+                    animationPhase === "spreading" ||
+                    animationPhase === "complete"
+                      ? "spreading"
+                      : animationPhase === "stacking"
+                      ? "stacking"
+                      : "initial"
+                  }
+                  variants={getCardVariants(index)}
+                  style={{
+                    width: "33.33%",
+                    transformOrigin: "center center",
+                  }}
                 >
-                  View portfolio
-                  <span className="ml-1">↗</span>
-                </a>
-              </div>
-            </motion.div>
+                  <div
+                    className="w-full h-full"
+                    style={{
+                      boxShadow:
+                        animationPhase === "stacking" ||
+                        animationPhase === "initial"
+                          ? "0 25px 50px -12px rgba(0, 0, 0, 0.25)"
+                          : "none",
+                      transition: "box-shadow 0.5s ease",
+                    }}
+                  >
+                    {/* Box content based on index */}
+                    {index === 0 && (
+                      <>
+                        <div
+                          className="w-full h-full flex items-center justify-center"
+                          style={{ backgroundColor: "#E89161" }}
+                        >
+                          <img
+                            src="images/card1.png"
+                            alt="ETCETRA Ladder Visual"
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                        {/* <div className="absolute bottom-4 left-4 text-xs text-white/90 tracking-wider">
+                          (01)
+                        </div> */}
+                      </>
+                    )}
 
-            {/* Box 3 */}
-            <motion.div
-              className="relative aspect-square"
-              initial="initial"
-              animate={
-                animationPhase === "spreading" || animationPhase === "complete"
-                  ? "spreading"
-                  : animationPhase === "stacking"
-                  ? "stacking"
-                  : "initial"
-              }
-              variants={getCardVariants(2)}
-              style={{
-                position:
-                  animationPhase === "spreading" ||
-                  animationPhase === "complete"
-                    ? "relative"
-                    : "absolute",
-                left:
-                  animationPhase === "spreading" ||
-                  animationPhase === "complete"
-                    ? "auto"
-                    : "33.33%",
-                width:
-                  animationPhase === "spreading" ||
-                  animationPhase === "complete"
-                    ? "100%"
-                    : "33.33%",
-              }}
-            >
-              <div
-                className="w-full h-full flex items-center justify-center shadow-2xl"
-                style={{ backgroundColor: "#0B5E6F" }}
-              >
-                <img
-                  src="https://images.unsplash.com/photo-1606327054517-6bf0b2e84cc4?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070"
-                  alt="BYOB Visual"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="absolute bottom-4 left-4 text-xs text-white/90 tracking-wider">
-                (03)
-              </div>
-            </motion.div>
+                    {index === 1 && (
+                      <div className="w-full h-full flex flex-col items-center justify-center p-8 bg-white/90 border-px-4 border-t border-b border-l-0 border-r-0 border-[#0B5E6F]/10">
+                        <p className="text-[#546d3b] text-center max-w-xs leading-relaxed">
+                          We create simple and effective solutions that help
+                          your business find new talent and grow.
+                        </p>
+                        <a
+                          href="#"
+                          className="inline-flex items-center mt-6 font-medium hover:opacity-70 transition-opacity"
+                          style={{ color: "#E89161" }}
+                        >
+                          View portfolio
+                          <span className="ml-1">↗</span>
+                        </a>
+                      </div>
+                    )}
+
+                    {index === 2 && (
+                      <>
+                        <div
+                          className="w-full h-full flex items-center justify-center"
+                          style={{ backgroundColor: "#0B5E6F" }}
+                        >
+                          <img
+                            src="images/card2.png"
+                            alt="BYOB Visual"
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                        {/* <div className="absolute bottom-4 left-4 text-xs text-white/90 tracking-wider">
+                          (03)
+                        </div> */}
+                      </>
+                    )}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
 

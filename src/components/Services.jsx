@@ -7,101 +7,59 @@ const Services = () => {
   const services = [
     {
       id: 1,
-      title: "MARKETING STRATEGY & CONSULTING",
+      title: "CONSULTING",
       description:
-        "We help businesses unlock growth with tailored marketing strategies backed by data, creativity, and industry insight.",
+        "Transform your organization with expert HR consulting, organizational development, and compliance solutions tailored to your business needs.",
       features: [
-        "Market research & competitive analysis",
-        "Brand positioning & messaging",
-        "Campaign planning & performance strategy",
-        "Digital transformation consulting",
+        "HR transformation & strategy",
+        "Organizational development",
+        "Compliance management",
+        "HR policy & process design",
       ],
       image:
         "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
     },
     {
       id: 2,
-      title: "SOCIAL MEDIA MARKETING",
+      title: "COACHING & LEADERSHIP DEVELOPMENT",
       description:
-        "Boost your brand's presence across all major social platforms with engaging content and strategic campaigns.",
+        "Empower your leaders and teams with personalized coaching programs designed to unlock potential and drive organizational success.",
       features: [
-        "Social media strategy development",
-        "Content creation & scheduling",
-        "Community management",
-        "Performance analytics & reporting",
+        "Executive coaching",
+        "Team coaching & dynamics",
+        "Leadership development programs",
+        "Succession planning support",
       ],
       image:
-        "https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+        "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
     },
     {
       id: 3,
-      title: "SEO (SEARCH ENGINE OPTIMIZATION)",
+      title: "TRAINING PROGRAMS",
       description:
-        "Improve your search engine rankings and drive organic traffic with comprehensive SEO strategies.",
+        "Comprehensive training solutions from Train-the-Trainer programs to K-12 education and professional soft skills development.",
       features: [
-        "Keyword research & analysis",
-        "On-page optimization",
-        "Technical SEO audit",
-        "Link building strategy",
+        "Train-the-Trainer (TTT) programs",
+        "Finishing school & professional etiquette",
+        "K-12 educational programs",
+        "Soft skills & communication training",
       ],
       image:
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+        "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
     },
     {
       id: 4,
-      title: "CONTENT CREATION",
+      title: "COMPLIANCE & ADVISORY",
       description:
-        "Create compelling content that resonates with your audience and drives engagement.",
+        "Navigate complex regulatory landscapes with confidence through our comprehensive risk management and regulatory readiness services.",
       features: [
-        "Content strategy development",
-        "Blog writing & editing",
-        "Video production",
-        "Visual content creation",
+        "Risk assessment & mitigation",
+        "Regulatory compliance readiness",
+        "Policy audit & review",
+        "Advisory on labor laws & regulations",
       ],
       image:
-        "https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-    },
-    {
-      id: 5,
-      title: "BRANDING & CREATIVE",
-      description:
-        "Build a strong brand identity that stands out and connects with your target audience.",
-      features: [
-        "Brand identity development",
-        "Logo & visual design",
-        "Brand guidelines",
-        "Creative direction",
-      ],
-      image:
-        "https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-    },
-    {
-      id: 6,
-      title: "ANALYTICS & PERFORMANCE TRACKING",
-      description:
-        "Measure and optimize your marketing performance with advanced analytics and insights.",
-      features: [
-        "KPI development & tracking",
-        "Dashboard creation",
-        "ROI analysis",
-        "Performance optimization",
-      ],
-      image:
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-    },
-    {
-      id: 7,
-      title: "INFLUENCER & AFFILIATE MARKETING",
-      description:
-        "Leverage influencer partnerships and affiliate networks to expand your reach.",
-      features: [
-        "Influencer identification & outreach",
-        "Campaign management",
-        "Affiliate program setup",
-        "Partnership analytics",
-      ],
-      image:
-        "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+        "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
     },
   ];
 

@@ -95,7 +95,7 @@ const TestimonialsSection = () => {
 
   return (
     <div
-      className="hidden sm:flex py-20 px-4  relative bg-cover bg-center bg-fixed"
+      className="hidden sm:flex flex-col py-20 px-4  relative bg-cover bg-center bg-fixed"
       style={{
         backgroundImage:
           'linear-gradient(rgba(255, 248, 243, 0.92), rgba(255, 248, 243, 0.92)), url("https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80")',
@@ -104,7 +104,7 @@ const TestimonialsSection = () => {
       {/* Background Overlay */}
       <div className="absolute inset-0 bg-[#FFF8F3] opacity-90"></div>
 
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="max-w-7xl mx-auto relative z-10 w-full">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -135,22 +135,22 @@ const TestimonialsSection = () => {
         </motion.div>
 
         {/* Main Content */}
-        <div className="flex flex-col lg:flex-row gap-12 items-center">
+        <div className="flex md:px-12 items-center mb-16">
           {/* Testimonial Slider */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="lg:w-1/2"
+            className="w-full max-w-5xl"
           >
-            <div className="bg-white p-8 md:p-12 shadow-lg border border-[#0B5E6F]/10 relative">
+            <div className="bg-white p-8 md:p-16 lg:p-20 shadow-lg border border-[#0B5E6F]/10 relative">
               {/* Quote Icon */}
-              <div className="absolute top-6 left-6 text-[#E89161] text-4xl opacity-20">
+              <div className="absolute top-8 left-8 text-[#E89161] text-5xl md:text-6xl opacity-20">
                 "
               </div>
 
-              <div className="relative h-64">
+              <div className="relative min-h-[280px] md:min-h-[240px]">
                 {testimonials.map((testimonial, index) => (
                   <div
                     key={testimonial.id}
@@ -167,17 +167,19 @@ const TestimonialsSection = () => {
 
                     {/* Quote */}
                     <div className="mb-8">
-                      <p className="text-gray-700 text-lg leading-relaxed italic">
+                      <p className="text-gray-700 text-xl md:text-2xl leading-relaxed italic">
                         "{testimonial.content}"
                       </p>
                     </div>
 
                     {/* Client Info */}
-                    <div className="border-t border-[#0B5E6F]/10 pt-4">
-                      <h3 className="text-[#0B5E6F] font-bold text-lg">
+                    <div className="border-t border-[#0B5E6F]/10 pt-6 mt-6">
+                      <h3 className="text-[#0B5E6F] font-bold text-xl md:text-2xl">
                         {testimonial.name}
                       </h3>
-                      <p className="text-gray-600">{testimonial.position}</p>
+                      <p className="text-gray-600 text-base md:text-lg">
+                        {testimonial.position}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -220,64 +222,30 @@ const TestimonialsSection = () => {
               </div>
             </div>
           </motion.div>
+        </div>
 
-          {/* Stats Sidebar */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.7, delay: 0.4 }}
-            className="lg:w-1/2"
-          >
-            <div className="grid grid-cols-2 gap-6">
-              <div className="bg-white p-6 text-center border border-[#0B5E6F]/10 shadow-sm">
-                <div className="text-[#0B5E6F] text-3xl md:text-4xl font-bold mb-2">
-                  200+
-                </div>
-                <div className="text-gray-700">Happy Clients</div>
-              </div>
-              <div className="bg-white p-6 text-center border border-[#0B5E6F]/10 shadow-sm">
-                <div className="text-[#0B5E6F] text-3xl md:text-4xl font-bold mb-2">
-                  98%
-                </div>
-                <div className="text-gray-700">Client Retention</div>
-              </div>
-              <div className="bg-white p-6 text-center border border-[#0B5E6F]/10 shadow-sm">
-                <div className="text-[#0B5E6F] text-3xl md:text-4xl font-bold mb-2">
-                  4.9/5
-                </div>
-                <div className="text-gray-700">Average Rating</div>
-              </div>
-              <div className="bg-white p-6 text-center border border-[#0B5E6F]/10 shadow-sm">
-                <div className="text-[#0B5E6F] text-3xl md:text-4xl font-bold mb-2">
-                  15+
-                </div>
-                <div className="text-gray-700">Industries Served</div>
-              </div>
+        {/* Client Logos Carousel - Full Width */}
+        <div className="mt-8">
+          <h3 className="text-[#0B5E6F] text-lg font-semibold mb-6 text-center">
+            Trusted by Industry Leaders
+          </h3>
+          <div className="relative overflow-hidden">
+            <div className="flex animate-scroll space-x-8 py-4">
+              {/* Triple the array for seamless infinite loop */}
+              {[...clientLogos, ...clientLogos, ...clientLogos].map(
+                (logo, index) => (
+                  <div
+                    key={`${logo.id}-${index}`}
+                    className="flex-shrink-0 w-20 h-20 bg-white flex items-center justify-center border border-[#0B5E6F]/10 shadow-sm opacity-80 hover:opacity-100 hover:shadow-md transition-all duration-300"
+                  >
+                    <span className="text-2xl text-[#0B5E6F] font-bold">
+                      {logo.logo}
+                    </span>
+                  </div>
+                )
+              )}
             </div>
-
-            {/* Client Logos Carousel */}
-            <div className="mt-12">
-              <h3 className="text-[#0B5E6F] text-lg font-semibold mb-6 text-center">
-                Trusted by Industry Leaders
-              </h3>
-              <div className="relative overflow-hidden">
-                <div className="flex animate-scroll space-x-8 py-4">
-                  {/* Double the array for seamless loop */}
-                  {[...clientLogos, ...clientLogos].map((logo, index) => (
-                    <div
-                      key={`${logo.id}-${index}`}
-                      className="flex-shrink-0 w-20 h-20 bg-white flex items-center justify-center border border-[#0B5E6F]/10 shadow-sm opacity-80 hover:opacity-100 hover:shadow-md transition-all duration-300"
-                    >
-                      <span className="text-2xl text-[#0B5E6F] font-bold">
-                        {logo.logo}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </motion.div>
+          </div>
         </div>
       </div>
 
@@ -288,11 +256,11 @@ const TestimonialsSection = () => {
             transform: translateX(0);
           }
           100% {
-            transform: translateX(calc(-160px * 8));
+            transform: translateX(calc(-112px * 8));
           }
         }
         .animate-scroll {
-          animation: scroll 30s linear infinite;
+          animation: scroll 25s linear infinite;
         }
         .animate-scroll:hover {
           animation-play-state: paused;
