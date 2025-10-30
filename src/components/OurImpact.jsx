@@ -93,7 +93,7 @@ const OurImpact = () => {
 
         {/* Stats Grid */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12"
+          className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-12"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -117,10 +117,10 @@ const OurImpact = () => {
                   type: "spring",
                   stiffness: 100,
                 }}
-                className="mb-4"
+                className="mb-3"
               >
                 <h3
-                  className="text-5xl md:text-6xl lg:text-7xl font-bold"
+                  className="text-4xl md:text-5xl lg:text-6xl font-bold"
                   style={{ color: stat.color }}
                 >
                   {stat.number}
@@ -133,7 +133,7 @@ const OurImpact = () => {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 + 0.2 }}
-                className="text-lg md:text-xl font-bold mb-3"
+                className="text-base md:text-lg lg:text-xl font-bold mb-2"
                 style={{ color: "#0B5E6F" }}
               >
                 {stat.label}
@@ -145,7 +145,7 @@ const OurImpact = () => {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 + 0.3 }}
-                className="text-gray-700 text-sm md:text-base leading-relaxed max-w-xs mx-auto"
+                className="text-gray-700 text-xs md:text-sm lg:text-base leading-relaxed max-w-xs mx-auto"
               >
                 {stat.description}
               </motion.p>

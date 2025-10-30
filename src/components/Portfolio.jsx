@@ -87,7 +87,7 @@ const PortfolioSection = () => {
   return (
     <secction>
       <div
-        className=" max-w-7xl mx-auto min-h-screen py-16 px-4"
+        className=" max-w-7xl mx-auto md:min-h-screen py-16 px-4"
         style={{ backgroundColor: "#FFF8F3" }}
       >
         {/* Section Header */}

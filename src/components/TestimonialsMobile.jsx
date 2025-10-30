@@ -86,8 +86,13 @@ const TestimonialsMobile = () => {
 
         {/* Testimonial Slider */}
         <div className="mb-12">
-          <div className="bg-white p-6 shadow-lg border border-[#0B5E6F]/10">
-            <div className="relative h-64">
+          <div className="bg-white p-8 shadow-lg border border-[#0B5E6F]/10 relative">
+            {/* Quote Icon */}
+            <div className="absolute top-6 left-6 text-[#E89161] text-5xl opacity-20">
+              "
+            </div>
+
+            <div className="relative min-h-[300px]">
               {testimonials.map((testimonial, index) => (
                 <div
                   key={testimonial.id}
@@ -98,23 +103,23 @@ const TestimonialsMobile = () => {
                   }`}
                 >
                   {/* Rating */}
-                  <div className="flex mb-4">
+                  <div className="flex mb-6">
                     {renderStars(testimonial.rating)}
                   </div>
 
                   {/* Quote */}
-                  <div className="mb-6">
-                    <p className="text-gray-700 leading-relaxed italic">
+                  <div className="mb-8">
+                    <p className="text-gray-700 text-lg leading-relaxed italic">
                       "{testimonial.content}"
                     </p>
                   </div>
 
                   {/* Client Info */}
-                  <div className="border-t border-[#0B5E6F]/10 pt-4">
-                    <h3 className="text-[#0B5E6F] font-bold">
+                  <div className="border-t border-[#0B5E6F]/10 pt-6 mt-6">
+                    <h3 className="text-[#0B5E6F] font-bold text-lg">
                       {testimonial.name}
                     </h3>
-                    <p className="text-gray-600 text-sm">
+                    <p className="text-gray-600 text-base">
                       {testimonial.position}
                     </p>
                   </div>
@@ -139,45 +144,45 @@ const TestimonialsMobile = () => {
           </div>
         </div>
 
-        {/* Stats */}
-        <div className="grid grid-cols-2 gap-4 mb-12">
-          <div className="bg-white p-4 text-center border border-[#0B5E6F]/10">
-            <div className="text-[#0B5E6F] text-xl font-bold">200+</div>
-            <div className="text-gray-700 text-sm">Happy Clients</div>
-          </div>
-          <div className="bg-white p-4 text-center border border-[#0B5E6F]/10">
-            <div className="text-[#0B5E6F] text-xl font-bold">98%</div>
-            <div className="text-gray-700 text-sm">Retention</div>
-          </div>
-          <div className="bg-white p-4 text-center border border-[#0B5E6F]/10">
-            <div className="text-[#0B5E6F] text-xl font-bold">4.9/5</div>
-            <div className="text-gray-700 text-sm">Rating</div>
-          </div>
-          <div className="bg-white p-4 text-center border border-[#0B5E6F]/10">
-            <div className="text-[#0B5E6F] text-xl font-bold">15+</div>
-            <div className="text-gray-700 text-sm">Industries</div>
-          </div>
-        </div>
-
         {/* Client Logos */}
         <div className="text-center">
           <h3 className="text-[#0B5E6F] text-lg font-semibold mb-6">
-            Trusted Partners
+            Trusted by Industry Leaders
           </h3>
-          <div className="grid grid-cols-3 gap-4">
-            {clientLogos.map((logo) => (
-              <div
-                key={logo.id}
-                className="bg-white p-4 border border-[#0B5E6F]/10 flex items-center justify-center opacity-80 hover:opacity-100 transition-opacity duration-300"
-              >
-                <span className="text-xl text-[#0B5E6F] font-bold">
-                  {logo.logo}
-                </span>
-              </div>
-            ))}
+          <div className="relative overflow-hidden -mx-4">
+            <div className="flex animate-scroll-mobile space-x-6 py-4 px-4">
+              {/* Triple the array for seamless infinite loop */}
+              {[...clientLogos, ...clientLogos, ...clientLogos].map(
+                (logo, index) => (
+                  <div
+                    key={`${logo.id}-${index}`}
+                    className="flex-shrink-0 w-16 h-16 bg-white flex items-center justify-center border border-[#0B5E6F]/10 shadow-sm opacity-80"
+                  >
+                    <span className="text-xl text-[#0B5E6F] font-bold">
+                      {logo.logo}
+                    </span>
+                  </div>
+                )
+              )}
+            </div>
           </div>
         </div>
       </div>
+
+      {/* Custom CSS for scrolling animation */}
+      <style jsx>{`
+        @keyframes scroll-mobile {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(calc(-88px * 6));
+          }
+        }
+        .animate-scroll-mobile {
+          animation: scroll-mobile 20s linear infinite;
+        }
+      `}</style>
     </div>
   );
 };
