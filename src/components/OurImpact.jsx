@@ -1,5 +1,46 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useRef } from "react";
+import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
+
+const AnimatedNumber = ({ value, delay = 0, color }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const motionValue = useMotionValue(0);
+  const springValue = useSpring(motionValue, {
+    damping: 30,
+    stiffness: 50,
+  });
+
+  useEffect(() => {
+    if (isInView) {
+      const timer = setTimeout(() => {
+        const numericValue = parseFloat(value);
+        motionValue.set(numericValue);
+      }, delay);
+      return () => clearTimeout(timer);
+    }
+  }, [isInView, value, delay, motionValue]);
+
+  useEffect(() => {
+    return springValue.on("change", (latest) => {
+      if (ref.current) {
+        const numericValue = parseFloat(value);
+        const suffix = value.replace(/[0-9.]/g, "");
+        const formatted = Math.floor(latest);
+        ref.current.textContent = formatted + suffix;
+      }
+    });
+  }, [springValue, value]);
+
+  return (
+    <h3
+      ref={ref}
+      className="text-4xl md:text-5xl lg:text-6xl font-bold"
+      style={{ color }}
+    >
+      0{value.replace(/[0-9.]/g, "")}
+    </h3>
+  );
+};
 
 const OurImpact = () => {
   const stats = [
@@ -119,12 +160,11 @@ const OurImpact = () => {
                 }}
                 className="mb-3"
               >
-                <h3
-                  className="text-4xl md:text-5xl lg:text-6xl font-bold"
-                  style={{ color: stat.color }}
-                >
-                  {stat.number}
-                </h3>
+                <AnimatedNumber
+                  value={stat.number}
+                  delay={index * 100}
+                  color={stat.color}
+                />
               </motion.div>
 
               {/* Label */}

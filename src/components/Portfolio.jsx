@@ -102,7 +102,7 @@ const PortfolioSection = () => {
             className="text-3xl md:text-4xl font-bold"
             style={{ color: "#0B5E6F" }}
           >
-            Portfolio
+            BYOB
           </h2>
         </motion.div>
 

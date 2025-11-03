@@ -53,21 +53,24 @@ const Navbar = () => {
             </a>
           </div>
 
-          {/* CTA Button */}
+          {/* CTA Button - filled by default, becomes transparent on hover */}
           <a
             href="#"
             className="px-5 md:px-7 py-2.5 border transition-all text-sm"
             style={{
               borderColor: "#E89161",
-              color: "#E89161",
+              backgroundColor: "#E89161",
+              color: "#FFF8F3",
             }}
             onMouseEnter={(e) => {
-              e.target.style.backgroundColor = "#E89161";
-              e.target.style.color = "#FFF8F3";
+              const el = e.currentTarget;
+              el.style.backgroundColor = "transparent";
+              el.style.color = "#E89161";
             }}
             onMouseLeave={(e) => {
-              e.target.style.backgroundColor = "transparent";
-              e.target.style.color = "#E89161";
+              const el = e.currentTarget;
+              el.style.backgroundColor = "#E89161";
+              el.style.color = "#FFF8F3";
             }}
           >
             Get in touch ↗

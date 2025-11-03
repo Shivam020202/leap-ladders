@@ -7,20 +7,16 @@ import TestimonialsSection from "../components/Testimonials";
 import TestimonialsMobile from "../components/TestimonialsMobile";
 import PortfolioSection from "../components/Portfolio";
 import OurImpact from "../components/OurImpact";
+import ContactUs from "../components/ContactUs";
 
 export default function Home() {
   return (
     <>
       <HeroSection />
-      {/* <AboutUs /> */}
-      <Services />
-      <PortfolioSection />
       <OurImpact />
-      <TestimonialsSection />
-      <div className="sm:hidden">
-        <TestimonialsMobile />
-      </div>
       <BlogGrid />
+      <PortfolioSection />
+      <ContactUs />
     </>
   );
 }

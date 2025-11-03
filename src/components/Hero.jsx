@@ -127,7 +127,7 @@ const HeroSection = () => {
             className="text-sm md:text-base tracking-widest"
             style={{ color: "#E89161" }}
           >
-            human resources
+            HUMAN RESOURCES
           </p>
         </motion.div>
 
