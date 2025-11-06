@@ -55,6 +55,11 @@ const HeroSection = () => {
       alt: "BYOB - Build Your Own Brand/Business",
       bgColor: "#0B5E6F",
     },
+    {
+      id: "04",
+      alt: "Our Story - Meet the Team",
+      bgColor: "#546d3b",
+    },
   ];
 
   const nextSlide = () => {
@@ -94,7 +99,14 @@ const HeroSection = () => {
       spreading: {
         scale: 1,
         opacity: 1,
-        x: index === 0 ? "-100%" : index === 2 ? "100%" : 0,
+        x:
+          index === 0
+            ? "-150%"
+            : index === 1
+            ? "-50%"
+            : index === 2
+            ? "50%"
+            : "150%",
         y: 0,
         rotate: 0,
         zIndex: index + 1,
@@ -116,18 +128,23 @@ const HeroSection = () => {
     >
       {/* Hero Content */}
       <div className="px-4 md:px-8 lg:px-20 py-8 md:py-16">
-        {/* Tagline */}
+        {/* Logo and Tagline */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-center mb-3"
+          className="flex flex-col items-center justify-center mb-6 gap-3"
         >
+          <img
+            src="leap-ladders-logo.png"
+            className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20"
+            alt="Leap Ladders Logo"
+          />
           <p
-            className="text-sm md:text-base tracking-widest"
+            className="text-sm md:text-base lg:text-lg tracking-widest font-bold"
             style={{ color: "#E89161" }}
           >
-            HUMAN RESOURCES
+            LEAP LADDER
           </p>
         </motion.div>
 
@@ -136,25 +153,25 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-center mb-8 md:mb-20"
+          className="text-center mb-8 md:mb-12"
         >
           <h1
-            className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight"
             style={{ color: "#0B5E6F", letterSpacing: "-0.02em" }}
           >
             {displayText}
           </h1>
         </motion.div>
 
-        {/* Desktop - Three Box Layout with Complex Animation */}
+        {/* Desktop - Four Box Layout with Complex Animation */}
         <div className="hidden md:block max-w-7xl mx-auto relative">
           <div
             className="relative"
-            style={{ height: "calc((100vw - 160px) / 3)", maxHeight: "466px" }}
+            style={{ height: "calc((100vw - 160px) / 4)", maxHeight: "400px" }}
           >
             <div className="absolute inset-0 flex justify-center items-center">
-              {/* All three cards positioned at center, will spread using transforms */}
-              {[0, 1, 2].map((index) => (
+              {/* All four cards positioned at center, will spread using transforms */}
+              {[0, 1, 2, 3].map((index) => (
                 <motion.div
                   key={index}
                   className="absolute aspect-square"
@@ -169,7 +186,7 @@ const HeroSection = () => {
                   }
                   variants={getCardVariants(index)}
                   style={{
-                    width: "33.33%",
+                    width: "25%",
                     transformOrigin: "center center",
                   }}
                 >
@@ -204,20 +221,18 @@ const HeroSection = () => {
                     )}
 
                     {index === 1 && (
-                      <div className="w-full h-full flex flex-col items-center justify-center p-8 bg-white/90 border-px-4 border-t border-b border-l-0 border-r-0 border-[#0B5E6F]/10">
-                        <p className="text-[#546d3b] text-center max-w-xs leading-relaxed">
-                          We create simple and effective solutions that help
-                          your business find new talent and grow.
-                        </p>
-                        <a
-                          href="#"
-                          className="inline-flex items-center mt-6 font-medium hover:opacity-70 transition-opacity"
-                          style={{ color: "#E89161" }}
+                      <>
+                        <div
+                          className="w-full h-full flex items-center justify-center"
+                          style={{ backgroundColor: "#FFF8F3" }}
                         >
-                          View portfolio
-                          <span className="ml-1">↗</span>
-                        </a>
-                      </div>
+                          <img
+                            src="https://images.unsplash.com/photo-1664575602276-acd073f104c1?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070"
+                            alt="Portfolio Visual"
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      </>
                     )}
 
                     {index === 2 && (
@@ -237,6 +252,33 @@ const HeroSection = () => {
                         </div> */}
                       </>
                     )}
+
+                    {index === 3 && (
+                      <div className="w-full h-full flex flex-col items-center justify-center p-6 relative overflow-hidden">
+                        <div
+                          className="absolute inset-0 bg-cover bg-center"
+                          style={{
+                            backgroundImage:
+                              "url('https://images.unsplash.com/photo-1762223749370-4d05a6023f8f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1625')",
+                            filter: "brightness(0.4)",
+                          }}
+                        />
+                        <div className="relative z-10 flex flex-col items-center justify-end  h-full">
+                          <p className="text-white text-center max-w-xs leading-relaxed font-semibold mb-6">
+                            Strategy Is Easy. People Are the Plot Twist. Meet
+                            Ours.
+                          </p>
+                          <a
+                            href="/our-story"
+                            className="inline-flex items-center font-medium hover:opacity-70 transition-opacity"
+                            style={{ color: "#E89161" }}
+                          >
+                            Know more
+                            <span className="ml-1">→</span>
+                          </a>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </motion.div>
               ))}
@@ -251,22 +293,6 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.5 }}
         >
-          {/* Mobile text content */}
-          <div className="mb-8 text-center px-4">
-            <p className="text-gray-700 text-sm leading-relaxed mb-4">
-              We create simple and effective solutions that help your business
-              find new talent and grow.
-            </p>
-            <a
-              href="#"
-              className="inline-flex items-center font-medium text-sm"
-              style={{ color: "#E89161" }}
-            >
-              View portfolio
-              <span className="ml-1">↗</span>
-            </a>
-          </div>
-
           {/* Mobile Image Slider */}
           <div className="relative">
             <div className="overflow-hidden">
@@ -277,8 +303,8 @@ const HeroSection = () => {
                 {images.map((image, index) => (
                   <div key={index} className="w-full flex-shrink-0">
                     <div className="relative aspect-square">
-                      {/* Slide 1 & 3: image tiles with background color */}
-                      {(index === 0 || index === 2) && (
+                      {/* Slide 1, 2 & 3: image tiles with background color */}
+                      {(index === 0 || index === 1 || index === 2) && (
                         <div
                           className="w-full h-full flex items-center justify-center"
                           style={{ backgroundColor: image.bgColor }}
@@ -291,24 +317,31 @@ const HeroSection = () => {
                         </div>
                       )}
 
-                      {/* Slide 2: centered text content */}
-                      {index === 1 && (
-                        <div
-                          className="w-full h-full flex flex-col items-center justify-center p-8"
-                          style={{ backgroundColor: image.bgColor }}
-                        >
-                          <p className="text-gray-700 text-center max-w-xs leading-relaxed">
-                            We create simple and effective solutions that help
-                            your business find new talent and grow.
-                          </p>
-                          <a
-                            href="#"
-                            className="inline-flex items-center mt-6 font-medium hover:opacity-70 transition-opacity"
-                            style={{ color: "#E89161" }}
-                          >
-                            View portfolio
-                            <span className="ml-1">↗</span>
-                          </a>
+                      {/* Slide 4: Our Story card with background image */}
+                      {index === 3 && (
+                        <div className="w-full h-full flex flex-col items-center justify-center p-8 relative overflow-hidden">
+                          <div
+                            className="absolute inset-0 bg-cover bg-center"
+                            style={{
+                              backgroundImage:
+                                "url('https://images.unsplash.com/photo-1606327054517-6bf0b2e84cc4?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070')",
+                              filter: "brightness(0.4)",
+                            }}
+                          />
+                          <div className="relative z-10 flex flex-col items-center justify-center h-full">
+                            <p className="text-white text-center max-w-xs leading-relaxed font-semibold mb-6">
+                              Strategy Is Easy. People Are the Plot Twist. Meet
+                              Ours.
+                            </p>
+                            <a
+                              href="/our-story"
+                              className="inline-flex items-center font-medium hover:opacity-70 transition-opacity"
+                              style={{ color: "#E89161" }}
+                            >
+                              Know more
+                              <span className="ml-1">→</span>
+                            </a>
+                          </div>
                         </div>
                       )}
 

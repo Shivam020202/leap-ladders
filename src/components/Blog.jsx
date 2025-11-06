@@ -27,7 +27,7 @@ const BlogGrid = () => {
   ];
 
   return (
-    <div className=" bg-[#FFF8F3] py-12 px-4 md:px-8 lg:px-16">
+    <div className=" bg-[#FFF8F3] py-10 px-4 md:px-8 lg:px-16">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.div
@@ -35,7 +35,7 @@ const BlogGrid = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="flex justify-between items-center mb-12"
+          className="flex justify-between items-center mb-8"
         >
           <motion.h1
             initial={{ opacity: 0, x: -30 }}
@@ -60,7 +60,7 @@ const BlogGrid = () => {
         </motion.div>
 
         {/* Blog Posts Grid - Equal Columns */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
           {blogPosts.map((post, index) => (
             <motion.div
               key={post.id}
@@ -68,12 +68,12 @@ const BlogGrid = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -8, transition: { duration: 0.3 } }}
-              className="bg-white  p-6  border border-[#0B5E6F]/10 hover:shadow-xl transition-all duration-300 group"
+              whileHover={{ y: -6, transition: { duration: 0.3 } }}
+              className="bg-white p-4 border border-[#0B5E6F]/10 hover:shadow-lg transition-all duration-300 group"
             >
               <div className="flex flex-col h-full">
                 {/* Square image at top of card */}
-                <div className="mb-4 overflow-hidden  aspect-square">
+                <div className="mb-3 overflow-hidden aspect-video">
                   <img
                     src={`https://picsum.photos/seed/${post.id}/600/600`}
                     alt={post.title}
@@ -81,15 +81,15 @@ const BlogGrid = () => {
                   />
                 </div>
                 {/* Category and Date */}
-                <div className="flex justify-between items-start mb-4">
-                  <span className="text-[#0B5E6F] font-semibold">
+                <div className="flex justify-between items-start mb-2.5">
+                  <span className="text-[#0B5E6F] font-semibold text-sm">
                     {post.category}
                   </span>
-                  <span className="text-gray-700 text-sm">{post.date}</span>
+                  <span className="text-gray-600 text-xs">{post.date}</span>
                 </div>
 
                 {/* Title */}
-                <h3 className="text-gray-700 font-semibold text-lg leading-tight mb-6 flex-grow">
+                <h3 className="text-gray-700 font-semibold text-base leading-snug mb-4 flex-grow">
                   {post.title}
                 </h3>
 

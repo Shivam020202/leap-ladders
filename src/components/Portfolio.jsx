@@ -87,7 +87,7 @@ const PortfolioSection = () => {
   return (
     <secction>
       <div
-        className=" max-w-7xl mx-auto md:min-h-screen py-16 px-4"
+        className=" max-w-7xl mx-auto md:min-h-screen py-16 md:px-4"
         style={{ backgroundColor: "#FFF8F3" }}
       >
         {/* Section Header */}
@@ -102,7 +102,7 @@ const PortfolioSection = () => {
             className="text-3xl md:text-4xl font-bold"
             style={{ color: "#0B5E6F" }}
           >
-            BYOB
+            Beyond Operations And Business
           </h2>
         </motion.div>
 

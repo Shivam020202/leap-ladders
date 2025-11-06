@@ -10,26 +10,70 @@ const AnimatedNumber = ({ value, delay = 0, color }) => {
     stiffness: 50,
   });
 
+  // Extract numeric part and surrounding prefix/suffix (supports commas, decimals, K/M)
+  const numberMatch = String(value).match(/([0-9,]+(?:\.[0-9]+)?)/);
+  const hasNumber = !!numberMatch;
+  let prefix = "";
+  let suffix = "";
+  let baseNumber = 0;
+  let multiplierChar = null;
+
+  if (hasNumber) {
+    const numStart = numberMatch.index;
+    const numStr = numberMatch[1];
+    prefix = String(value).slice(0, numStart);
+    // check char after number for K/M multiplier
+    const afterChar = String(value).charAt(numStart + numStr.length);
+    if (afterChar === "K" || afterChar === "M") {
+      multiplierChar = afterChar;
+      suffix = String(value).slice(numStart + numStr.length + 1);
+    } else {
+      suffix = String(value).slice(numStart + numStr.length);
+    }
+    const numericClean = numStr.replace(/,/g, "");
+    baseNumber = parseFloat(numericClean);
+    if (isNaN(baseNumber)) baseNumber = 0;
+  }
+
   useEffect(() => {
+    if (!hasNumber) {
+      if (ref.current) ref.current.textContent = value;
+      return;
+    }
+
     if (isInView) {
       const timer = setTimeout(() => {
-        const numericValue = parseFloat(value);
-        motionValue.set(numericValue);
+        // set target value (for K/M we animate the base number and keep the multiplier char)
+        motionValue.set(baseNumber);
       }, delay);
       return () => clearTimeout(timer);
     }
-  }, [isInView, value, delay, motionValue]);
+  }, [isInView, value, delay, motionValue, hasNumber, baseNumber]);
 
   useEffect(() => {
+    if (!hasNumber) return;
     return springValue.on("change", (latest) => {
       if (ref.current) {
-        const numericValue = parseFloat(value);
-        const suffix = value.replace(/[0-9.]/g, "");
-        const formatted = Math.floor(latest);
-        ref.current.textContent = formatted + suffix;
+        const isDecimal = String(numberMatch[1]).includes(".");
+        const formatted = isDecimal
+          ? Number(latest).toFixed(2)
+          : Math.floor(latest).toLocaleString();
+        // reattach multiplier char (K/M) if present
+        const displayNumber = multiplierChar ? formatted : formatted;
+        ref.current.textContent = `${prefix}${displayNumber}${
+          multiplierChar || ""
+        }${suffix}`;
       }
     });
-  }, [springValue, value]);
+  }, [
+    springValue,
+    value,
+    hasNumber,
+    numberMatch,
+    multiplierChar,
+    prefix,
+    suffix,
+  ]);
 
   return (
     <h3
@@ -37,55 +81,146 @@ const AnimatedNumber = ({ value, delay = 0, color }) => {
       className="text-4xl md:text-5xl lg:text-6xl font-bold"
       style={{ color }}
     >
-      0{value.replace(/[0-9.]/g, "")}
+      {hasNumber ? `${prefix}0${multiplierChar || ""}${suffix}` : value}
     </h3>
   );
 };
 
 const OurImpact = () => {
+  const logos = [
+    {
+      name: "Genpact",
+      url: "https://logo.clearbit.com/genpact.com",
+    },
+    {
+      name: "NTT",
+      url: "https://logo.clearbit.com/ntt.com",
+    },
+    {
+      name: "SHRM",
+      url: "https://logo.clearbit.com/shrm.org",
+    },
+    {
+      name: "Core Competency",
+      url: "https://logo.clearbit.com/corecompetency.net",
+    },
+    {
+      name: "Sila Real Estate",
+      url: "https://logo.clearbit.com/silarealtytrust.com",
+    },
+    {
+      name: "EKAM Inc.",
+      url: "https://logo.clearbit.com/ekaminc.com",
+    },
+    {
+      name: "Diverse Prism",
+      url: "https://logo.clearbit.com/diverseprism.com",
+    },
+    {
+      name: "MindTek Consulting",
+      url: "https://logo.clearbit.com/mindtekconsulting.com",
+    },
+    {
+      name: "ElasticRun",
+      url: "https://logo.clearbit.com/elastic.run",
+    },
+    {
+      name: "Infosys",
+      url: "https://logo.clearbit.com/infosys.com",
+    },
+    {
+      name: "IIM",
+      url: "https://logo.clearbit.com/iima.ac.in",
+    },
+    {
+      name: "Brookfield Properties",
+      url: "https://logo.clearbit.com/brookfieldproperties.com",
+    },
+    {
+      name: "EY",
+      url: "https://logo.clearbit.com/ey.com",
+    },
+    {
+      name: "GSDC",
+      url: "https://logo.clearbit.com/gsdc.org",
+    },
+    {
+      name: "TISS Mumbai",
+      url: "https://logo.clearbit.com/tiss.edu",
+    },
+    {
+      name: "NIIT",
+      url: "https://logo.clearbit.com/niit.com",
+    },
+    {
+      name: "Seagull",
+      url: "https://logo.clearbit.com/seagull.com",
+    },
+    {
+      name: "Infopro",
+      url: "https://logo.clearbit.com/infopro.com",
+    },
+    {
+      name: "Maersk",
+      url: "https://logo.clearbit.com/maersk.com",
+    },
+    {
+      name: "Midland Encore Group",
+      url: "https://logo.clearbit.com/midlandencoregroup.com",
+    },
+    {
+      name: "Airtel",
+      url: "https://logo.clearbit.com/airtel.in",
+    },
+  ];
+
   const stats = [
     {
       id: 1,
-      number: "20+",
-      label: "Years",
-      description: "Senior HR experience across multiple sectors.",
+      number: "95%",
+      label: "On-Time Delivery",
+      description:
+        "Projects delivered to timeline, scope, and expected performance outcomes.",
       color: "#E89161",
     },
     {
       id: 2,
-      number: "60%",
-      label: "Process efficiency gains",
+      number: "4.97 / 5",
+      label: "Client Satisfaction",
       description:
-        "through HR digital transformation (GUS Global Services example).",
+        "Consistently rated in the top satisfaction tier across programs and stakeholders.",
       color: "#E89161",
     },
     {
       id: 3,
-      number: "3x",
-      label: "GPTW® Certified Organizations",
-      description: "Led organisations to certification.",
+      number: "30%",
+      label: "Faster Learning Deployment",
+      description:
+        "Streamlined processes and workflows that reduce turnaround time, end-to-end.",
       color: "#E89161",
     },
     {
       id: 4,
-      number: "95%",
-      label: "NPS",
-      description: "on AI-powered onboarding experiences implemented.",
+      number: "4,500+",
+      label: "Hours of Live Training",
+      description:
+        "Scaled capability building across leadership, behavioral, communication, and functional skills.",
       color: "#E89161",
     },
     {
       id: 5,
-      number: "18%",
-      label: "Reduction",
-      description: "in voluntary attrition (example outcome at OMAX Autos).",
+      number: "7,528+",
+      label: "Hours of Learning Content",
+      description:
+        "Outcome-aligned curriculum and digital modules across levels and roles.",
       color: "#E89161",
     },
     {
       id: 6,
-      number: "9+",
-      label: "HiPo framework",
+      number: "$500K+",
+      label: "Cost Savings & Capacity Gains",
       description:
-        "85% promotion rate within 12 months (coaching/talent outcomes).",
+        "Enabled through better retention, scalable learning models, and optimized L&D investments.",
       color: "#E89161",
     },
   ];
@@ -191,6 +326,53 @@ const OurImpact = () => {
               </motion.p>
             </motion.div>
           ))}
+        </motion.div>
+
+        {/* Logo Carousel */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="mt-20"
+        >
+          <div className="relative overflow-hidden">
+            {/* Gradient overlays for smooth fade effect */}
+            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#FFF8F3] to-transparent z-10" />
+            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#FFF8F3] to-transparent z-10" />
+
+            {/* Scrolling container */}
+            <div className="flex animate-scroll">
+              {/* First set of logos */}
+              {logos.map((logo, index) => (
+                <div
+                  key={`logo-1-${index}`}
+                  className="flex-shrink-0 mx-8 md:mx-12 flex items-center justify-center"
+                  style={{ width: "120px", height: "80px" }}
+                >
+                  <img
+                    src={logo.url}
+                    alt={logo.name}
+                    className="max-w-full max-h-full object-contain "
+                  />
+                </div>
+              ))}
+              {/* Duplicate set for seamless loop */}
+              {logos.map((logo, index) => (
+                <div
+                  key={`logo-2-${index}`}
+                  className="flex-shrink-0 mx-8 md:mx-12 flex items-center justify-center"
+                  style={{ width: "120px", height: "80px" }}
+                >
+                  <img
+                    src={logo.url}
+                    alt={logo.name}
+                    className="max-w-full max-h-full object-contain"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
         </motion.div>
       </div>
     </div>

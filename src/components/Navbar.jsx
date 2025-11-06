@@ -20,6 +20,12 @@ const Navbar = () => {
           {/* Navigation Links - Hidden on mobile */}
           <div className="hidden lg:flex items-center space-x-10">
             <a
+              href="/"
+              className="text-gray-700 hover:opacity-70 transition-opacity text-sm tracking-wide"
+            >
+              Home
+            </a>
+            <a
               href="#"
               className="text-gray-700 hover:opacity-70 transition-opacity text-sm tracking-wide"
             >
