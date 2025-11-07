@@ -90,87 +90,79 @@ const OurImpact = () => {
   const logos = [
     {
       name: "Genpact",
-      url: "https://logo.clearbit.com/genpact.com",
+      url: "/logos/1280px-Genpact_logo.svg.png",
     },
     {
       name: "NTT",
-      url: "https://logo.clearbit.com/ntt.com",
+      url: "/logos/NTT_company_logo.svg.png",
     },
     {
       name: "SHRM",
-      url: "https://logo.clearbit.com/shrm.org",
+      url: "/logos/Shrm_logo.jpg",
     },
     {
       name: "Core Competency",
-      url: "https://logo.clearbit.com/corecompetency.net",
+      url: "/logos/images (1).png",
     },
     {
       name: "Sila Real Estate",
-      url: "https://logo.clearbit.com/silarealtytrust.com",
+      url: "/logos/786f14a9cb548acdd7e0e34562b32761.png",
     },
     {
       name: "EKAM Inc.",
-      url: "https://logo.clearbit.com/ekaminc.com",
+      url: "/logos/ekam_inc_logo.jpeg",
     },
     {
       name: "Diverse Prism",
-      url: "https://logo.clearbit.com/diverseprism.com",
+      url: "/logos/diverse_prism_logo.jpeg",
     },
     {
       name: "MindTek Consulting",
-      url: "https://logo.clearbit.com/mindtekconsulting.com",
+      url: "/logos/mindteck_logo.jpeg",
     },
     {
       name: "ElasticRun",
-      url: "https://logo.clearbit.com/elastic.run",
+      url: "/logos/Elasticrun_Logo.svg.png",
     },
     {
       name: "Infosys",
-      url: "https://logo.clearbit.com/infosys.com",
+      url: "/logos/Infosys_logo.svg.png",
     },
     {
       name: "IIM",
-      url: "https://logo.clearbit.com/iima.ac.in",
+      url: "/logos/images.png",
     },
     {
       name: "Brookfield Properties",
-      url: "https://logo.clearbit.com/brookfieldproperties.com",
+      url: "/logos/Brookfield_Properties_logo.png",
     },
     {
       name: "EY",
-      url: "https://logo.clearbit.com/ey.com",
+      url: "/logos/EY_logo_2019.svg.png",
     },
     {
-      name: "GSDC",
-      url: "https://logo.clearbit.com/gsdc.org",
+      name: "MCM",
+      url: "/logos/MCM-Logo_RegisteredOFFICIAL_330X134.png",
     },
     {
       name: "TISS Mumbai",
-      url: "https://logo.clearbit.com/tiss.edu",
+      url: "/logos/Tata_Institute_of_Social_Sciences_Logo.svg.png",
     },
     {
       name: "NIIT",
-      url: "https://logo.clearbit.com/niit.com",
-    },
-    {
-      name: "Seagull",
-      url: "https://logo.clearbit.com/seagull.com",
+      url: "/logos/NIIT_logo.svg.png",
     },
     {
       name: "Infopro",
-      url: "https://logo.clearbit.com/infopro.com",
+      url: "/logos/LOGO_INFOPRO_DIGITAL_2022.png",
     },
     {
       name: "Maersk",
-      url: "https://logo.clearbit.com/maersk.com",
-    },
-    {
-      name: "Midland Encore Group",
-      url: "https://logo.clearbit.com/midlandencoregroup.com",
+      url: "/logos/Maersk-Logo.jpg",
     },
     {
       name: "Airtel",
-      url: "https://logo.clearbit.com/airtel.in",
+      url: "/logos/Airtel-logo.jpg",
     },
   ];
 

@@ -7,6 +7,7 @@ const HeroSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [animationPhase, setAnimationPhase] = useState("initial");
+  const [showCard2Content, setShowCard2Content] = useState(false);
 
   const fullText = "Smart HR for a Smarter Workforce";
 
@@ -137,15 +138,9 @@ const HeroSection = () => {
         >
           <img
             src="leap-ladders-logo.png"
-            className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20"
+            className="w-16 h-fit sm:w-20 sm:h-fit md:w-24 md:h-fit"
             alt="Leap Ladders Logo"
           />
-          <p
-            className="text-sm md:text-base lg:text-lg tracking-widest font-bold"
-            style={{ color: "#E89161" }}
-          >
-            LEAP LADDER
-          </p>
         </motion.div>
 
         {/* Main Heading with Typewriter Effect */}
@@ -223,14 +218,58 @@ const HeroSection = () => {
                     {index === 1 && (
                       <>
                         <div
-                          className="w-full h-full flex items-center justify-center"
-                          style={{ backgroundColor: "#FFF8F3" }}
+                          className="w-full h-full relative group cursor-pointer"
+                          onClick={() => setShowCard2Content(!showCard2Content)}
                         >
-                          <img
-                            src="https://images.unsplash.com/photo-1664575602276-acd073f104c1?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070"
-                            alt="Portfolio Visual"
-                            className="w-full h-full object-cover"
-                          />
+                          <div
+                            className="w-full h-full flex items-center justify-center"
+                            style={{ backgroundColor: "#FFF8F3" }}
+                          >
+                            <img
+                              src="https://images.unsplash.com/photo-1664575602276-acd073f104c1?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070"
+                              alt="Portfolio Visual"
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                          {/* Hover/Tap Overlay Content */}
+                          <div
+                            className={`absolute inset-0 bg-[#0B5E6F]/95 flex flex-col items-center justify-center p-6 transition-opacity duration-300 ${
+                              showCard2Content
+                                ? "opacity-100 md:opacity-0"
+                                : "opacity-0"
+                            } md:group-hover:opacity-100`}
+                          >
+                            <h3 className="text-white text-lg md:text-xl font-bold mb-6 text-center">
+                              We help you…
+                            </h3>
+                            <ul className="text-white space-y-3 text-sm md:text-base">
+                              <li className="flex items-start">
+                                <span className="mr-2" style={{ color: "#E89161" }}>
+                                  •
+                                </span>
+                                <span>
+                                  Strategize the change (consulting)
+                                </span>
+                              </li>
+                              <li className="flex items-start">
+                                <span className="mr-2" style={{ color: "#E89161" }}>
+                                  •
+                                </span>
+                                <span>
+                                  Transform your people (coaching and training)
+                                </span>
+                              </li>
+                              <li className="flex items-start">
+                                <span className="mr-2" style={{ color: "#E89161" }}>
+                                  •
+                                </span>
+                                <span>
+                                  Find the method in the madness (Custom Training
+                                  Content Development)
+                                </span>
+                              </li>
+                            </ul>
+                          </div>
                         </div>
                       </>
                     )}
@@ -242,7 +281,7 @@ const HeroSection = () => {
                           style={{ backgroundColor: "#0B5E6F" }}
                         >
                           <img
-                            src="images/card2.png"
+                            src="images/byob.png"
                             alt="BYOB Visual"
                             className="w-full h-full object-cover"
                           />
@@ -258,8 +297,7 @@ const HeroSection = () => {
                         <div
                           className="absolute inset-0 bg-cover bg-center"
                           style={{
-                            backgroundImage:
-                              "url('https://images.unsplash.com/photo-1762223749370-4d05a6023f8f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1625')",
+                            backgroundImage: "url('images/strategy.png')",
                             filter: "brightness(0.4)",
                           }}
                         />
@@ -303,8 +341,8 @@ const HeroSection = () => {
                 {images.map((image, index) => (
                   <div key={index} className="w-full flex-shrink-0">
                     <div className="relative aspect-square">
-                      {/* Slide 1, 2 & 3: image tiles with background color */}
-                      {(index === 0 || index === 1 || index === 2) && (
+                      {/* Slide 1 & 3: image tiles with background color */}
+                      {(index === 0 || index === 2) && (
                         <div
                           className="w-full h-full flex items-center justify-center"
                           style={{ backgroundColor: image.bgColor }}
@@ -314,6 +352,62 @@ const HeroSection = () => {
                             alt={image.alt}
                             className="w-full h-full object-cover"
                           />
+                        </div>
+                      )}
+
+                      {/* Slide 2: Interactive card with tap functionality */}
+                      {index === 1 && (
+                        <div
+                          className="w-full h-full relative cursor-pointer"
+                          onClick={() => setShowCard2Content(!showCard2Content)}
+                        >
+                          <div
+                            className="w-full h-full flex items-center justify-center"
+                            style={{ backgroundColor: image.bgColor }}
+                          >
+                            <img
+                              src="https://images.unsplash.com/photo-1664575602276-acd073f104c1?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070"
+                              alt={image.alt}
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                          {/* Tap Overlay Content */}
+                          <div
+                            className={`absolute inset-0 bg-[#0B5E6F]/95 flex flex-col items-center justify-center p-6 transition-opacity duration-300 ${
+                              showCard2Content ? "opacity-100" : "opacity-0"
+                            }`}
+                          >
+                            <h3 className="text-white text-lg font-bold mb-6 text-center">
+                              We help you…
+                            </h3>
+                            <ul className="text-white space-y-3 text-sm">
+                              <li className="flex items-start">
+                                <span className="mr-2" style={{ color: "#E89161" }}>
+                                  •
+                                </span>
+                                <span>
+                                  Strategize the change (consulting)
+                                </span>
+                              </li>
+                              <li className="flex items-start">
+                                <span className="mr-2" style={{ color: "#E89161" }}>
+                                  •
+                                </span>
+                                <span>
+                                  Transform your people (coaching and training)
+                                </span>
+                              </li>
+                              <li className="flex items-start">
+                                <span className="mr-2" style={{ color: "#E89161" }}>
+                                  •
+                                </span>
+                                <span>
+                                  Find the method in the madness (Custom Training
+                                  Content Development)
+                                </span>
+                              </li>
+                            </ul>
+                          </div>
                         </div>
                       )}
 
