@@ -282,24 +282,6 @@ const HeroSection = () => {
                     )}
 
                     {index === 2 && (
-                      <>
-                        <div
-                          className="w-full h-full flex items-center justify-center"
-                          style={{ backgroundColor: "#0B5E6F" }}
-                        >
-                          <img
-                            src="images/byob.png"
-                            alt="BYOB Visual"
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                        {/* <div className="absolute bottom-4 left-4 text-xs text-white/90 tracking-wider">
-                          (03)
-                        </div> */}
-                      </>
-                    )}
-
-                    {index === 3 && (
                       <div className="w-full h-full flex flex-col items-center justify-center p-6 relative overflow-hidden">
                         <div
                           className="absolute inset-0 bg-cover bg-center"
@@ -323,6 +305,24 @@ const HeroSection = () => {
                           </a>
                         </div>
                       </div>
+                    )}
+
+                    {index === 3 && (
+                      <>
+                        <div
+                          className="w-full h-full flex items-center justify-center"
+                          style={{ backgroundColor: "#0B5E6F" }}
+                        >
+                          <img
+                            src="images/byob.png"
+                            alt="BYOB Visual"
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                        {/* <div className="absolute bottom-4 left-4 text-xs text-white/90 tracking-wider">
+                          (03)
+                        </div> */}
+                      </>
                     )}
                   </div>
                 </motion.div>
@@ -348,8 +348,8 @@ const HeroSection = () => {
                 {images.map((image, index) => (
                   <div key={index} className="w-full flex-shrink-0">
                     <div className="relative aspect-square">
-                      {/* Slide 1 & 3: image tiles with background color */}
-                      {(index === 0 || index === 2) && (
+                      {/* Slide 1: image tile with background color */}
+                      {index === 0 && (
                         <div
                           className="w-full h-full flex items-center justify-center"
                           style={{ backgroundColor: image.bgColor }}
@@ -425,14 +425,14 @@ const HeroSection = () => {
                         </div>
                       )}
 
-                      {/* Slide 4: Our Story card with background image */}
-                      {index === 3 && (
+                      {/* Slide 3: Our Story card with background image */}
+                      {index === 2 && (
                         <div className="w-full h-full flex flex-col items-center justify-center p-8 relative overflow-hidden">
                           <div
                             className="absolute inset-0 bg-cover bg-center"
                             style={{
                               backgroundImage:
-                                "url('https://images.unsplash.com/photo-1606327054517-6bf0b2e84cc4?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070')",
+                                "url('images/strategy.png')",
                               filter: "brightness(0.4)",
                             }}
                           />
@@ -450,6 +450,20 @@ const HeroSection = () => {
                               <span className="ml-1">→</span>
                             </a>
                           </div>
+                        </div>
+                      )}
+
+                      {/* Slide 4: BYOB image */}
+                      {index === 3 && (
+                        <div
+                          className="w-full h-full flex items-center justify-center"
+                          style={{ backgroundColor: image.bgColor }}
+                        >
+                          <img
+                            src="images/byob.png"
+                            alt="BYOB Visual"
+                            className="w-full h-full object-cover"
+                          />
                         </div>
                       )}
 

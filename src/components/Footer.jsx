@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { MessageCircle, Linkedin as LinkedinIcon } from "lucide-react";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -209,21 +210,42 @@ const Footer = () => {
           </motion.div>
         </div>
 
-        {/* Bottom Section - Copyright and Privacy */}
+        {/* Bottom Section - Copyright, Social Icons, and Privacy */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="flex flex-col md:flex-row justify-between items-start md:items-center text-sm pt-6"
+          className="flex flex-col md:flex-row justify-between items-start md:items-center text-sm pt-6 gap-4"
           style={{ borderTop: "1px solid rgba(232, 145, 97, 0.2)" }}
         >
           <p style={{ color: "#E89161" }}>
             ©2025 LEAP LADDERS. All rights reserved
           </p>
+
+          {/* Social Media Icons */}
+          <div className="flex items-center gap-4">
+            <a
+              href="#"
+              className="hover:opacity-70 transition-opacity"
+              style={{ color: "#E89161" }}
+              aria-label="WhatsApp"
+            >
+              <MessageCircle size={20} />
+            </a>
+            <a
+              href="#"
+              className="hover:opacity-70 transition-opacity"
+              style={{ color: "#E89161" }}
+              aria-label="LinkedIn"
+            >
+              <LinkedinIcon size={20} />
+            </a>
+          </div>
+
           <a
             href="#privacy"
-            className="hover:opacity-70 transition-opacity mt-2 md:mt-0"
+            className="hover:opacity-70 transition-opacity"
             style={{ color: "#E89161" }}
           >
             Privacy policy
