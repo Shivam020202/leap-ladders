@@ -204,7 +204,7 @@ const HeroSection = () => {
                           style={{ backgroundColor: "#E89161" }}
                         >
                           <img
-                            src="images/card1.png"
+                            src="images/etcetra.png"
                             alt="ETCETRA Ladder Visual"
                             className="w-full h-full object-cover"
                           />
@@ -244,15 +244,19 @@ const HeroSection = () => {
                             </h3>
                             <ul className="text-white space-y-3 text-sm md:text-base">
                               <li className="flex items-start">
-                                <span className="mr-2" style={{ color: "#E89161" }}>
+                                <span
+                                  className="mr-2"
+                                  style={{ color: "#E89161" }}
+                                >
                                   •
                                 </span>
-                                <span>
-                                  Strategize the change (consulting)
-                                </span>
+                                <span>Strategize the change (consulting)</span>
                               </li>
                               <li className="flex items-start">
-                                <span className="mr-2" style={{ color: "#E89161" }}>
+                                <span
+                                  className="mr-2"
+                                  style={{ color: "#E89161" }}
+                                >
                                   •
                                 </span>
                                 <span>
@@ -260,12 +264,15 @@ const HeroSection = () => {
                                 </span>
                               </li>
                               <li className="flex items-start">
-                                <span className="mr-2" style={{ color: "#E89161" }}>
+                                <span
+                                  className="mr-2"
+                                  style={{ color: "#E89161" }}
+                                >
                                   •
                                 </span>
                                 <span>
-                                  Find the method in the madness (Custom Training
-                                  Content Development)
+                                  Find the method in the madness (Custom
+                                  Training Content Development)
                                 </span>
                               </li>
                             </ul>
@@ -382,15 +389,19 @@ const HeroSection = () => {
                             </h3>
                             <ul className="text-white space-y-3 text-sm">
                               <li className="flex items-start">
-                                <span className="mr-2" style={{ color: "#E89161" }}>
+                                <span
+                                  className="mr-2"
+                                  style={{ color: "#E89161" }}
+                                >
                                   •
                                 </span>
-                                <span>
-                                  Strategize the change (consulting)
-                                </span>
+                                <span>Strategize the change (consulting)</span>
                               </li>
                               <li className="flex items-start">
-                                <span className="mr-2" style={{ color: "#E89161" }}>
+                                <span
+                                  className="mr-2"
+                                  style={{ color: "#E89161" }}
+                                >
                                   •
                                 </span>
                                 <span>
@@ -398,12 +409,15 @@ const HeroSection = () => {
                                 </span>
                               </li>
                               <li className="flex items-start">
-                                <span className="mr-2" style={{ color: "#E89161" }}>
+                                <span
+                                  className="mr-2"
+                                  style={{ color: "#E89161" }}
+                                >
                                   •
                                 </span>
                                 <span>
-                                  Find the method in the madness (Custom Training
-                                  Content Development)
+                                  Find the method in the madness (Custom
+                                  Training Content Development)
                                 </span>
                               </li>
                             </ul>
