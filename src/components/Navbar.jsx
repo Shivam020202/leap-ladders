@@ -26,7 +26,7 @@ const Navbar = () => {
               Home
             </a>
             <a
-              href="#"
+              href="our-story"
               className="text-gray-700 hover:opacity-70 transition-opacity text-sm tracking-wide"
             >
               Our Story
