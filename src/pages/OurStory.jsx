@@ -106,7 +106,7 @@ const experts = [
  const [activeIndex, setActiveIndex] = useState(0);
   const activeExpert = experts[activeIndex];
   return (
-    <div className="min-h-screen bg-[var(--bg)] text-[var(--fg)] font-sans no-rounded">
+    <div className="min-h-screen bg-[#FFF8F3] text-[var(--fg)] font-sans no-rounded">
       <style>{`
         :root {
           --bg: #ffffff;
@@ -127,7 +127,7 @@ const experts = [
       {/* Subtle background accent */}
       <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-[#FFF8F5]/30 to-transparent pointer-events-none" />
       
-      <div className="relative mx-auto max-w-7xl px-6 py-24 md:py-32">
+      <div className="relative mx-auto max-w-7xl px-4 md:px-8 lg:px-20 py-8 md:py-16">
         <div className="grid lg:grid-cols-12 gap-16 items-center">
           {/* LEFT — Content */}
           <div className="lg:col-span-7 order-2 lg:order-1">
@@ -293,7 +293,7 @@ const experts = [
 
       {/* SECTION 2 — The Leap of Faith */}
     <section className="border-b border-[#E7E7E7] bg-white">
-      <div className="mx-auto max-w-7xl px-6 py-24">
+      <div className="mx-auto max-w-7xl px-4 md:px-8 py-8 md:py-16">
         {/* Header with decorative line */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -463,8 +463,8 @@ const experts = [
     </section>
 
       {/* SECTION 3 – Meet Our Experts */}
-  <section className="bg-[#FAFAFA] py-24 border-b-[2px] border-[#E7E7E7]">
-      <div className="mx-auto max-w-7xl px-6">
+  <section className="bg-[#FAFAFA] py-8 md:py-16 border-b-[2px] border-[#E7E7E7]">
+      <div className="mx-auto max-w-7xl px-4 md:px-8 lg:px-20">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

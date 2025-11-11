@@ -32,7 +32,7 @@ const Navbar = () => {
               Our Story
             </a>
             <a
-              href="#"
+              href="services"
               className="text-gray-700 hover:opacity-70 transition-opacity text-sm tracking-wide"
             >
               Services

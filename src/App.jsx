@@ -5,7 +5,7 @@ import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import StoryPage from "./pages/OurStory";
-import StoryPageok from "./pages/OurStory2";
+import ServicesSection from "./pages/ServicePage";
 
 export default function App() {
   return (
@@ -16,8 +16,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
                     <Route path="/our-story" element={<StoryPage />} />
-       <Route path="/our-story-2" element={<StoryPageok />} />
-
+                    <Route path="/services" element={<ServicesSection />} />
         </Routes>
       </main>
       <Footer />
