@@ -6,6 +6,8 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import StoryPage from "./pages/OurStory";
 import ServicesSection from "./pages/ServicePage";
+import TestimonialsSection from "./pages/TestiminialsPage";
+import BYOBSection from "./pages/ByobPage";
 
 export default function App() {
   return (
@@ -17,6 +19,9 @@ export default function App() {
           <Route path="/contact" element={<Contact />} />
                     <Route path="/our-story" element={<StoryPage />} />
                     <Route path="/services" element={<ServicesSection />} />
+              <Route path="/testimonials" element={<TestimonialsSection />} />
+          <Route path="/byob" element={<BYOBSection />} />
+
         </Routes>
       </main>
       <Footer />
