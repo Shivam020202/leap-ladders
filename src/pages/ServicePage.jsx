@@ -61,7 +61,7 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section className="bg-white py-8 md:py-16 border-b-[2px] border-[#E7E7E7]">
+    <section className="bg-[#FFF8F3] py-8 md:py-16 border-b-[2px] border-[#E7E7E7]">
       <div className="mx-auto max-w-7xl px-6">
         {/* Header */}
         <motion.div

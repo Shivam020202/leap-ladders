@@ -123,7 +123,7 @@ const experts = [
       {/* HERO SECTION */}
  {/* HERO SECTION */}
 {/* HERO SECTION */}
-<section id="hero" className="border-b border-[#E7E7E7] bg-white relative overflow-hidden">
+<section id="hero" className="border-b border-[#E7E7E7] bg-[#FFF8F3] relative overflow-hidden">
       {/* Subtle background accent */}
       <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-[#FFF8F5]/30 to-transparent pointer-events-none" />
       
