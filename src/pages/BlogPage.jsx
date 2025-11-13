@@ -33,7 +33,7 @@ export default function BlogPage() {
   ];
 
   return (
-    <section className="bg-[#FFF8F3] py-24">
+    <section className="bg-[#FFF8F3] py-8 md:py-16">
       <div className="mx-auto max-w-7xl px-6">
         {/* Header */}
         <motion.div
