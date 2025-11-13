@@ -22,7 +22,7 @@ export default function App() {
                     <Route path="/services" element={<ServicesSection />} />
               <Route path="/testimonials" element={<TestimonialsSection />} />
           <Route path="/byob" element={<BYOBSection />} />
-                    <Route path="/blogs" element={<BlogPage />} />
+<Route path="/blogs" element={<BlogPage />} />
 
 
         </Routes>
