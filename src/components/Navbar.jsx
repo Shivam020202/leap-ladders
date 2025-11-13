@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const navLinkStyle = `
     relative text-gray-700 hover:opacity-70 text-sm tracking-wide pb-1
@@ -22,6 +24,27 @@ const Navbar = () => {
 
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
+  };
+
+  const handleContactClick = () => {
+    if (location.pathname === "/") {
+      // Already on home page, scroll to contact section
+      const element = document.getElementById("contact-section");
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      // Not on home page, navigate to home and then scroll
+      navigate("/");
+      // Use setTimeout to allow navigation to complete
+      setTimeout(() => {
+        const element = document.getElementById("contact-section");
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    }
+    closeMobileMenu();
   };
 
   return (
@@ -85,7 +108,7 @@ const Navbar = () => {
               Toolbox
             </a> */}
             <a
-              href="#"
+              href="/blogs"
               className="relative text-gray-700 hover:opacity-70 transition-opacity text-sm tracking-wide pb-1"
             >
               Blogs
@@ -117,8 +140,8 @@ const Navbar = () => {
           </div>
 
           {/* CTA Button - Hidden on mobile */}
-          <a
-            href="#"
+          <button
+            onClick={handleContactClick}
             className="hidden lg:block px-5 md:px-7 py-2.5 border transition-all text-sm"
             style={{
               borderColor: "#E89161",
@@ -137,7 +160,7 @@ const Navbar = () => {
             }}
           >
            TAKE THE LEAP 
-          </a>
+          </button>
 
           {/* Mobile Menu Button */}
           <button
@@ -257,7 +280,7 @@ const Navbar = () => {
                   </svg>
                   <span>Services</span>
                 </NavLink>
-                <a
+                {/* <a
                   href="#"
                   onClick={closeMobileMenu}
                   className="relative text-gray-700 text-base tracking-wide py-3 px-6 block hover:bg-[#E89161]/5 transition-all duration-200 flex items-center gap-3"
@@ -266,9 +289,9 @@ const Navbar = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
                   </svg>
                   <span>Toolbox</span>
-                </a>
+                </a> */}
                 <a
-                  href="#"
+                  href="/blogs"
                   onClick={closeMobileMenu}
                   className="relative text-gray-700 text-base tracking-wide py-3 px-6 block hover:bg-[#E89161]/5 transition-all duration-200 flex items-center gap-3"
                 >
@@ -277,7 +300,7 @@ const Navbar = () => {
                   </svg>
                   <span>Blogs</span>
                 </a>
-                <NavLink
+                {/* <NavLink
                   to="/byob"
                   onClick={closeMobileMenu}
                   className={({ isActive }) =>
@@ -292,7 +315,7 @@ const Navbar = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                   </svg>
                   <span>BYOB</span>
-                </NavLink>
+                </NavLink> */}
                 <NavLink
                   to="/testimonials"
                   onClick={closeMobileMenu}
@@ -312,21 +335,20 @@ const Navbar = () => {
 
                 {/* Mobile CTA Button */}
                 <div className="px-6 pt-4">
-                  <a
-                    href="#"
+                  <button
+                    onClick={handleContactClick}
                     className="flex items-center justify-center gap-2 w-full text-center px-6 py-3 border-2 transition-all text-sm font-medium rounded-md"
                     style={{
                       borderColor: "#E89161",
                       backgroundColor: "#E89161",
                       color: "#FFF8F3",
                     }}
-                    onClick={closeMobileMenu}
                   >
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                     <span>TAKE THE LEAP</span>
-                  </a>
+                  </button>
                 </div>
               </div>
             </motion.div>

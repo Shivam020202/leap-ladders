@@ -87,7 +87,7 @@ const PortfolioSection = () => {
   return (
     <secction>
       <div
-        className=" max-w-7xl mx-auto md:min-h-screen py-16 md:px-4"
+        className="max-w-7xl mx-auto min-h-auto md:min-h-screen py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-4"
         style={{ backgroundColor: "#FFF8F3" }}
       >
         {/* Section Header */}
@@ -96,10 +96,10 @@ const PortfolioSection = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-12"
+          className="mb-8 md:mb-12 px-4 md:px-0"
         >
           <h2
-            className="text-3xl md:text-4xl font-bold"
+            className="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight"
             style={{ color: "#0B5E6F" }}
           >
             Beyond Operations And Business
@@ -257,8 +257,8 @@ const PortfolioSection = () => {
           </div>
 
           {/* Mobile Horizontal Scroll Layout */}
-          <div className="md:hidden overflow-x-auto scrollbar-hide -mx-4 px-4">
-            <div className="flex gap-4 pb-4" style={{ width: "max-content" }}>
+          <div className="md:hidden overflow-x-auto scrollbar-hide -mx-4 sm:-mx-6 px-4 sm:px-6">
+            <div className="flex gap-3 sm:gap-4 pb-4" style={{ width: "max-content" }}>
               {portfolioItems.map((item, index) => (
                 <motion.div
                   key={item.id}
@@ -267,27 +267,27 @@ const PortfolioSection = () => {
                   viewport={{ once: true, amount: 0.3 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="relative flex-shrink-0"
-                  style={{ width: "85vw", maxWidth: "400px" }}
+                  style={{ width: "90vw", maxWidth: "350px", minWidth: "280px" }}
                 >
-                  <div className="relative overflow-hidden h-[400px]">
+                  <div className="relative overflow-hidden h-64 sm:h-80 ">
                     <img
                       src={item.image}
                       alt={item.name}
                       className="w-full h-full object-cover"
                     />
                     {/* Always visible text overlay on mobile */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex flex-col justify-end p-6">
-                      <h3 className="text-xl font-bold mb-1 text-white">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col justify-end p-4 sm:p-5">
+                      <h3 className="text-lg sm:text-xl font-bold mb-1 text-white leading-tight">
                         {item.name}
                       </h3>
-                      <p className="text-white/90 text-sm mb-3">
+                      <p className="text-white/85 text-xs sm:text-sm mb-2 leading-relaxed">
                         {item.services}
                       </p>
                       <a
                         href={item.link}
-                        className="inline-flex items-center text-white text-sm font-medium"
+                        className="inline-flex items-center text-white text-xs sm:text-sm font-medium hover:opacity-80 transition-opacity"
                       >
-                        View project <ArrowUpRight size={16} className="ml-1" />
+                        View project <ArrowUpRight size={14} className="ml-1 sm:ml-2" />
                       </a>
                     </div>
                   </div>
@@ -302,15 +302,15 @@ const PortfolioSection = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.8 }}
-            className="mt-2 md:-mt-20"
+            className="mt-6 sm:mt-8 md:mt-2 md:-mt-20 px-4 md:px-0"
           >
             <a
               href="#portfolio"
-              className="inline-flex items-center text-lg font-medium hover:opacity-70 transition-opacity"
+              className="inline-flex items-center text-base sm:text-lg font-medium hover:opacity-70 transition-opacity"
               style={{ color: "#E89161" }}
             >
               View all
-              <ArrowUpRight size={20} className="ml-1" />
+              <ArrowUpRight size={18} className="ml-2 sm:ml-3" />
             </a>
           </motion.div>
         </motion.div>

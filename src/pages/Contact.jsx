@@ -56,7 +56,7 @@ export default function ContactSection() {
         </motion.div> */}
 
         {/* Main Content Grid */}
-        <div className="grid lg:grid-cols-2 gap-8 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 items-start" id="contact-section">
           {/* LEFT - Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
