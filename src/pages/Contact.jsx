@@ -21,10 +21,25 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="bg-[#FFF8F3] py-8 md:py-16">
+    <section className="bg-[#FFF8F3] py-8 md:py-8">
       <div className="mx-auto max-w-7xl px-6">
         {/* Header */}
-        <motion.div
+
+             <motion.div
+                  initial={{ opacity: 0, x: -50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                  className="mb-16"
+                >
+                  <h2
+                    className="text-3xl md:text-4xl font-bold"
+                    style={{ color: "#0B5E6F" }}
+                  >
+                    Take the Leap
+                  </h2>
+                </motion.div>
+        {/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -38,10 +53,10 @@ export default function ContactSection() {
           <p className="text-[17px] text-[#4A5568] max-w-2xl mx-auto leading-relaxed">
             You've come this far. Might as well say hi!
           </p>
-        </motion.div>
+        </motion.div> */}
 
         {/* Main Content Grid */}
-        <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-12 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 items-start">
           {/* LEFT - Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -49,11 +64,11 @@ export default function ContactSection() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           >
-            <div className="bg-white border-[2px] border-[#E7E7E7] p-8 lg:p-10 relative">
+            <div className="bg-white border-[2px] border-[#E7E7E7] p-6 lg:p-8 relative">
               {/* Corner accent */}
               <div className="absolute top-0 left-0 w-20 h-20 border-t-[3px] border-l-[3px] border-[#E89161]" />
-              
-              <div className="space-y-6 mt-8">
+
+              <div className="space-y-4 mt-8">
                 {/* Name */}
                 <div>
                   <label className="block text-[13px] font-semibold text-[#0B5E6F] mb-2 uppercase tracking-wide">
@@ -65,7 +80,7 @@ export default function ContactSection() {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="Your Name"
-                    className="w-full px-4 py-3 border-[2px] border-[#E7E7E7] bg-[#FFF8F5] text-[15px] text-[#1a1a1a] placeholder-[#4A5568]/50 focus:border-[#E89161] focus:outline-none transition-colors duration-300"
+                    className="w-full px-4 py-2.5 border-[2px] border-[#E7E7E7] bg-[#FFF8F5] text-[15px] text-[#1a1a1a] placeholder-[#4A5568]/50 focus:border-[#E89161] focus:outline-none transition-colors duration-300"
                   />
                 </div>
 
@@ -80,7 +95,7 @@ export default function ContactSection() {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="your.email@example.com"
-                    className="w-full px-4 py-3 border-[2px] border-[#E7E7E7] bg-[#FFF8F5] text-[15px] text-[#1a1a1a] placeholder-[#4A5568]/50 focus:border-[#E89161] focus:outline-none transition-colors duration-300"
+                    className="w-full px-4 py-2.5 border-[2px] border-[#E7E7E7] bg-[#FFF8F5] text-[15px] text-[#1a1a1a] placeholder-[#4A5568]/50 focus:border-[#E89161] focus:outline-none transition-colors duration-300"
                   />
                 </div>
 
@@ -95,7 +110,7 @@ export default function ContactSection() {
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder="+1 (123) 456-7890"
-                    className="w-full px-4 py-3 border-[2px] border-[#E7E7E7] bg-[#FFF8F5] text-[15px] text-[#1a1a1a] placeholder-[#4A5568]/50 focus:border-[#E89161] focus:outline-none transition-colors duration-300"
+                    className="w-full px-4 py-2.5 border-[2px] border-[#E7E7E7] bg-[#FFF8F5] text-[15px] text-[#1a1a1a] placeholder-[#4A5568]/50 focus:border-[#E89161] focus:outline-none transition-colors duration-300"
                   />
                 </div>
 
@@ -108,7 +123,7 @@ export default function ContactSection() {
                     name="service"
                     value={formData.service}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border-[2px] border-[#E7E7E7] bg-[#FFF8F5] text-[15px] text-[#1a1a1a] focus:border-[#E89161] focus:outline-none transition-colors duration-300"
+                    className="w-full px-4 py-2.5 border-[2px] border-[#E7E7E7] bg-[#FFF8F5] text-[15px] text-[#1a1a1a] focus:border-[#E89161] focus:outline-none transition-colors duration-300"
                   >
                     <option value="">Select a service</option>
                     <option value="consulting">Strategize the Change (Consulting)</option>
@@ -129,7 +144,7 @@ export default function ContactSection() {
                     value={formData.company}
                     onChange={handleChange}
                     placeholder="Your Company"
-                    className="w-full px-4 py-3 border-[2px] border-[#E7E7E7] bg-[#FFF8F5] text-[15px] text-[#1a1a1a] placeholder-[#4A5568]/50 focus:border-[#E89161] focus:outline-none transition-colors duration-300"
+                    className="w-full px-4 py-2.5 border-[2px] border-[#E7E7E7] bg-[#FFF8F5] text-[15px] text-[#1a1a1a] placeholder-[#4A5568]/50 focus:border-[#E89161] focus:outline-none transition-colors duration-300"
                   />
                 </div>
 
@@ -143,8 +158,8 @@ export default function ContactSection() {
                     value={formData.message}
                     onChange={handleChange}
                     placeholder="Tell us about your project..."
-                    rows={5}
-                    className="w-full px-4 py-3 border-[2px] border-[#E7E7E7] bg-[#FFF8F5] text-[15px] text-[#1a1a1a] placeholder-[#4A5568]/50 focus:border-[#E89161] focus:outline-none transition-colors duration-300 resize-none"
+                    rows={4}
+                    className="w-full px-4 py-2.5 border-[2px] border-[#E7E7E7] bg-[#FFF8F5] text-[15px] text-[#1a1a1a] placeholder-[#4A5568]/50 focus:border-[#E89161] focus:outline-none transition-colors duration-300 resize-none"
                   />
                 </div>
 
@@ -153,7 +168,7 @@ export default function ContactSection() {
                   whileHover={{ x: 4 }}
                   transition={{ duration: 0.2 }}
                   onClick={handleSubmit}
-                  className="w-full px-8 py-4 bg-[#E89161] text-white text-[15px] font-semibold uppercase tracking-wide flex items-center justify-center gap-3 group transition-all duration-300"
+                  className="w-full px-8 py-3 bg-[#E89161] text-white text-[15px] font-semibold uppercase tracking-wide flex items-center justify-center gap-3 group transition-all duration-300"
                 >
                   Send Message
                   <svg className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
@@ -170,7 +185,7 @@ export default function ContactSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            className="space-y-6"
+            className="space-y-4"
           >
             {/* LinkedIn DM */}
             <motion.a
@@ -179,7 +194,7 @@ export default function ContactSection() {
               rel="noopener noreferrer"
               whileHover={{ x: 4 }}
               transition={{ duration: 0.2 }}
-              className="block border-[2px] border-[#E7E7E7] bg-white p-6 group"
+              className="block border-[2px] border-[#E7E7E7] bg-white p-5 group"
             >
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 bg-[#0B5E6F] flex items-center justify-center flex-shrink-0">
@@ -206,7 +221,7 @@ export default function ContactSection() {
               rel="noopener noreferrer"
               whileHover={{ x: 4 }}
               transition={{ duration: 0.2 }}
-              className="block border-[2px] border-[#E7E7E7] bg-white p-6 group"
+              className="block border-[2px] border-[#E7E7E7] bg-white p-5 group"
             >
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 bg-[#E89161] flex items-center justify-center flex-shrink-0">
@@ -233,7 +248,7 @@ export default function ContactSection() {
               rel="noopener noreferrer"
               whileHover={{ x: 4 }}
               transition={{ duration: 0.2 }}
-              className="block border-[2px] border-[#E7E7E7] bg-white p-6 group"
+              className="block border-[2px] border-[#E7E7E7] bg-white p-5 group"
             >
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 bg-[#0B5E6F] flex items-center justify-center flex-shrink-0">
@@ -259,14 +274,21 @@ export default function ContactSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="border-[2px] border-[#E7E7E7] bg-[#0B5E6F] p-6 mt-8"
+              className="border-[2px] border-[#E7E7E7] bg-[#0B5E6F] p-5 mt-4 relative overflow-hidden"
             >
-              <h4 className="text-[13px] uppercase tracking-[0.15em] text-[#E89161] font-bold mb-3">
-                Response Time
-              </h4>
-              <p className="text-[15px] text-white/90 leading-[1.7]">
-                We typically respond within 24 hours on business days. For urgent matters, WhatsApp is your best bet.
-              </p>
+              {/* Large decorative text */}
+              <div className="absolute -bottom-4 -right-4 text-[100px] md:text-[120px] font-bold text-white opacity-[0.04] leading-none pointer-events-none">
+                LEAP
+              </div>
+
+              <div className="relative z-10">
+                <h4 className="text-[13px] uppercase tracking-[0.15em] text-[#E89161] font-bold mb-3">
+                  Response Time
+                </h4>
+                <p className="text-[15px] text-white/90 leading-[1.7]">
+                  We typically respond within 24 hours on business days. For urgent matters, WhatsApp is your best bet.
+                </p>
+              </div>
             </motion.div>
           </motion.div>
         </div>

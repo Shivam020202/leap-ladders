@@ -78,19 +78,19 @@ const Navbar = () => {
             >
               Services
             </NavLink>
-            <a
+            {/* <a
               href="#"
               className="relative text-gray-700 hover:opacity-70 transition-opacity text-sm tracking-wide pb-1"
             >
               Toolbox
-            </a>
+            </a> */}
             <a
               href="#"
               className="relative text-gray-700 hover:opacity-70 transition-opacity text-sm tracking-wide pb-1"
             >
               Blogs
             </a>
-            <NavLink
+            {/* <NavLink
               to="/byob"
               className={({ isActive }) =>
                 `${navLinkStyle} ${
@@ -101,7 +101,7 @@ const Navbar = () => {
               }
             >
               BYOB
-            </NavLink>
+            </NavLink> */}
             <NavLink
               to="/testimonials"
               className={({ isActive }) =>
@@ -136,7 +136,7 @@ const Navbar = () => {
               el.style.color = "#FFF8F3";
             }}
           >
-            Get in touch ↗
+           TAKE THE LEAP 
           </a>
 
           {/* Mobile Menu Button */}
@@ -325,7 +325,7 @@ const Navbar = () => {
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
-                    <span>Get in touch</span>
+                    <span>TAKE THE LEAP</span>
                   </a>
                 </div>
               </div>

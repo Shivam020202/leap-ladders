@@ -44,21 +44,21 @@ export default function TestimonialsSection() {
   const bottomRowDuplicated = [...bottomRowTestimonials, ...bottomRowTestimonials, ...bottomRowTestimonials, ...bottomRowTestimonials];
 
   const TestimonialCard = ({ company, quote }) => (
-    <div className="flex-shrink-0 w-[420px] mx-4">
-      <div className="bg-[#FFF8F5] border-[2px] border-[#E7E7E7] p-8 h-full">
+    <div className="flex-shrink-0 w-[280px] md:w-[420px] mx-2 md:mx-4">
+      <div className="bg-[#FFF8F5] border-[2px] border-[#E7E7E7] p-5 md:p-8 h-full">
         {/* Quote Mark */}
-        <svg className="w-10 h-10 text-[#E89161] mb-4 opacity-40" fill="currentColor" viewBox="0 0 24 24">
+        <svg className="w-7 h-7 md:w-10 md:h-10 text-[#E89161] mb-3 md:mb-4 opacity-40" fill="currentColor" viewBox="0 0 24 24">
           <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
         </svg>
-        
+
         {/* Quote Text */}
-        <p className="text-[15px] leading-[1.7] text-[#1a1a1a] mb-6">
+        <p className="text-[13px] md:text-[15px] leading-[1.7] text-[#1a1a1a] mb-4 md:mb-6">
           {quote}
         </p>
-        
+
         {/* Company */}
-        <div className="pt-4 border-t-[2px] border-[#E89161]/20">
-          <p className="text-[13px] font-bold uppercase tracking-[0.1em] text-[#0B5E6F]">
+        <div className="pt-3 md:pt-4 border-t-[2px] border-[#E89161]/20">
+          <p className="text-[11px] md:text-[13px] font-bold uppercase tracking-[0.1em] text-[#0B5E6F]">
             {company}
           </p>
         </div>
@@ -68,20 +68,20 @@ export default function TestimonialsSection() {
 
   return (
     <section className="bg-[#FFF8F3] py-8 md:py-16 mx-auto max-w-7xl overflow-hidden border-b-[2px] border-[#E7E7E7]">
-      <div className="mx-auto max-w-7xl px-6 mb-16">
+      <div className="mx-auto max-w-7xl px-4 md:px-6 mb-8 md:mb-16">
         {/* Rating Badge */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="flex justify-center mb-8"
+          className="flex justify-center mb-6 md:mb-8"
         >
-          <div className="bg-[#0B5E6F] px-6 py-3 flex items-center gap-3">
-            <svg className="w-5 h-5 text-[#E89161]" fill="currentColor" viewBox="0 0 20 20">
+          <div className="bg-[#0B5E6F] px-4 py-2 md:px-6 md:py-3 flex items-center gap-2 md:gap-3">
+            <svg className="w-4 h-4 md:w-5 md:h-5 text-[#E89161]" fill="currentColor" viewBox="0 0 20 20">
               <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
             </svg>
-            <span className="text-white text-[13px] font-medium">Trusted by 700+ professionals</span>
+            <span className="text-white text-[11px] md:text-[13px] font-medium">Trusted by 700+ professionals</span>
           </div>
         </motion.div>
 
@@ -93,19 +93,20 @@ export default function TestimonialsSection() {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="text-center"
         >
-          <h2 className="text-5xl md:text-6xl font-semibold tracking-[-0.02em] text-[#0B5E6F] mb-4 leading-tight">
-            Words of praise from others<br />about our presence.
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-semibold tracking-[-0.02em] text-[#0B5E6F] mb-4 leading-tight px-2">
+            Words of praise from others<br className="hidden md:block" />
+            <span className="md:inline"> about our presence.</span>
           </h2>
         </motion.div>
       </div>
 
       {/* Top Row - Left to Right */}
-      <div className="mb-8 relative overflow-hidden">
+      <div className="mb-6 md:mb-8 relative overflow-hidden">
         {/* Left Gradient */}
-        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#FFF8F3] to-transparent z-10 pointer-events-none" />
-        
+        <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-[#FFF8F3] to-transparent z-10 pointer-events-none" />
+
         {/* Right Gradient */}
-        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#FFF8F3] to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-[#FFF8F3] to-transparent z-10 pointer-events-none" />
         
         <motion.div
           className="flex"
@@ -137,10 +138,10 @@ export default function TestimonialsSection() {
       {/* Bottom Row - Right to Left */}
       <div className="relative overflow-hidden">
         {/* Left Gradient */}
-        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#FFF8F3] to-transparent z-10 pointer-events-none" />
-        
+        <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-[#FFF8F3] to-transparent z-10 pointer-events-none" />
+
         {/* Right Gradient */}
-        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#FFF8F3] to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-[#FFF8F3] to-transparent z-10 pointer-events-none" />
         
         <motion.div
           className="flex"

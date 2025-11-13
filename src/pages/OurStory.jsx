@@ -35,7 +35,7 @@ const experts = [
     {
       name: "Roopali Suri",
       role: "Learning Strategist | HR Transformation | Talent Development | Experience Designer",
-      img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&h=800&fit=crop",
+      img: "/images/team/rupali-2.jpg",
       quote: "Coloring outside the lines because rules are boring.",
       bio: "Roopali brings 15+ years of HR transformation experience to every project. If you see magic in learning design, odds are it's hers.",
       achievements: [
@@ -49,7 +49,7 @@ const experts = [
     {
       name: "Sanchita Banerjee",
       role: "Certified Happiness Coach | Published Author | L&D Specialist | Content Curator",
-      img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=800&h=800&fit=crop",
+      img: "/images/team/Sanchita.png",
       quote: "Spreading happiness one training session at a time.",
       bio: "Popularly known as the corporate fairy godmother, Sanchita has 15+ years of creating measurable growth and genuine workplace joy.",
       achievements: [
@@ -63,7 +63,7 @@ const experts = [
     {
       name: "Chumki Sen",
       role: "Communication Strategist | Brand Messaging | Internal & External Comms | Soft Skills Training",
-      img: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=800&h=800&fit=crop",
+      img: "/images/team/chumki.png",
       quote: "Words matter. Clarity matters more.",
       bio: "A communication powerhouse with 20+ years of narrative leadership. HR strategist by day, grammar ninja by legacy.",
       achievements: [
@@ -77,7 +77,7 @@ const experts = [
     {
       name: "Sakshi Khurana",
       role: "L&D Specialist | OD Transformation | Talent Development | Employee Experience Designer",
-      img: "https://images.unsplash.com/photo-1598550874175-4d0ef436c909?w=800&h=800&fit=crop",
+      img: "/images/team/sakshi.png",
       quote: "From boardroom to microphone, hitting all the right notes.",
       bio: "Sakshi's 18 years span TA, HRBP, L&D, and OD — like a playlist of HR hits that actually delivers results.",
       achievements: [
@@ -91,7 +91,7 @@ const experts = [
     {
       name: "Payal Lath",
       role: "Educator | Mentor | Teacher Trainer | Curriculum Designer",
-      img: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=800&h=800&fit=crop",
+      img: "/images/team/payal.jpg",
       quote: "Making learning fizz, pop, and bubble with purpose.",
       bio: "Armed with a Master's in Chemistry and 10+ years in education, Payal transforms complex concepts into engaging experiences.",
       achievements: [
@@ -534,7 +534,7 @@ const experts = [
                 </div>
 
                 {/* Quote Text Overlay */}
-                <motion.div
+                {/* <motion.div
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
@@ -543,7 +543,7 @@ const experts = [
                   <p className="text-[18px] leading-[1.6] text-[#0B5E6F] font-medium italic">
                     {activeExpert.quote}
                   </p>
-                </motion.div>
+                </motion.div> */}
 
                 {/* Image */}
                 <motion.div

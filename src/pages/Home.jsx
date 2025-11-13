@@ -8,6 +8,7 @@ import TestimonialsMobile from "../components/TestimonialsMobile";
 import PortfolioSection from "../components/Portfolio";
 import OurImpact from "../components/OurImpact";
 import ContactUs from "../components/ContactUs";
+import ContactSection from "./Contact";
 
 export default function Home() {
   return (
@@ -16,7 +17,7 @@ export default function Home() {
       <OurImpact />
       <BlogGrid />
       <PortfolioSection />
-      <ContactUs />
+      <ContactSection/>
     </>
   );
 }

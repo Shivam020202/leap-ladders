@@ -164,6 +164,14 @@ const OurImpact = () => {
       name: "Airtel",
       url: "/logos/Airtel-logo.jpg",
     },
+    {
+      name: "IIM Raipur",
+      url: "/images/clients/iim-raipur.png",
+    },
+    {
+      name: "Seagull",
+      url: "/images/clients/seagull-logo.jpg",
+    },
   ];
 
   const stats = [

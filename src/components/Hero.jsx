@@ -137,14 +137,12 @@ const HeroSection = () => {
           className="flex flex-col items-center justify-center mb-6 gap-3"
         >
           <img
-            src="leap-ladders-logo.png"
+            src="ll-logo.png"
             className="w-16 h-fit sm:w-20 sm:h-fit md:w-24 md:h-fit"
             alt="Leap Ladders Logo"
           />
         </motion.div>
-
-        {/* Main Heading with Typewriter Effect */}
-        <motion.div
+               <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
@@ -154,9 +152,54 @@ const HeroSection = () => {
             className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight"
             style={{ color: "#0B5E6F", letterSpacing: "-0.02em" }}
           >
-            {displayText}
+            LEAP LADDER
           </h1>
         </motion.div>
+
+        {/* Main Heading with Typewriter Effect */}
+<motion.div
+  initial={{ opacity: 0, y: 30 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, delay: 0.4 }}
+  className="text-center mb-8 md:mb-12"
+>
+  <h1
+    className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight"
+    style={{ letterSpacing: "-0.02em" }}
+  >
+    <span className="relative inline-block text-[#0B5E6F]">
+      Smart HR
+      <motion.div
+        initial={{ scaleX: 0 }}
+        whileInView={{ scaleX: 1 }}
+        viewport={{ once: true }}
+        transition={{
+          duration: 0.6,
+          delay: 0.5,
+          ease: [0.22, 1, 0.36, 1],
+        }}
+        className="absolute -bottom-1 left-0 w-full h-[3px] bg-[#E89161] origin-left"
+      />
+    </span>{" "}
+    <span className="text-black">for a</span>{" "}
+    <span className="relative inline-block text-[#0B5E6F]">
+      Smarter
+      <motion.div
+        initial={{ scaleX: 0 }}
+        whileInView={{ scaleX: 1 }}
+        viewport={{ once: true }}
+        transition={{
+          duration: 0.6,
+          delay: 0.8,
+          ease: [0.22, 1, 0.36, 1],
+        }}
+        className="absolute -bottom-1 left-0 w-full h-[3px] bg-[#E89161] origin-left"
+      />
+    </span>{" "}
+    <span className="text-black">Workforce</span>
+  </h1>
+</motion.div>
+
 
         {/* Desktop - Four Box Layout with Complex Animation */}
         <div className="hidden md:block max-w-7xl mx-auto relative">
