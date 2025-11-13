@@ -149,7 +149,7 @@ const HeroSection = () => {
           className="text-center mb-8 md:mb-12"
         >
           <h1
-            className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight"
+            className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight"
             style={{ color: "#0B5E6F", letterSpacing: "-0.02em" }}
           >
             LEAP LADDER
