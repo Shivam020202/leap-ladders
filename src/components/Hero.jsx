@@ -357,7 +357,7 @@ const HeroSection = () => {
                           style={{ backgroundColor: "#0B5E6F" }}
                         >
                           <img
-                            src="images/byob.png"
+                            src="images/home-4th-image.png"
                             alt="BYOB Visual"
                             className="w-full h-full object-cover"
                           />

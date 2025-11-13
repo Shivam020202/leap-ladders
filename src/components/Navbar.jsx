@@ -57,7 +57,7 @@ const Navbar = () => {
             style={{ color: "#E89161" }}
           >
             <img
-              className="w-16 h-auto"
+              className="w-16 h-auto "
               src="leap-ladders-logo.png"
               alt="Leap Ladders Logo"
             />
@@ -107,12 +107,20 @@ const Navbar = () => {
             >
               Toolbox
             </a> */}
-            <a
-              href="/blogs"
-              className="relative text-gray-700 hover:opacity-70 transition-opacity text-sm tracking-wide pb-1"
+
+                     <NavLink
+              to="/blogs"
+              className={({ isActive }) =>
+                `${navLinkStyle} ${
+                  isActive
+                    ? "after:w-full"
+                    : "after:w-0 hover:after:w-full"
+                }`
+              }
             >
               Blogs
-            </a>
+            </NavLink>
+    
             {/* <NavLink
               to="/byob"
               className={({ isActive }) =>

@@ -1,5 +1,5 @@
-import React from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Routes, Route, Link, useLocation } from "react-router-dom";
 import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
@@ -11,6 +11,12 @@ import BYOBSection from "./pages/ByobPage";
 import BlogPage from "./pages/BlogPage";
 
 export default function App() {
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
   return (
     <div className="min-h-screen bg-[#FFF8F3] text-slate-900">
       <Navbar />
