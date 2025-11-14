@@ -352,15 +352,18 @@ const HeroSection = () => {
 
                     {index === 3 && (
                       <>
-                        <div
-                          className="w-full h-full flex items-center justify-center"
-                          style={{ backgroundColor: "#0B5E6F" }}
-                        >
+                        <div className="w-full h-full relative">
                           <img
                             src="images/home-4th-image.png"
                             alt="BYOB Visual"
                             className="w-full h-full object-cover"
                           />
+                          {/* Overlay with text */}
+                          <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-end h-full p-6">
+                            <p className="text-white text-center max-w-xs leading-relaxed font-semibold mb-6">
+                              Beyond Operations And Business
+                            </p>
+                          </div>
                         </div>
                         {/* <div className="absolute bottom-4 left-4 text-xs text-white/90 tracking-wider">
                           (03)
@@ -398,7 +401,7 @@ const HeroSection = () => {
                           style={{ backgroundColor: image.bgColor }}
                         >
                           <img
-                            src="https://images.unsplash.com/photo-1606327054517-6bf0b2e84cc4?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070"
+                            src="images/etcetra.png"
                             alt={image.alt}
                             className="w-full h-full object-cover"
                           />
@@ -498,15 +501,18 @@ const HeroSection = () => {
 
                       {/* Slide 4: BYOB image */}
                       {index === 3 && (
-                        <div
-                          className="w-full h-full flex items-center justify-center"
-                          style={{ backgroundColor: image.bgColor }}
-                        >
+                        <div className="w-full h-full relative">
                           <img
-                            src="images/byob.png"
+                            src="images/home-4th-image.png"
                             alt="BYOB Visual"
                             className="w-full h-full object-cover"
                           />
+                          {/* Overlay with text */}
+                          <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center h-full p-8">
+                            <p className="text-white text-center max-w-xs leading-relaxed font-semibold mb-6">
+                              Beyond Operations And Business
+                            </p>
+                          </div>
                         </div>
                       )}
 
