@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function StoryPage() {
   const [openExpert, setOpenExpert] = useState(null);
+  const [expandedExpert, setExpandedExpert] = useState(null);
 
 const values = [
     {
@@ -43,6 +44,7 @@ const experts = [
         "Transformed learning cultures at Zomato, MobiKwik & Lenskart",
         "Architect of 100+ bespoke learning programs"
       ],
+      expandedContent: "Roopali's strategic thinking and ability to navigate complex projects have made her a sought-after leader in the field of HR. She has a proven track record of building high-performing teams, managing large-scale initiatives, and driving tangible business results.\nShe's delivered over 2350 hours of training, which is more screen time than your favorite Netflix show.\nHer understanding of instructional design and knowledge management is so deep, Google once tried to index her brain.\nComplex projects? Roopali eats those for breakfast (with a side of Avocado of course) with a drizzle of change management.\nSo, if your organization is lost in the wilderness of disengaged employees and training modules that feel like 2003 PowerPoint trauma... fear not.\nRoopali's got the compass, the map, and probably a motivational quote to go with it.\nWatch out, HR Avengers. She's assembling.",
       tab: "Roopali Suri",
       color: "#E89161"
     },
@@ -57,6 +59,7 @@ const experts = [
         "Published author & content creation specialist",
         "Expert in blending psychology with practical L&D"
       ],
+      expandedContent: "Sanchita has a proven track record of delivering innovative and impactful training solutions across diverse industries, making her a trusted partner for businesses aiming to elevate their performance and foster a culture of growth. And, of course, because one career wasn't enough to tickle her brains, she founded two companies — Decoding Happiness and FeedIn Services, which sounds like a tech startup but is really where innovation meets people development.\nAnd then, she still had more time in hand so she became an author. She's got books in two languages — English and Hindi including an international bestseller, Unstoppable Courage. That's right. She can inspire you in whichever language your inner critic speaks.\nSo, if you're looking for someone who can project manage a unicorn, coach a cactus into blooming, and still have time to edit a best-seller, Sanchita's your person.",
       tab: "Sanchita Banerjee",
       color: "#0B5E6F"
     },
@@ -71,6 +74,7 @@ const experts = [
         "Expert in soft skills training & brand messaging",
         "Yoga instructor bringing balance to boardrooms"
       ],
+      expandedContent: "With over two decades of experience spanning media, publishing, healthcare, and insurance, Chumki's pretty much worn every communication hat short of writing carrier pigeon manuals. From drafting white papers to ghostwriting for C-suite execs, she's played spokesperson, strategist, editor, and occasional sanity-restorer for brands like Max Life Insurance and GE Medical Systems. As Assistant Editor at Business World, she edited news with one eye, ran the desk with the other. Oh, and did we mention she researched, wrote, and roamed for travel guides at Dorling Kindersley?\n\nHobbies? Reading, traveling, and reminding people that yoga is more than just headstands — it's also how she handles project deadlines.\nWith a career that reads like a bookshelf and the agility to switch from internal comms to downward dog in 2.3 seconds, she's back in the game — strategic, centered, and creatively caffeinated.",
       tab: "Chumki Sen",
       color: "#E89161"
     },
@@ -85,6 +89,7 @@ const experts = [
         "Transformed teams at Cognizant, Infosys & startups",
         "Professional singer bringing rhythm to retention"
       ],
+      expandedContent: "Sakshi tangoed with Talent Acquisition, and has been the secret spice behind Hiring. She has introduced Induction programs that don't induce naps, skip-level meetings that skip the embarrassment and HR reviews that didn't involve pocket cuts.\nSakshi has served a lot of 'a-ha' learning programs for field executives as well as client service teams, sales professionals and IT specialists. She's clocked training hours are more like HR version of a marathoner – 4500+ manhours.\nWhen she's not fine-tuning PowerPoint presentations, she's busy hitting high notes. She's a trained classical vocalist, who has lent her voice to e-learning modules for universities and participated in marketing and advertising collaborations with corporates and freelance organizations.\nBasically, she hits the right notes both in HR and from behind the mic.",
       tab: "Sakshi Khurana",
       color: "#0B5E6F"
     },
@@ -99,6 +104,7 @@ const experts = [
         "Expert in curriculum design & teacher training",
         "Transforms complex concepts into engaging learning"
       ],
+      expandedContent: "Payal fully trilingual – fluent in Hindi, English, and Punjabi – whether the conversation turns academic, emotional, or just mildly dramatic, she can keep up with it.\nAfter finally washing her hands off the chalk dust, she has set her sights on something bigger – up-skilling teachers in small towns to help strengthen education right, where it matters most. These days, she designs creative, workshops on everything from education management to classroom delivery – sprinkled, of course, with practical tips for keeping students engaged and awake.\nShe believes that if teachers are given the right tools, a few creative nudges, and a strong cup of chai – they'll light up minds (without setting off the fire alarm).",
       tab: "Payal Lath",
       color: "#E89161"
     },
@@ -161,7 +167,7 @@ const experts = [
                   whileInView={{ scaleX: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                  className="absolute -bottom-1 left-0 w-full h-[3px] bg-[#E89161] origin-left"
+                  // className="absolute -bottom-1 left-0 w-full h-[3px] bg-[#E89161] origin-left"
                 />
               </span>{" "}
               minds,{" "}
@@ -172,7 +178,7 @@ const experts = [
                   whileInView={{ scaleX: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                  className="absolute -bottom-1 left-0 w-full h-[3px] bg-[#E89161] origin-left"
+                  // className="absolute -bottom-1 left-0 w-full h-[3px] bg-[#E89161] origin-left"
                 />
               </span>{" "}
               growth and{" "}
@@ -183,7 +189,7 @@ const experts = [
                   whileInView={{ scaleX: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                  className="absolute -bottom-1 left-0 w-full h-[3px] bg-[#E89161] origin-left"
+                  // className="absolute -bottom-1 left-0 w-full h-[3px] bg-[#E89161] origin-left"
                 />
               </span>{" "}
               together
@@ -547,8 +553,8 @@ const experts = [
 
                 {/* Image */}
                 <motion.div
-                  initial={{ scale: 1.05, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
                   transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                   className="h-full min-h-[600px]"
                 >
@@ -617,15 +623,15 @@ const experts = [
                         key={i}
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
-                        transition={{ 
-                          duration: 0.5, 
+                        transition={{
+                          duration: 0.5,
                           delay: 0.2 + (i * 0.1),
                           ease: [0.22, 1, 0.36, 1]
                         }}
                         className="flex items-start gap-3"
                       >
                         {/* Checkmark Circle */}
-                        <div 
+                        <div
                           className="flex-shrink-0 w-6 h-6 flex items-center justify-center mt-0.5"
                           style={{ backgroundColor: activeExpert.color }}
                         >
@@ -640,6 +646,50 @@ const experts = [
                     ))}
                   </div>
 
+                  {/* Know More Button & Expanded Content */}
+                  {activeExpert.expandedContent && (
+                    <div className="mb-8">
+                      <motion.button
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.6, delay: 0.5 }}
+                        onClick={() => setExpandedExpert(expandedExpert === activeIndex ? null : activeIndex)}
+                        className="inline-flex items-center gap-2 text-[14px] font-medium transition-all duration-300 hover:gap-3"
+                        style={{ color: activeExpert.color }}
+                      >
+                        Know more
+                        <motion.span
+                          animate={{ rotate: expandedExpert === activeIndex ? 180 : 0 }}
+                          transition={{ duration: 0.3 }}
+                        >
+                          ↓
+                        </motion.span>
+                      </motion.button>
+
+                      <AnimatePresence>
+                        {expandedExpert === activeIndex && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                            className="overflow-hidden"
+                          >
+                            <div className="mt-6 pt-6 border-t border-[#E7E7E7]">
+                              {activeExpert.expandedContent.split('\n').map((paragraph, i) => (
+                                paragraph.trim() && (
+                                  <p key={i} className="text-[15px] leading-[1.8] text-[#4A5568] mb-4">
+                                    {paragraph}
+                                  </p>
+                                )
+                              ))}
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  )}
+
                   {/* Social Icons */}
                   <motion.div
                     initial={{ opacity: 0 }}
@@ -652,8 +702,8 @@ const experts = [
                     </span>
                     <div className="flex gap-3">
                       {['Be', 'Db', 'In', 'Tw'].map((icon, i) => (
-                        <div 
-                          key={icon} 
+                        <div
+                          key={icon}
                           className="w-9 h-9 border-[1.5px] border-[#E7E7E7] bg-white flex items-center justify-center text-[11px] font-bold text-[#0B5E6F] opacity-60 hover:opacity-100 transition-opacity duration-300"
                         >
                           {icon}

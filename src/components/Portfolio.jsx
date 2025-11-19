@@ -116,7 +116,7 @@ const PortfolioSection = () => {
         >
           {/* Desktop Layout */}
           <div
-            className="hidden md:grid md:grid-cols-12 md:grid-rows-6 gap-6"
+            className="hidden md:grid md:grid-cols-12 md:grid-rows-5 gap-6"
             style={{ height: "900px" }}
           >
             {/* URBN - Large left image */}
@@ -142,12 +142,12 @@ const PortfolioSection = () => {
                   <p className="text-white text-sm mb-3 leading-relaxed">
                     {portfolioItems[0].description}
                   </p>
-                  <a
+                  {/* <a
                     href={portfolioItems[0].link}
                     className="inline-flex items-center text-white text-sm font-medium hover:underline"
                   >
                     Know more <ArrowUpRight size={16} className="ml-1" />
-                  </a>
+                  </a> */}
                 </motion.div>
               </div>
               {/* Label */}
@@ -176,12 +176,12 @@ const PortfolioSection = () => {
                   <p className="text-white text-sm mb-3 leading-relaxed">
                     {portfolioItems[1].description}
                   </p>
-                  <a
+                  {/* <a
                     href={portfolioItems[1].link}
                     className="inline-flex items-center text-white text-sm font-medium hover:underline"
                   >
                     Know more <ArrowUpRight size={16} className="ml-1" />
-                  </a>
+                  </a> */}
                 </motion.div>
               </div>
               {/* Label positioned to the left */}
@@ -210,12 +210,12 @@ const PortfolioSection = () => {
                   <p className="text-white text-sm mb-3 leading-relaxed">
                     {portfolioItems[2].description}
                   </p>
-                  <a
+                  {/* <a
                     href={portfolioItems[2].link}
                     className="inline-flex items-center text-white text-sm font-medium hover:underline"
                   >
                     Know more <ArrowUpRight size={16} className="ml-1" />
-                  </a>
+                  </a> */}
                 </motion.div>
               </div>
               {/* Label positioned to the left */}
@@ -244,12 +244,12 @@ const PortfolioSection = () => {
                   <p className="text-white text-sm mb-3 leading-relaxed">
                     {portfolioItems[3].description}
                   </p>
-                  <a
+                  {/* <a
                     href={portfolioItems[3].link}
                     className="inline-flex items-center text-white text-sm font-medium hover:underline"
                   >
                     Know more <ArrowUpRight size={16} className="ml-1" />
-                  </a>
+                  </a> */}
                 </motion.div>
               </div>
               {/* Label */}
@@ -297,7 +297,7 @@ const PortfolioSection = () => {
           </div>
 
           {/* View All Link */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -312,7 +312,7 @@ const PortfolioSection = () => {
               View all
               <ArrowUpRight size={18} className="ml-2 sm:ml-3" />
             </a>
-          </motion.div>
+          </motion.div> */}
         </motion.div>
       </div>
     </secction>
