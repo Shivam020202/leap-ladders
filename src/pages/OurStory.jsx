@@ -606,7 +606,7 @@ const experts = [
                   </p>
 
                   {/* Divider */}
-                  <div 
+                  <div
                     className="w-20 h-[2px] mb-8"
                     style={{ backgroundColor: activeExpert.color }}
                   />
@@ -646,48 +646,24 @@ const experts = [
                     ))}
                   </div>
 
-                  {/* Know More Button & Expanded Content */}
+                  {/* Know More Button */}
                   {activeExpert.expandedContent && (
-                    <div className="mb-8">
-                      <motion.button
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 0.6, delay: 0.5 }}
-                        onClick={() => setExpandedExpert(expandedExpert === activeIndex ? null : activeIndex)}
-                        className="inline-flex items-center gap-2 text-[14px] font-medium transition-all duration-300 hover:gap-3"
-                        style={{ color: activeExpert.color }}
+                    <motion.button
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ duration: 0.6, delay: 0.5 }}
+                      onClick={() => setExpandedExpert(expandedExpert === activeIndex ? null : activeIndex)}
+                      className="inline-flex items-center gap-2 text-[14px] font-medium transition-all duration-300 hover:gap-3 mb-8"
+                      style={{ color: activeExpert.color }}
+                    >
+                      Know more
+                      <motion.span
+                        animate={{ rotate: expandedExpert === activeIndex ? 180 : 0 }}
+                        transition={{ duration: 0.3 }}
                       >
-                        Know more
-                        <motion.span
-                          animate={{ rotate: expandedExpert === activeIndex ? 180 : 0 }}
-                          transition={{ duration: 0.3 }}
-                        >
-                          ↓
-                        </motion.span>
-                      </motion.button>
-
-                      <AnimatePresence>
-                        {expandedExpert === activeIndex && (
-                          <motion.div
-                            initial={{ height: 0, opacity: 0 }}
-                            animate={{ height: "auto", opacity: 1 }}
-                            exit={{ height: 0, opacity: 0 }}
-                            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                            className="overflow-hidden"
-                          >
-                            <div className="mt-6 pt-6 border-t border-[#E7E7E7]">
-                              {activeExpert.expandedContent.split('\n').map((paragraph, i) => (
-                                paragraph.trim() && (
-                                  <p key={i} className="text-[15px] leading-[1.8] text-[#4A5568] mb-4">
-                                    {paragraph}
-                                  </p>
-                                )
-                              ))}
-                            </div>
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
-                    </div>
+                        ↓
+                      </motion.span>
+                    </motion.button>
                   )}
 
                   {/* Social Icons */}
@@ -701,7 +677,7 @@ const experts = [
                       Connect
                     </span>
                     <div className="flex gap-3">
-                      {['Be', 'Db', 'In', 'Tw'].map((icon, i) => (
+                      {['Be', 'Db', 'In', 'Tw'].map((icon) => (
                         <div
                           key={icon}
                           className="w-9 h-9 border-[1.5px] border-[#E7E7E7] bg-white flex items-center justify-center text-[11px] font-bold text-[#0B5E6F] opacity-60 hover:opacity-100 transition-opacity duration-300"
@@ -714,6 +690,34 @@ const experts = [
                 </motion.div>
               </div>
             </div>
+
+            {/* Expanded Content - Full Width Below Grid */}
+            {activeExpert.expandedContent && (
+              <AnimatePresence>
+                {expandedExpert === activeIndex && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                    className="overflow-hidden border-t-[2px] border-[#E7E7E7]"
+                  >
+                    <div className="p-10 lg:p-12 bg-[#FFF8F5]">
+                      <h3 className="text-2xl md:text-3xl font-bold mb-6" style={{ color: activeExpert.color }}>
+                        About {activeExpert.name.split(' ')[0]}
+                      </h3>
+                      {activeExpert.expandedContent.split('\n').map((paragraph, i) => (
+                        paragraph.trim() && (
+                          <p key={i} className="text-[15px] leading-[1.8] text-[#4A5568] mb-4">
+                            {paragraph}
+                          </p>
+                        )
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            )}
           </motion.div>
         </AnimatePresence>
       </div>
