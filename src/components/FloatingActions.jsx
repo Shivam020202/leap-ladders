@@ -58,8 +58,6 @@ const FloatingActions = () => {
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
         className="w-16 h-16 bg-[#E89161] rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
-        whileHover={{ rotate: 180 }}
-        transition={{ duration: 0.3 }}
       >
         <motion.div
           animate={{ rotate: isOpen ? 45 : 0 }}
