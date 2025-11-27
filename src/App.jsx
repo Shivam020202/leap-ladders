@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
+import FloatingActions from "./components/FloatingActions";
 import StoryPage from "./pages/OurStory";
 import ServicesSection from "./pages/ServicePage";
 import TestimonialsSection from "./pages/TestiminialsPage";
@@ -34,6 +35,7 @@ export default function App() {
         </Routes>
       </main>
       <Footer />
+      <FloatingActions />
     </div>
   );
 }

@@ -16,7 +16,7 @@ const Footer = () => {
     <footer className="bg-[#E89161] border-t border-white/20">
       <div className="max-w-7xl mx-auto px-4 py-12 md:py-16">
         {/* Main Section - Logo and 4 Info Columns */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Logo - Leftmost */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -149,7 +149,7 @@ const Footer = () => {
           </motion.div>
 
           {/* Newsletter Subscription */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -189,7 +189,7 @@ const Footer = () => {
               By clicking 'Submit', I agree to the processing of my personal
               data as described in the Privacy Policy.
             </p>
-          </motion.div>
+          </motion.div> */}
         </div>
 
         {/* Bottom Section - Copyright, Social Icons, and Privacy */}
