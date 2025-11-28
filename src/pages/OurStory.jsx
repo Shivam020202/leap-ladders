@@ -108,6 +108,21 @@ const experts = [
       tab: "Payal Lath",
       color: "#E89161"
     },
+    {
+  name: "Smritie Bhardwaj",
+  role: "Business Graduate | Strategy & Learning Designer | Creative Problem-Solver",
+  img: "/images/team/rupali-2.jpg",
+  quote: "Work should wake you up, not wear you out.",
+  bio: "A business graduate turned strategy and experience designer, Smritie blends financial discipline with modern creativity to help teams communicate, collaborate, and create better.",
+  achievements: [
+    "Business graduate with early-career experience in London’s finance sector",
+    "Expert in simplifying, redesigning, and elevating processes and experiences",
+    "Brings a unique blend of corporate structure and creative strategy"
+  ],
+  expandedContent: "A business graduate by education, finance professional by early-career accident, and creative problem-solver by instinct – Smritie’s journey is proof that career paths don’t always have to be straight lines.\nAfter completing her degree in the UK and spending two years navigating London’s finance world, she learned a universal truth: spreadsheets weren’t the enemy… monotony was. That’s when she made the most logical Gen Z move – pivoting into learning, strategy, and experience design, where variety, creativity, and actual human connection finally made sense.\nShe’s the team’s unofficial SOS number for anything that needs simplifying, redesigning, or saving from aesthetic disaster. She gets things done faster than most people can send a calendar invite about getting things done. Her decks have that much-needed spark – structured, sharp, and impossible to ignore.\nLike any true Gen Z, she thrives in chaos, shifting priorities, and projects that shapeshift. With a blend of London’s corporate discipline and India’s fast-paced workplace energy, she balances structure with creativity, helping teams sharpen communication and collaborate better – without falling into the cut-copy-paste-and-hope-it-works mindset.\nShe’s happiest when mapping a fresh workshop experience, giving an outdated process a makeover, or gently reminding the team that yes – there *is* a better tool than the one they’ve been using forever.\nStrategic, curious, and unapologetically modern, she brings structure, creativity, and momentum to the team – often all at once, usually with a colour-coded planner to match.",
+  tab: "Smritie Bhardwaj",
+  color: "#E89161"
+}
   ];
  const [activeIndex, setActiveIndex] = useState(0);
   const activeExpert = experts[activeIndex];

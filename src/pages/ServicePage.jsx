@@ -1,7 +1,9 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function ServicesSection() {
+  const [expandedService, setExpandedService] = useState(null);
+
   const services = [
     {
       icon: (
@@ -13,10 +15,11 @@ export default function ServicesSection() {
       subtitle: "Consulting",
       description: "We partner with organizations to turn people strategy into practical, sustainable action. With 20+ years in HR and Organizational Development, we support leaders through transformation—whether it involves rethinking HR systems, reshaping culture, or aligning leadership around a shared direction.",
       features: [
-        "Life & Well-Being Coaching",
-        "Happiness Coaching",
-        "Career & Purpose Coaching",
-        "Customized Growth Programs"
+        "HR Operating Model and process transformation",
+        "Culture, capability, and experience design",
+        "Learning strategy and modernization",
+        "Technology and digital enablement",
+        "Change, adoption and knowledge management"
       ],
       cta: "Request a free consultation",
       expert: "Smritie",
@@ -29,12 +32,14 @@ export default function ServicesSection() {
         </svg>
       ),
       title: "Transform Your People",
-      subtitle: "Coaching & Capability Development",
+      subtitle: "Coaching",
       description: "Growth doesn't happen through sessions alone—it happens when people feel equipped, supported, and confident. We build capability across leaders, teams, educators, students, and early-career professionals through coaching and skill-building programs designed to create real, lasting behavioral change.",
       features: [
-        "K-12 and Academia",
-        "College to Corporate Transition",
-        "Language, Soft Skills & Communication Training"
+        "Leadership and Manager Development",
+        "Early career and college to corporate readiness",
+        "Communication, language and behavior skills",
+        "Team effectiveness, collaboration, and tech enablement",
+        "Academic, educator and student enablement"
       ],
       cta: "Talk to an expert",
       expert: "Roopali",
@@ -47,12 +52,14 @@ export default function ServicesSection() {
         </svg>
       ),
       title: "Find the Method in the Madness",
-      subtitle: "Toolkits, Templates & Practical Resources",
+      subtitle: "Toolkit",
       description: "We believe great ideas only matter when they can be put into practice. That's why we create simple, adaptable, and field-tested tools that make HR work real, repeatable, and scalable. Our templates and frameworks support performance management, onboarding, employee engagement, DEI enablement, and POSH compliance.",
       features: [
-        "Experience Design & Coaching",
-        "Advisory & Transformation",
-        "Performance & Engagement Tools"
+        "Experience design, coaching and manager enablement (kits)",
+        "Performance and growth frameworks",
+        "Onboarding, SOPs, and workflow templates",
+        "Employee engagement and culture kit",
+        "Compliance, governance and policy toolkits"
       ],
       cta: "Book a 1-on-1 with an expert",
       expert: "Chumki",
@@ -126,32 +133,51 @@ export default function ServicesSection() {
                 </p>
 
                 {/* Features List */}
-                <div className="space-y-3 mb-8">
-                  {service.features.map((feature, i) => (
-                    <motion.div
-                      key={i}
-                      initial={{ opacity: 0, x: -10 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ 
-                        duration: 0.5, 
-                        delay: index * 0.15 + 0.3 + (i * 0.08),
-                        ease: [0.22, 1, 0.36, 1]
-                      }}
-                      className="flex items-start gap-3"
-                    >
-                      {/* Cube Icon */}
-                      <div className="flex-shrink-0 mt-0.5">
-                        <svg className="w-4 h-4 text-[#E89161]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                          <path strokeLinecap="square" strokeLinejoin="miter" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-                        </svg>
-                      </div>
-                      <span className="text-[14px] text-[#1a1a1a] leading-[1.6]">
-                        {feature}
-                      </span>
-                    </motion.div>
-                  ))}
+                <div className="space-y-3 mb-4">
+                  {service.features
+                    .slice(0, expandedService === index ? service.features.length : 3)
+                    .map((feature, i) => (
+                      <motion.div
+                        key={i}
+                        initial={{ opacity: 0, x: -10 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{
+                          duration: 0.5,
+                          delay: index * 0.15 + 0.3 + (i * 0.08),
+                          ease: [0.22, 1, 0.36, 1]
+                        }}
+                        className="flex items-start gap-3"
+                      >
+                        {/* Dot Icon */}
+                        <div className="flex-shrink-0 mt-1.5">
+                          <svg className="w-3 h-3 text-[#E89161]" fill="currentColor" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="5" />
+                          </svg>
+                        </div>
+                        <span className="text-[14px] text-[#1a1a1a] leading-[1.6]">
+                          {feature}
+                        </span>
+                      </motion.div>
+                    ))}
                 </div>
+
+                {/* Read More Button */}
+                {service.features.length > 3 && (
+                  <button
+                    onClick={() => setExpandedService(expandedService === index ? null : index)}
+                    className="text-[#E89161] font-medium text-[14px] mb-8 hover:underline inline-flex items-center"
+                  >
+                    {expandedService === index ? "Read less" : "Read more"}
+                    <motion.span
+                      animate={{ rotate: expandedService === index ? 180 : 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="ml-1"
+                    >
+                      ↓
+                    </motion.span>
+                  </button>
+                )}
               </div>
 
               {/* CTA Button */}
