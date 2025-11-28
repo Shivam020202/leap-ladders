@@ -43,12 +43,10 @@ const Footer = () => {
             className="space-y-4"
           >
             <div>
-              <p className="leading-relaxed text-white">
-                488 Madison Avenue, Suite 2300
+              <p className="leading-relaxed font-bold text-white">
+                HQ: Digitally Located, Globally Connected.
               </p>
-              <p className="leading-relaxed text-white">
-                New York, NY 10022
-              </p>
+              {/* <p className="leading-relaxed text-white">New York, NY 10022</p> */}
             </div>
             <div>
               <p className="text-white">Phone: (212) 555-7810</p>
@@ -74,9 +72,7 @@ const Footer = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <ul className="space-y-2">
-              <li className="text-xl font-medium mb-3 text-white">
-                Services
-              </li>
+              <li className="text-xl font-medium mb-3 text-white">Services</li>
               <li>
                 <a
                   href="#portfolio"
@@ -112,9 +108,7 @@ const Footer = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             <ul className="space-y-2">
-              <li className="text-xl font-medium mb-3 text-white">
-                Socials
-              </li>
+              <li className="text-xl font-medium mb-3 text-white">Socials</li>
               <li>
                 <a
                   href="https://instagram.com"
@@ -201,9 +195,7 @@ const Footer = () => {
           className="flex flex-col md:flex-row justify-between items-start md:items-center text-sm pt-6 gap-4"
           style={{ borderTop: "1px solid rgba(255, 255, 255, 0.2)" }}
         >
-          <p className="text-white">
-            ©2025 LEAP LADDERS. All rights reserved
-          </p>
+          <p className="text-white">©2025 LEAP LADDERS. All rights reserved</p>
 
           {/* Social Media Icons */}
           <div className="flex items-center gap-4">

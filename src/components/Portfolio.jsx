@@ -9,7 +9,7 @@ const PortfolioSection = () => {
     {
       id: "urbn",
       name: "URBN",
-      services: "social media marketing, content creation",
+      services: ["📣 Social media marketing", "🎥 Content creation"],
       image:
         "https://images.unsplash.com/photo-1509631179647-0177331693ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
       description:
@@ -20,37 +20,37 @@ const PortfolioSection = () => {
     },
     {
       id: "fresh",
-      name: "FRESH",
-      services: "branding",
+      name: "Building Better Humans",
+      services: ["🧑‍🏫 Education & Development", "🤝 Community Programs"],
       image:
         "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
       description:
-        "Complete brand identity redesign for a sustainable beverage company, focusing on eco-friendly packaging and vibrant visual storytelling.",
-      link: "#fresh",
+        "At Leap Ladder, we're in the business of building better humans. This is where we step beyond boardrooms and performance dashboards, and get into the real work: purpose, possibility, and people. We design activity-based learning modules, hands-on skill workshops, and educator development programs that meet learners where they are. Sometimes, that's a government school classroom in Bihar. Sometimes, it's a teacher training circle in a small-town community center. This is our space for bold ideas, big-hearted projects, and high-impact work that grows from the ground up. Everything we do beyond the bottom line—from pro bono consulting to grassroots learning programs—is rooted in a simple belief: Real change begins before the résumé. It begins in the classroom.",
+      link: "#building-better-humans",
       position: "top-right",
       size: "medium",
     },
     {
       id: "win",
-      name: "WIN",
-      services: "analytics, social media marketing",
+      name: "BYOB: Capacity Building",
+      services: ["🔧 Capacity building", "🚀 Future building"],
       image:
         "https://images.unsplash.com/photo-1529697216570-f48ef8f6b2dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
       description:
-        "Data-driven marketing strategies that delivered 300% ROI through targeted campaigns and comprehensive analytics implementation.",
-      link: "#win",
+        "BYOB isn't charity. It's capacity-building. It's future-building. It's believing that talent is everywhere—opportunity just needs to catch up.",
+      link: "#byob",
       position: "middle-right",
       size: "large",
     },
     {
       id: "taina",
-      name: "TAINA",
-      services: "marketing strategy, content creation",
+      name: "The K–12 Experience",
+      services: ["🏫 Classrooms That Work", "📚 Learning That Lasts"],
       image:
         "https://images.unsplash.com/photo-1543269664-76bc3997d9ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
       description:
-        "Holistic marketing approach for a wellness brand, combining strategic planning with authentic content that connects with health-conscious audiences.",
-      link: "#taina",
+        "We're on a mission to help educators teach better, and help students learn smarter—not just in metros, but in the smallest towns, where untapped potential is waiting to be unleashed.\n\nOur K–12 programs are:\n 🎯 Designed for real-world classrooms\n 🎓 Built by experts who get it\n 🎉 Backed by belief",
+      link: "#k12-experience",
       position: "bottom-left",
       size: "medium",
     },
@@ -85,7 +85,7 @@ const PortfolioSection = () => {
   };
 
   return (
-    <secction>
+    <secction id="byob">
       <div
         className="max-w-7xl mx-auto min-h-auto md:min-h-screen py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-4"
         style={{ backgroundColor: "#FFF8F3" }}
@@ -241,7 +241,7 @@ const PortfolioSection = () => {
                   transition={{ duration: 0.3 }}
                   className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent flex flex-col justify-end p-6"
                 >
-                  <p className="text-white text-sm mb-3 leading-relaxed">
+                  <p className="text-white text-sm mb-3 leading-relaxed whitespace-pre-line">
                     {portfolioItems[3].description}
                   </p>
                   {/* <a
@@ -258,7 +258,10 @@ const PortfolioSection = () => {
 
           {/* Mobile Horizontal Scroll Layout */}
           <div className="md:hidden overflow-x-auto scrollbar-hide -mx-4 sm:-mx-6 px-4 sm:px-6">
-            <div className="flex gap-3 sm:gap-4 pb-4" style={{ width: "max-content" }}>
+            <div
+              className="flex gap-3 sm:gap-4 pb-4"
+              style={{ width: "max-content" }}
+            >
               {portfolioItems.map((item, index) => (
                 <motion.div
                   key={item.id}
@@ -267,7 +270,11 @@ const PortfolioSection = () => {
                   viewport={{ once: true, amount: 0.3 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="relative flex-shrink-0"
-                  style={{ width: "90vw", maxWidth: "350px", minWidth: "280px" }}
+                  style={{
+                    width: "90vw",
+                    maxWidth: "350px",
+                    minWidth: "280px",
+                  }}
                 >
                   <div className="relative overflow-hidden h-64 sm:h-80 ">
                     <img
@@ -287,7 +294,8 @@ const PortfolioSection = () => {
                         href={item.link}
                         className="inline-flex items-center text-white text-xs sm:text-sm font-medium hover:opacity-80 transition-opacity"
                       >
-                        View project <ArrowUpRight size={14} className="ml-1 sm:ml-2" />
+                        View project{" "}
+                        <ArrowUpRight size={14} className="ml-1 sm:ml-2" />
                       </a>
                     </div>
                   </div>

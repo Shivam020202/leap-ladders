@@ -100,14 +100,7 @@ const HeroSection = () => {
       spreading: {
         scale: 1,
         opacity: 1,
-        x:
-          index === 0
-            ? "-150%"
-            : index === 1
-            ? "-50%"
-            : index === 2
-            ? "50%"
-            : "150%",
+        x: index === 0 ? "-100%" : index === 1 ? "0%" : "100%",
         y: 0,
         rotate: 0,
         zIndex: index + 1,
@@ -130,7 +123,7 @@ const HeroSection = () => {
       {/* Hero Content */}
       <div className="px-4 md:px-8 lg:px-20 py-8 md:py-16">
         {/* Logo and Tagline */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -141,7 +134,7 @@ const HeroSection = () => {
             className="w-16 h-fit sm:w-20 sm:h-fit md:w-24 md:h-fit"
             alt="Leap Ladders Logo"
           />
-        </motion.div>
+        </motion.div> */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -149,7 +142,7 @@ const HeroSection = () => {
           className="text-center mb-8 md:mb-12"
         >
           <h1
-            className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight"
+            className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight"
             style={{ color: "#0B5E6F", letterSpacing: "-0.02em" }}
           >
             LEAP LADDER
@@ -200,15 +193,76 @@ const HeroSection = () => {
           </h1>
         </motion.div>
 
-        {/* Desktop - Four Box Layout with Complex Animation */}
+        {/* Subheading */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="text-center mb-8 md:mb-16 px-4"
+        >
+          <p className="text-base md:text-lg lg:text-xl font-extrabold leading-relaxed max-w-4xl mx-auto">
+            <motion.span
+              initial={{ opacity: 0, x: -10 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.8 }}
+              className="inline-block mr-2"
+            >
+              <span style={{ color: "#E89161" }}>E</span>
+              <span style={{ color: "#0B5E6F" }}>MPOWERING </span>
+              <span style={{ color: "#E89161" }}>T</span>
+              <span style={{ color: "#0B5E6F" }}>ALENT </span>
+            </motion.span>
+            <motion.span
+              initial={{ opacity: 0, x: -10 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.9 }}
+              className="inline-block mr-2"
+            >
+              <span style={{ color: "#E89161" }}>C</span>
+              <span style={{ color: "#0B5E6F" }}>HANNELIZING </span>
+              <span className="ml-1" style={{ color: "#E89161" }}>
+                E
+              </span>
+              <span style={{ color: "#0B5E6F" }}>FFICIENCY </span>
+            </motion.span>
+            <motion.span
+              initial={{ opacity: 0, x: -10 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 1.0 }}
+              className="inline-block mr-2"
+            >
+              <span style={{ color: "#E89161" }}>T</span>
+              <span style={{ color: "#0B5E6F" }}>ARGETING </span>
+              <span style={{ color: "#E89161" }}>E</span>
+              <span style={{ color: "#0B5E6F" }}>XCELLENT </span>
+              <span style={{ color: "#E89161" }}>R</span>
+              <span style={{ color: "#0B5E6F" }}>ESULTS </span>
+            </motion.span>
+            <motion.span
+              initial={{ opacity: 0, x: -10 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 1.1 }}
+              className="inline-block"
+            >
+              <span style={{ color: "#E89161" }}>A</span>
+              <span style={{ color: "#0B5E6F" }}>CCELERATING </span>
+              <span className="ml-1" style={{ color: "#E89161" }}>
+                I
+              </span>
+              <span style={{ color: "#0B5E6F" }}>MPACT</span>
+            </motion.span>
+          </p>
+        </motion.div>
+
+        {/* Desktop - Three Box Layout with Complex Animation */}
         <div className="hidden md:block max-w-7xl mx-auto relative">
           <div
             className="relative"
-            style={{ height: "calc((100vw - 160px) / 4)", maxHeight: "400px" }}
+            style={{ height: "calc((100vw - 160px) / 3)", maxHeight: "450px" }}
           >
             <div className="absolute inset-0 flex justify-center items-center">
-              {/* All four cards positioned at center, will spread using transforms */}
-              {[0, 1, 2, 3].map((index) => (
+              {/* All three cards positioned at center, will spread using transforms */}
+              {[0, 1, 2].map((index) => (
                 <motion.div
                   key={index}
                   className="absolute aspect-square"
@@ -223,7 +277,7 @@ const HeroSection = () => {
                   }
                   variants={getCardVariants(index)}
                   style={{
-                    width: "25%",
+                    width: "32%",
                     transformOrigin: "center center",
                   }}
                 >
@@ -240,24 +294,6 @@ const HeroSection = () => {
                   >
                     {/* Box content based on index */}
                     {index === 0 && (
-                      <>
-                        <div
-                          className="w-full h-full flex items-center justify-center"
-                          style={{ backgroundColor: "#E89161" }}
-                        >
-                          <img
-                            src="images/etcetra.png"
-                            alt="ETCETRA Ladder Visual"
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                        {/* <div className="absolute bottom-4 left-4 text-xs text-white/90 tracking-wider">
-                          (01)
-                        </div> */}
-                      </>
-                    )}
-
-                    {index === 1 && (
                       <>
                         <div
                           className="w-full h-full relative group cursor-pointer"
@@ -323,7 +359,7 @@ const HeroSection = () => {
                       </>
                     )}
 
-                    {index === 2 && (
+                    {index === 1 && (
                       <div className="w-full h-full flex flex-col items-center justify-center p-6 relative overflow-hidden">
                         <div
                           className="absolute inset-0 bg-cover bg-center"
@@ -349,7 +385,7 @@ const HeroSection = () => {
                       </div>
                     )}
 
-                    {index === 3 && (
+                    {index === 2 && (
                       <>
                         <div className="w-full h-full relative">
                           <img
@@ -362,6 +398,14 @@ const HeroSection = () => {
                             <p className="text-white text-center max-w-xs leading-relaxed font-semibold mb-6">
                               Beyond Operations And Business
                             </p>
+                            <a
+                              href="#byob"
+                              className="inline-flex items-center font-medium hover:opacity-70 transition-opacity"
+                              style={{ color: "#E89161" }}
+                            >
+                              Know more
+                              <span className="ml-1">→</span>
+                            </a>
                           </div>
                         </div>
                         {/* <div className="absolute bottom-4 left-4 text-xs text-white/90 tracking-wider">
@@ -390,136 +434,129 @@ const HeroSection = () => {
                 className="flex transition-transform duration-300 ease-in-out"
                 style={{ transform: `translateX(-${currentSlide * 100}%)` }}
               >
-                {images.map((image, index) => (
-                  <div key={index} className="w-full flex-shrink-0">
-                    <div className="relative aspect-square">
-                      {/* Slide 1: image tile with background color */}
-                      {index === 0 && (
-                        <div
-                          className="w-full h-full flex items-center justify-center"
-                          style={{ backgroundColor: image.bgColor }}
-                        >
-                          <img
-                            src="images/etcetra.png"
-                            alt={image.alt}
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                      )}
-
-                      {/* Slide 2: Interactive card with tap functionality */}
-                      {index === 1 && (
-                        <div
-                          className="w-full h-full relative cursor-pointer"
-                          onClick={() => setShowCard2Content(!showCard2Content)}
-                        >
+                {images
+                  .filter((_, i) => i !== 0)
+                  .map((image, index) => (
+                    <div key={index} className="w-full flex-shrink-0">
+                      <div className="relative aspect-square">
+                        {/* Slide 1: Interactive card with tap functionality */}
+                        {index === 0 && (
                           <div
-                            className="w-full h-full flex items-center justify-center"
-                            style={{ backgroundColor: image.bgColor }}
+                            className="w-full h-full relative cursor-pointer"
+                            onClick={() =>
+                              setShowCard2Content(!showCard2Content)
+                            }
                           >
+                            <div
+                              className="w-full h-full flex items-center justify-center"
+                              style={{ backgroundColor: image.bgColor }}
+                            >
+                              <img
+                                src="https://images.unsplash.com/photo-1664575602276-acd073f104c1?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070"
+                                alt={image.alt}
+                                className="w-full h-full object-cover"
+                              />
+                            </div>
+                            {/* Tap Overlay Content */}
+                            <div
+                              className={`absolute inset-0 bg-[#0B5E6F]/95 flex flex-col items-center justify-center p-6 transition-opacity duration-300 ${
+                                showCard2Content ? "opacity-100" : "opacity-0"
+                              }`}
+                            >
+                              <h3 className="text-white text-lg font-bold mb-6 text-center">
+                                We help you…
+                              </h3>
+                              <ul className="text-white space-y-3 text-sm">
+                                <li className="flex items-start">
+                                  <span
+                                    className="mr-2"
+                                    style={{ color: "#E89161" }}
+                                  >
+                                    •
+                                  </span>
+                                  <span>
+                                    Strategize the change (consulting)
+                                  </span>
+                                </li>
+                                <li className="flex items-start">
+                                  <span
+                                    className="mr-2"
+                                    style={{ color: "#E89161" }}
+                                  >
+                                    •
+                                  </span>
+                                  <span>
+                                    Transform your people (coaching and
+                                    training)
+                                  </span>
+                                </li>
+                                <li className="flex items-start">
+                                  <span
+                                    className="mr-2"
+                                    style={{ color: "#E89161" }}
+                                  >
+                                    •
+                                  </span>
+                                  <span>
+                                    Find the method in the madness (Custom
+                                    Training Content Development)
+                                  </span>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        )}
+
+                        {/* Slide 2: Our Story card with background image */}
+                        {index === 1 && (
+                          <div className="w-full h-full flex flex-col items-center justify-center p-8 relative overflow-hidden">
+                            <div
+                              className="absolute inset-0 bg-cover bg-center"
+                              style={{
+                                backgroundImage: "url('images/strategy.png')",
+                                filter: "brightness(0.4)",
+                              }}
+                            />
+                            <div className="relative z-10 flex flex-col items-center justify-center h-full">
+                              <p className="text-white text-center max-w-xs leading-relaxed font-semibold mb-6">
+                                Strategy Is Easy. People Are the Plot Twist.
+                                Meet Ours.
+                              </p>
+                              <a
+                                href="/our-story"
+                                className="inline-flex items-center font-medium hover:opacity-70 transition-opacity"
+                                style={{ color: "#E89161" }}
+                              >
+                                Know more
+                                <span className="ml-1">→</span>
+                              </a>
+                            </div>
+                          </div>
+                        )}
+
+                        {/* Slide 3: BYOB image */}
+                        {index === 2 && (
+                          <div className="w-full h-full relative">
                             <img
-                              src="https://images.unsplash.com/photo-1664575602276-acd073f104c1?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070"
-                              alt={image.alt}
+                              src="images/home-4th-image.png"
+                              alt="BYOB Visual"
                               className="w-full h-full object-cover"
                             />
+                            {/* Overlay with text */}
+                            <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center h-full p-8">
+                              <p className="text-white text-center max-w-xs leading-relaxed font-semibold mb-6">
+                                Beyond Operations And Business
+                              </p>
+                            </div>
                           </div>
-                          {/* Tap Overlay Content */}
-                          <div
-                            className={`absolute inset-0 bg-[#0B5E6F]/95 flex flex-col items-center justify-center p-6 transition-opacity duration-300 ${
-                              showCard2Content ? "opacity-100" : "opacity-0"
-                            }`}
-                          >
-                            <h3 className="text-white text-lg font-bold mb-6 text-center">
-                              We help you…
-                            </h3>
-                            <ul className="text-white space-y-3 text-sm">
-                              <li className="flex items-start">
-                                <span
-                                  className="mr-2"
-                                  style={{ color: "#E89161" }}
-                                >
-                                  •
-                                </span>
-                                <span>Strategize the change (consulting)</span>
-                              </li>
-                              <li className="flex items-start">
-                                <span
-                                  className="mr-2"
-                                  style={{ color: "#E89161" }}
-                                >
-                                  •
-                                </span>
-                                <span>
-                                  Transform your people (coaching and training)
-                                </span>
-                              </li>
-                              <li className="flex items-start">
-                                <span
-                                  className="mr-2"
-                                  style={{ color: "#E89161" }}
-                                >
-                                  •
-                                </span>
-                                <span>
-                                  Find the method in the madness (Custom
-                                  Training Content Development)
-                                </span>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      )}
+                        )}
 
-                      {/* Slide 3: Our Story card with background image */}
-                      {index === 2 && (
-                        <div className="w-full h-full flex flex-col items-center justify-center p-8 relative overflow-hidden">
-                          <div
-                            className="absolute inset-0 bg-cover bg-center"
-                            style={{
-                              backgroundImage: "url('images/strategy.png')",
-                              filter: "brightness(0.4)",
-                            }}
-                          />
-                          <div className="relative z-10 flex flex-col items-center justify-center h-full">
-                            <p className="text-white text-center max-w-xs leading-relaxed font-semibold mb-6">
-                              Strategy Is Easy. People Are the Plot Twist. Meet
-                              Ours.
-                            </p>
-                            <a
-                              href="/our-story"
-                              className="inline-flex items-center font-medium hover:opacity-70 transition-opacity"
-                              style={{ color: "#E89161" }}
-                            >
-                              Know more
-                              <span className="ml-1">→</span>
-                            </a>
-                          </div>
+                        <div className="absolute bottom-4 left-4 text-xs text-white/90 tracking-wider">
+                          ({image.id})
                         </div>
-                      )}
-
-                      {/* Slide 4: BYOB image */}
-                      {index === 3 && (
-                        <div className="w-full h-full relative">
-                          <img
-                            src="images/home-4th-image.png"
-                            alt="BYOB Visual"
-                            className="w-full h-full object-cover"
-                          />
-                          {/* Overlay with text */}
-                          <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center h-full p-8">
-                            <p className="text-white text-center max-w-xs leading-relaxed font-semibold mb-6">
-                              Beyond Operations And Business
-                            </p>
-                          </div>
-                        </div>
-                      )}
-
-                      <div className="absolute bottom-4 left-4 text-xs text-white/90 tracking-wider">
-                        ({image.id})
                       </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
               </div>
             </div>
 
