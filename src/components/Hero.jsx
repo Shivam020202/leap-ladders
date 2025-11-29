@@ -135,124 +135,80 @@ const HeroSection = () => {
             alt="Leap Ladders Logo"
           />
         </motion.div> */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-center mb-8 md:mb-12"
-        >
+        <div className="text-center mb-8 md:mb-12">
           <h1
             className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight"
             style={{ color: "#0B5E6F", letterSpacing: "-0.02em" }}
           >
-            LEAP LADDER
+            {"LEAP LADDER".split("").map((char, index) => (
+              <motion.span
+                key={index}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{
+                  duration: 0.3,
+                  delay: 0.1 + index * 0.04,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                style={{ display: "inline-block" }}
+              >
+                {char === " " ? "\u00A0" : char}
+              </motion.span>
+            ))}
           </h1>
-        </motion.div>
+        </div>
 
-        {/* Main Heading with Typewriter Effect */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-center mb-8 md:mb-12"
-        >
+        {/* Main Heading with Letter-by-Letter Fade-in Animation */}
+        <div className="text-center mb-8 md:mb-12">
           <h1
-            className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight"
+            className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight text-black"
             style={{ letterSpacing: "-0.02em" }}
           >
-            <span className="relative inline-block text-[#0B5E6F]">
-              Smart HR
-              <motion.div
-                initial={{ scaleX: 0 }}
-                whileInView={{ scaleX: 1 }}
-                viewport={{ once: true }}
+            {"Smart HR for a Smarter Workforce".split("").map((char, index) => (
+              <motion.span
+                key={index}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{
-                  duration: 0.6,
-                  delay: 0.5,
+                  duration: 0.3,
+                  delay: 0.4 + index * 0.03,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="absolute -bottom-1 left-0 w-full h-[3px] bg-[#E89161] origin-left"
-              />
-            </span>{" "}
-            <span className="text-black">for a</span>{" "}
-            <span className="relative inline-block text-[#0B5E6F]">
-              Smarter
-              <motion.div
-                initial={{ scaleX: 0 }}
-                whileInView={{ scaleX: 1 }}
-                viewport={{ once: true }}
-                transition={{
-                  duration: 0.6,
-                  delay: 0.8,
-                  ease: [0.22, 1, 0.36, 1],
-                }}
-                className="absolute -bottom-1 left-0 w-full h-[3px] bg-[#E89161] origin-left"
-              />
-            </span>{" "}
-            <span className="text-black">Workforce</span>
+                style={{ display: "inline-block" }}
+              >
+                {char === " " ? "\u00A0" : char}
+              </motion.span>
+            ))}
           </h1>
-        </motion.div>
+        </div>
 
         {/* Subheading */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-center mb-8 md:mb-16 px-4"
-        >
+        <div className="text-center mb-8  px-4">
           <p className="text-base md:text-lg lg:text-xl font-extrabold leading-relaxed max-w-4xl mx-auto">
-            <motion.span
-              initial={{ opacity: 0, x: -10 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.8 }}
-              className="inline-block mr-2"
-            >
-              <span style={{ color: "#E89161" }}>E</span>
-              <span style={{ color: "#0B5E6F" }}>MPOWERING </span>
-              <span style={{ color: "#E89161" }}>T</span>
-              <span style={{ color: "#0B5E6F" }}>ALENT </span>
-            </motion.span>
-            <motion.span
-              initial={{ opacity: 0, x: -10 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.9 }}
-              className="inline-block mr-2"
-            >
-              <span style={{ color: "#E89161" }}>C</span>
-              <span style={{ color: "#0B5E6F" }}>HANNELIZING </span>
-              <span className="ml-1" style={{ color: "#E89161" }}>
-                E
-              </span>
-              <span style={{ color: "#0B5E6F" }}>FFICIENCY </span>
-            </motion.span>
-            <motion.span
-              initial={{ opacity: 0, x: -10 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 1.0 }}
-              className="inline-block mr-2"
-            >
-              <span style={{ color: "#E89161" }}>T</span>
-              <span style={{ color: "#0B5E6F" }}>ARGETING </span>
-              <span style={{ color: "#E89161" }}>E</span>
-              <span style={{ color: "#0B5E6F" }}>XCELLENT </span>
-              <span style={{ color: "#E89161" }}>R</span>
-              <span style={{ color: "#0B5E6F" }}>ESULTS </span>
-            </motion.span>
-            <motion.span
-              initial={{ opacity: 0, x: -10 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 1.1 }}
-              className="inline-block"
-            >
-              <span style={{ color: "#E89161" }}>A</span>
-              <span style={{ color: "#0B5E6F" }}>CCELERATING </span>
-              <span className="ml-1" style={{ color: "#E89161" }}>
-                I
-              </span>
-              <span style={{ color: "#0B5E6F" }}>MPACT</span>
-            </motion.span>
+            {"EMPOWERING TALENT CHANNELIZING EFFICIENCY TARGETING EXCELLENT RESULTS ACCELERATING IMPACT".split("").map((char, index) => {
+              const firstLetters = [0, 11, 18, 31, 42, 53, 64, 75, 87, 94];
+              const isFirstLetter = firstLetters.includes(index);
+              return (
+                <motion.span
+                  key={index}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{
+                    duration: 0.3,
+                    delay: 1.4 + index * 0.015,
+                    ease: [0.22, 1, 0.36, 1],
+                  }}
+                  style={{ 
+                    display: "inline-block",
+                    color: isFirstLetter ? "#E89161" : "#0B5E6F"
+                  }}
+                >
+                  {char === " " ? "\u00A0" : char}
+                </motion.span>
+              );
+            })}
           </p>
-        </motion.div>
+        </div>
 
         {/* Desktop - Three Box Layout with Complex Animation */}
         <div className="hidden md:block max-w-7xl mx-auto relative">
