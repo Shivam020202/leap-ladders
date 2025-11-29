@@ -184,29 +184,28 @@ const HeroSection = () => {
 
         {/* Subheading */}
         <div className="text-center mb-8  px-4">
-          <p className="text-base md:text-lg lg:text-xl font-extrabold leading-relaxed max-w-4xl mx-auto">
-            {"EMPOWERING TALENT CHANNELIZING EFFICIENCY TARGETING EXCELLENT RESULTS ACCELERATING IMPACT".split("").map((char, index) => {
-              const firstLetters = [0, 11, 18, 31, 42, 53, 64, 75, 87, 94];
-              const isFirstLetter = firstLetters.includes(index);
-              return (
-                <motion.span
-                  key={index}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{
-                    duration: 0.3,
-                    delay: 1.4 + index * 0.015,
-                    ease: [0.22, 1, 0.36, 1],
-                  }}
-                  style={{ 
-                    display: "inline-block",
-                    color: isFirstLetter ? "#E89161" : "#0B5E6F"
-                  }}
-                >
-                  {char === " " ? "\u00A0" : char}
-                </motion.span>
-              );
-            })}
+          <p className="text-base md:text-lg lg:text-2xl font-extrabold leading-relaxed max-w-4xl mx-auto">
+            {"EMPOWERING TALENT CHANNELIZING EFFICIENCY TARGETING EXCELLENT RESULTS ACCELERATING IMPACT"
+              .split(" ")
+              .map((word, wIndex) => (
+                <React.Fragment key={wIndex}>
+                  <motion.span
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{
+                      duration: 0.3,
+                      delay: 1.4 + wIndex * 0.08,
+                      ease: [0.22, 1, 0.36, 1],
+                    }}
+                    style={{
+                      display: "inline-block",
+                    }}
+                  >
+                    <span style={{ color: "#E89161" }}>{word.charAt(0)}</span>
+                    <span style={{ color: "#0B5E6F" }}>{word.slice(1)}</span>
+                  </motion.span>{" "}
+                </React.Fragment>
+              ))}
           </p>
         </div>
 
