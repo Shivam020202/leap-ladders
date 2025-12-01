@@ -247,7 +247,7 @@ const HeroSection = () => {
                     {index === 0 && (
                       <div className="w-full h-full relative">
                         <img
-                          src="images/one.png"
+                          src="https://images.unsplash.com/photo-1651094856217-6f30970b1521?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                           alt="Services Visual"
                           className="w-full h-full object-cover"
                         />
@@ -277,7 +277,7 @@ const HeroSection = () => {
                         <div
                           className="absolute inset-0 bg-cover bg-center"
                           style={{
-                            backgroundImage: "url('images/two.png')",
+                            backgroundImage: "url('images/strategy.png')",
                             filter: "brightness(0.4)",
                           }}
                         />
@@ -302,7 +302,7 @@ const HeroSection = () => {
                       <>
                         <div className="w-full h-full relative">
                           <img
-                            src="images/three.png"
+                            src="images/home-4th-image.png"
                             alt="BYOB Visual"
                             className="w-full h-full object-cover"
                           />
