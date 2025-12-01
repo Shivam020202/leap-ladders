@@ -7,7 +7,6 @@ const HeroSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [animationPhase, setAnimationPhase] = useState("initial");
-  const [showCard2Content, setShowCard2Content] = useState(false);
 
   const fullText = "Smart HR for a Smarter Workforce";
 
@@ -138,7 +137,7 @@ const HeroSection = () => {
         <div className="text-center mb-8 md:mb-12">
           <h1
             className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight"
-            style={{ color: "#0B5E6F", letterSpacing: "-0.02em" }}
+            style={{ color: "#0B5E6F" }}
           >
             {"LEAP LADDER".split("").map((char, index) => (
               <motion.span
@@ -160,10 +159,7 @@ const HeroSection = () => {
 
         {/* Main Heading with Letter-by-Letter Fade-in Animation */}
         <div className="text-center mb-8 md:mb-12">
-          <h1
-            className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight text-black"
-            style={{ letterSpacing: "-0.02em" }}
-          >
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight text-black">
             {"Smart HR for a Smarter Workforce".split("").map((char, index) => (
               <motion.span
                 key={index}
@@ -184,7 +180,7 @@ const HeroSection = () => {
 
         {/* Subheading */}
         <div className="text-center mb-8  px-4">
-          <p className="text-base md:text-lg lg:text-2xl font-extrabold leading-relaxed max-w-4xl mx-auto">
+          <p className="text-base md:text-lg lg:text-2xl font-extrabold  max-w-4xl mx-auto">
             {"EMPOWERING TALENT CHANNELIZING EFFICIENCY TARGETING EXCELLENT RESULTS ACCELERATING IMPACT"
               .split(" ")
               .map((word, wIndex) => (
@@ -249,69 +245,31 @@ const HeroSection = () => {
                   >
                     {/* Box content based on index */}
                     {index === 0 && (
-                      <>
-                        <div
-                          className="w-full h-full relative group cursor-pointer"
-                          onClick={() => setShowCard2Content(!showCard2Content)}
-                        >
-                          <div
-                            className="w-full h-full flex items-center justify-center"
-                            style={{ backgroundColor: "#FFF8F3" }}
+                      <div className="w-full h-full relative">
+                        <img
+                          src="images/one.png"
+                          alt="Services Visual"
+                          className="w-full h-full object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                        <div className="absolute inset-0 flex flex-col justify-end p-6">
+                          <h3 className="text-white text-center text-lg md:text-xl font-bold mb-3">
+                            Services
+                          </h3>
+                          <p className="text-white/90 text-center text-sm md:text-base leading-relaxed mb-4">
+                            Strategy, coaching, and custom learning experiences
+                            designed to move your teams forward.
+                          </p>
+                          <a
+                            href="/services"
+                            className="inline-flex items-center mx-auto font-medium hover:opacity-70 transition-opacity"
+                            style={{ color: "#E89161" }}
                           >
-                            <img
-                              src="https://images.unsplash.com/photo-1664575602276-acd073f104c1?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070"
-                              alt="Portfolio Visual"
-                              className="w-full h-full object-cover"
-                            />
-                          </div>
-                          {/* Hover/Tap Overlay Content */}
-                          <div
-                            className={`absolute inset-0 bg-[#0B5E6F]/95 flex flex-col items-center justify-center p-6 transition-opacity duration-300 ${
-                              showCard2Content
-                                ? "opacity-100 md:opacity-0"
-                                : "opacity-0"
-                            } md:group-hover:opacity-100`}
-                          >
-                            <h3 className="text-white text-lg md:text-xl font-bold mb-6 text-center">
-                              We help you…
-                            </h3>
-                            <ul className="text-white space-y-3 text-sm md:text-base">
-                              <li className="flex items-start">
-                                <span
-                                  className="mr-2"
-                                  style={{ color: "#E89161" }}
-                                >
-                                  •
-                                </span>
-                                <span>Strategize the change (consulting)</span>
-                              </li>
-                              <li className="flex items-start">
-                                <span
-                                  className="mr-2"
-                                  style={{ color: "#E89161" }}
-                                >
-                                  •
-                                </span>
-                                <span>
-                                  Transform your people (coaching and training)
-                                </span>
-                              </li>
-                              <li className="flex items-start">
-                                <span
-                                  className="mr-2"
-                                  style={{ color: "#E89161" }}
-                                >
-                                  •
-                                </span>
-                                <span>
-                                  Find the method in the madness (Custom
-                                  Training Content Development)
-                                </span>
-                              </li>
-                            </ul>
-                          </div>
+                            Read more
+                            <span className="ml-1">→</span>
+                          </a>
                         </div>
-                      </>
+                      </div>
                     )}
 
                     {index === 1 && (
@@ -319,7 +277,7 @@ const HeroSection = () => {
                         <div
                           className="absolute inset-0 bg-cover bg-center"
                           style={{
-                            backgroundImage: "url('images/strategy.png')",
+                            backgroundImage: "url('images/two.png')",
                             filter: "brightness(0.4)",
                           }}
                         />
@@ -344,7 +302,7 @@ const HeroSection = () => {
                       <>
                         <div className="w-full h-full relative">
                           <img
-                            src="images/home-4th-image.png"
+                            src="images/three.png"
                             alt="BYOB Visual"
                             className="w-full h-full object-cover"
                           />
@@ -396,68 +354,29 @@ const HeroSection = () => {
                       <div className="relative aspect-square">
                         {/* Slide 1: Interactive card with tap functionality */}
                         {index === 0 && (
-                          <div
-                            className="w-full h-full relative cursor-pointer"
-                            onClick={() =>
-                              setShowCard2Content(!showCard2Content)
-                            }
-                          >
-                            <div
-                              className="w-full h-full flex items-center justify-center"
-                              style={{ backgroundColor: image.bgColor }}
-                            >
-                              <img
-                                src="https://images.unsplash.com/photo-1664575602276-acd073f104c1?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070"
-                                alt={image.alt}
-                                className="w-full h-full object-cover"
-                              />
-                            </div>
-                            {/* Tap Overlay Content */}
-                            <div
-                              className={`absolute inset-0 bg-[#0B5E6F]/95 flex flex-col items-center justify-center p-6 transition-opacity duration-300 ${
-                                showCard2Content ? "opacity-100" : "opacity-0"
-                              }`}
-                            >
-                              <h3 className="text-white text-lg font-bold mb-6 text-center">
-                                We help you…
+                          <div className="w-full h-full relative">
+                            <img
+                              src="images/one.png"
+                              alt="Services Visual"
+                              className="w-full h-full object-cover"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
+                            <div className="absolute inset-0 flex flex-col items-center justify-end p-8">
+                              <h3 className="text-white text-lg font-bold mb-3">
+                                Services
                               </h3>
-                              <ul className="text-white space-y-3 text-sm">
-                                <li className="flex items-start">
-                                  <span
-                                    className="mr-2"
-                                    style={{ color: "#E89161" }}
-                                  >
-                                    •
-                                  </span>
-                                  <span>
-                                    Strategize the change (consulting)
-                                  </span>
-                                </li>
-                                <li className="flex items-start">
-                                  <span
-                                    className="mr-2"
-                                    style={{ color: "#E89161" }}
-                                  >
-                                    •
-                                  </span>
-                                  <span>
-                                    Transform your people (coaching and
-                                    training)
-                                  </span>
-                                </li>
-                                <li className="flex items-start">
-                                  <span
-                                    className="mr-2"
-                                    style={{ color: "#E89161" }}
-                                  >
-                                    •
-                                  </span>
-                                  <span>
-                                    Find the method in the madness (Custom
-                                    Training Content Development)
-                                  </span>
-                                </li>
-                              </ul>
+                              <p className="text-white/90 text-sm leading-relaxed text-center mb-4">
+                                Strategy, coaching, and custom learning
+                                experiences designed to move your teams forward.
+                              </p>
+                              <a
+                                href="/services"
+                                className="inline-flex items-center font-medium hover:opacity-70 transition-opacity"
+                                style={{ color: "#E89161" }}
+                              >
+                                Read more
+                                <span className="ml-1">→</span>
+                              </a>
                             </div>
                           </div>
                         )}

@@ -12,8 +12,7 @@ const PortfolioSection = () => {
       services: ["📣 Social media marketing", "🎥 Content creation"],
       image:
         "https://images.unsplash.com/photo-1509631179647-0177331693ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-      description:
-        "Elevating urban fashion through strategic social media campaigns and engaging content that resonates with modern streetwear enthusiasts.",
+      description: "",
       link: "#urbn",
       position: "top-left",
       size: "large",
