@@ -10,8 +10,7 @@ const PortfolioSection = () => {
       id: "urbn",
       name: "URBN",
       services: ["📣 Social media marketing", "🎥 Content creation"],
-      image:
-        "https://images.unsplash.com/photo-1509631179647-0177331693ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+      image: "images/one.png",
       description: "",
       link: "#urbn",
       position: "top-left",
@@ -21,8 +20,7 @@ const PortfolioSection = () => {
       id: "fresh",
       name: "Building Better Humans",
       services: ["🧑‍🏫 Education & Development", "🤝 Community Programs"],
-      image:
-        "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+      image: "images/two.png",
       description:
         "At Leap Ladder, we're in the business of building better humans. This is where we step beyond boardrooms and performance dashboards, and get into the real work: purpose, possibility, and people. We design activity-based learning modules, hands-on skill workshops, and educator development programs that meet learners where they are. Sometimes, that's a government school classroom in Bihar. Sometimes, it's a teacher training circle in a small-town community center. This is our space for bold ideas, big-hearted projects, and high-impact work that grows from the ground up. Everything we do beyond the bottom line—from pro bono consulting to grassroots learning programs—is rooted in a simple belief: Real change begins before the résumé. It begins in the classroom.",
       link: "#building-better-humans",
@@ -33,8 +31,7 @@ const PortfolioSection = () => {
       id: "win",
       name: "BYOB: Capacity Building",
       services: ["🔧 Capacity building", "🚀 Future building"],
-      image:
-        "https://images.unsplash.com/photo-1529697216570-f48ef8f6b2dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+      image: "images/three.png",
       description:
         "BYOB isn't charity. It's capacity-building. It's future-building. It's believing that talent is everywhere—opportunity just needs to catch up.",
       link: "#byob",
@@ -121,7 +118,7 @@ const PortfolioSection = () => {
             {/* URBN - Large left image */}
             <motion.div
               variants={itemVariants}
-              className="col-span-5 row-span-3 relative group cursor-pointer overflow-hidden"
+              className="col-span-5 row-span-3 relative group overflow-hidden"
               onMouseEnter={() => setHoveredItem("urbn")}
               onMouseLeave={() => setHoveredItem(null)}
             >
@@ -136,7 +133,7 @@ const PortfolioSection = () => {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: hoveredItem === "urbn" ? 1 : 0 }}
                   transition={{ duration: 0.3 }}
-                  className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent flex flex-col justify-end p-6"
+                  className="absolute inset-0  flex flex-col justify-end p-6"
                 >
                   <p className="text-white text-sm mb-3 leading-relaxed">
                     {portfolioItems[0].description}
@@ -155,7 +152,7 @@ const PortfolioSection = () => {
             {/* FRESH - Top right medium image */}
             <motion.div
               variants={itemVariants}
-              className="col-span-5 col-start-8 row-span-2 relative group cursor-pointer overflow-hidden"
+              className="col-span-5 col-start-8 row-span-2 relative group overflow-hidden"
               onMouseEnter={() => setHoveredItem("fresh")}
               onMouseLeave={() => setHoveredItem(null)}
             >
@@ -189,7 +186,7 @@ const PortfolioSection = () => {
             {/* WIN - Large right bottom image */}
             <motion.div
               variants={itemVariants}
-              className="col-span-6 col-start-7 row-span-3 row-start-3 relative group cursor-pointer overflow-hidden"
+              className="col-span-6 col-start-7 row-span-3 row-start-3 relative group  overflow-hidden"
               onMouseEnter={() => setHoveredItem("win")}
               onMouseLeave={() => setHoveredItem(null)}
             >
@@ -223,7 +220,7 @@ const PortfolioSection = () => {
             {/* TAINA - Bottom left medium image */}
             <motion.div
               variants={itemVariants}
-              className="col-span-4 row-span-2 row-start-4 relative group cursor-pointer overflow-hidden"
+              className="col-span-4 row-span-2 row-start-4 relative group overflow-hidden"
               onMouseEnter={() => setHoveredItem("taina")}
               onMouseLeave={() => setHoveredItem(null)}
             >
