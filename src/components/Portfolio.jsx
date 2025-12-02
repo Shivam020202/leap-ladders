@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
 
 const PortfolioSection = () => {
 
@@ -113,7 +112,7 @@ const PortfolioSection = () => {
             className="hidden md:grid md:grid-cols-12 md:grid-rows-5 gap-6"
             style={{ height: "900px" }}
           >
-            {/* URBN - Large left image with text always visible */}
+            {/* URBN - Large left image - No text overlay */}
             <motion.div
               variants={itemVariants}
               className="col-span-5 row-span-3 relative overflow-hidden"
@@ -124,71 +123,60 @@ const PortfolioSection = () => {
                   alt={portfolioItems[0].name}
                   className="w-full h-full object-cover"
                 />
-                {/* Text Overlay - Always Visible */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex flex-col justify-end p-6">
-                  <h3 className="text-white text-2xl font-bold mb-2">
-                    {portfolioItems[0].name}
-                  </h3>
-                  <div className="text-white/90 text-sm space-y-1">
-                    {portfolioItems[0].services.map((service, idx) => (
-                      <p key={idx}>{service}</p>
-                    ))}
-                  </div>
-                </div>
               </div>
             </motion.div>
 
-            {/* Building Better Humans - Text box with solid background */}
+            {/* BYOB - Top right with solid background - Content from WIN */}
             <motion.div
               variants={itemVariants}
               className="col-span-5 col-start-8 row-span-2 relative overflow-hidden"
-              style={{ backgroundColor: "#0B5E6F" }}
-            >
-              <div className="w-full h-full p-8 flex flex-col justify-center">
-                <h3 className="text-white text-2xl font-bold mb-4 leading-tight">
-                  {portfolioItems[1].name}
-                </h3>
-                <p className="text-white/90 text-sm leading-relaxed">
-                  {portfolioItems[1].description}
-                </p>
-              </div>
-            </motion.div>
-
-            {/* BYOB - Text box with solid background */}
-            <motion.div
-              variants={itemVariants}
-              className="col-span-6 col-start-7 row-span-3 row-start-3 relative overflow-hidden"
               style={{ backgroundColor: "#E89161" }}
             >
-              <div className="w-full h-full p-8 flex flex-col justify-center">
-                <h3 className="text-white text-3xl font-bold mb-6 leading-tight">
+              <div className="w-full h-full p-8 flex flex-col justify-center overflow-y-auto">
+                <h3 className="text-white text-2xl font-bold mb-4 leading-tight">
                   {portfolioItems[2].name}
                 </h3>
-                <p className="text-white/95 text-base leading-relaxed">
+                <p className="text-white/95 text-sm leading-relaxed">
                   {portfolioItems[2].description}
                 </p>
               </div>
             </motion.div>
 
-            {/* K-12 Experience - Photo with heading underneath */}
+            {/* Building Better Humans - Large right bottom with solid background - Content from FRESH */}
             <motion.div
               variants={itemVariants}
-              className="col-span-4 row-span-2 row-start-4 relative overflow-hidden bg-white"
+              className="col-span-6 col-start-7 row-span-3 row-start-3 relative overflow-hidden"
+              style={{ backgroundColor: "#0B5E6F" }}
             >
-              <div className="w-full h-full flex flex-col">
-                {/* Image - 70% height */}
-                <div className="h-[70%] overflow-hidden">
-                  <img
-                    src={portfolioItems[3].image}
-                    alt={portfolioItems[3].name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                {/* Heading - 30% height */}
-                <div className="h-[30%] flex items-center justify-center px-6" style={{ backgroundColor: "#FFF8F3" }}>
-                  <h3 className="text-[#0B5E6F] text-xl font-bold text-center leading-tight">
+              <div className="w-full h-full p-8 flex flex-col justify-center overflow-y-auto">
+                <h3 className="text-white text-2xl font-bold mb-4 leading-tight">
+                  {portfolioItems[1].name}
+                </h3>
+                <p className="text-white/95 text-sm leading-relaxed">
+                  {portfolioItems[1].description}
+                </p>
+              </div>
+            </motion.div>
+
+            {/* TAINA - Bottom left medium image */}
+            <motion.div
+              variants={itemVariants}
+              className="col-span-4 row-span-2 row-start-4 relative overflow-hidden"
+            >
+              <div className="w-full h-full relative">
+                <img
+                  src={portfolioItems[3].image}
+                  alt={portfolioItems[3].name}
+                  className="w-full h-full object-cover"
+                />
+                {/* Text Overlay - Always Visible */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-black/40 flex flex-col justify-center p-6 overflow-y-auto">
+                  <h3 className="text-white text-lg font-bold mb-3">
                     {portfolioItems[3].name}
                   </h3>
+                  <p className="text-white/90 text-xs leading-relaxed whitespace-pre-line">
+                    {portfolioItems[3].description}
+                  </p>
                 </div>
               </div>
             </motion.div>
@@ -200,45 +188,105 @@ const PortfolioSection = () => {
               className="flex gap-3 sm:gap-4 pb-4"
               style={{ width: "max-content" }}
             >
-              {portfolioItems.map((item, index) => (
-                <motion.div
-                  key={item.id}
-                  initial={{ opacity: 0, x: 100 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, amount: 0.3 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="relative flex-shrink-0"
-                  style={{
-                    width: "90vw",
-                    maxWidth: "350px",
-                    minWidth: "280px",
-                  }}
-                >
-                  <div className="relative overflow-hidden h-64 sm:h-80 ">
-                    <img
-                      src={item.image}
-                      alt={item.name}
-                      className="w-full h-full object-cover"
-                    />
-                    {/* Always visible text overlay on mobile */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col justify-end p-4 sm:p-5">
-                      <h3 className="text-lg sm:text-xl font-bold mb-1 text-white leading-tight">
-                        {item.name}
-                      </h3>
-                      <p className="text-white/85 text-xs sm:text-sm mb-2 leading-relaxed">
-                        {item.services}
-                      </p>
-                      <a
-                        href={item.link}
-                        className="inline-flex items-center text-white text-xs sm:text-sm font-medium hover:opacity-80 transition-opacity"
-                      >
-                        View project{" "}
-                        <ArrowUpRight size={14} className="ml-1 sm:ml-2" />
-                      </a>
-                    </div>
+              {/* Card 1: URBN - Image only, no text */}
+              <motion.div
+                initial={{ opacity: 0, x: 100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6, delay: 0 }}
+                className="relative flex-shrink-0"
+                style={{
+                  width: "90vw",
+                  maxWidth: "350px",
+                  minWidth: "280px",
+                }}
+              >
+                <div className="relative overflow-hidden h-64 sm:h-80">
+                  <img
+                    src={portfolioItems[0].image}
+                    alt={portfolioItems[0].name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </motion.div>
+
+              {/* Card 2: BYOB - Solid orange background with content from index 2 */}
+              <motion.div
+                initial={{ opacity: 0, x: 100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="relative flex-shrink-0"
+                style={{
+                  width: "90vw",
+                  maxWidth: "350px",
+                  minWidth: "280px",
+                  backgroundColor: "#E89161",
+                }}
+              >
+                <div className="relative overflow-hidden h-64 sm:h-80 p-4 sm:p-5 flex flex-col justify-center overflow-y-auto">
+                  <h3 className="text-white text-lg sm:text-xl font-bold mb-3 leading-tight">
+                    {portfolioItems[2].name}
+                  </h3>
+                  <p className="text-white/95 text-xs sm:text-sm leading-relaxed">
+                    {portfolioItems[2].description}
+                  </p>
+                </div>
+              </motion.div>
+
+              {/* Card 3: Building Better Humans - Solid teal background with content from index 1 */}
+              <motion.div
+                initial={{ opacity: 0, x: 100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="relative flex-shrink-0"
+                style={{
+                  width: "90vw",
+                  maxWidth: "350px",
+                  minWidth: "280px",
+                  backgroundColor: "#0B5E6F",
+                }}
+              >
+                <div className="relative h-64 sm:h-80 p-4 sm:p-5 flex flex-col overflow-y-auto">
+                  <h3 className="text-white text-lg sm:text-xl font-bold mb-2 sm:mb-3 leading-tight flex-shrink-0">
+                    {portfolioItems[1].name}
+                  </h3>
+                  <p className="text-white/95 text-xs sm:text-sm leading-relaxed">
+                    {portfolioItems[1].description}
+                  </p>
+                </div>
+              </motion.div>
+
+              {/* Card 4: K-12 Experience - Image with text overlay */}
+              <motion.div
+                initial={{ opacity: 0, x: 100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="relative flex-shrink-0"
+                style={{
+                  width: "90vw",
+                  maxWidth: "350px",
+                  minWidth: "280px",
+                }}
+              >
+                <div className="relative overflow-hidden h-64 sm:h-80">
+                  <img
+                    src={portfolioItems[3].image}
+                    alt={portfolioItems[3].name}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-black/40 flex flex-col justify-center p-4 sm:p-5 overflow-y-auto">
+                    <h3 className="text-white text-lg sm:text-xl font-bold mb-3 leading-tight">
+                      {portfolioItems[3].name}
+                    </h3>
+                    <p className="text-white/90 text-xs sm:text-sm leading-relaxed whitespace-pre-line">
+                      {portfolioItems[3].description}
+                    </p>
                   </div>
-                </motion.div>
-              ))}
+                </div>
+              </motion.div>
             </div>
           </div>
 
