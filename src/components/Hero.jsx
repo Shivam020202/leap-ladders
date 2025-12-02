@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -134,75 +134,63 @@ const HeroSection = () => {
             alt="Leap Ladders Logo"
           />
         </motion.div> */}
-        <div className="text-center mb-8 md:mb-12">
-          <h1
-            className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight"
-            style={{ color: "#0B5E6F" }}
+        {/* Title and Tagline Group */}
+        <div className="text-center mb-4">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-2"
+            style={{ color: "#0B5E6F", fontFamily: "'Times New Roman', Times, serif" }}
           >
-            {"LEAP LADDER".split("").map((char, index) => (
-              <motion.span
-                key={index}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{
-                  duration: 0.3,
-                  delay: 0.1 + index * 0.04,
-                  ease: [0.22, 1, 0.36, 1],
-                }}
-                style={{ display: "inline-block" }}
-              >
-                {char === " " ? "\u00A0" : char}
-              </motion.span>
-            ))}
-          </h1>
+            LEAP LADDER
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="text-lg md:text-xl lg:text-2xl"
+            style={{ color: "black", fontFamily: "'Times New Roman', Times, serif" }}
+          >
+            Smart HR for a Smarter Workforce
+          </motion.p>
         </div>
 
-        {/* Main Heading with Letter-by-Letter Fade-in Animation */}
-        <div className="text-center mb-8 md:mb-12">
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight text-black">
-            {"Smart HR for a Smarter Workforce".split("").map((char, index) => (
-              <motion.span
-                key={index}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{
-                  duration: 0.3,
-                  delay: 0.4 + index * 0.03,
-                  ease: [0.22, 1, 0.36, 1],
-                }}
-                style={{ display: "inline-block" }}
-              >
-                {char === " " ? "\u00A0" : char}
-              </motion.span>
-            ))}
-          </h1>
-        </div>
-
-        {/* Subheading */}
-        <div className="text-center mb-8  px-4">
-          <p className="text-base md:text-lg lg:text-2xl font-extrabold  max-w-4xl mx-auto">
-            {"EMPOWERING TALENT CHANNELIZING EFFICIENCY TARGETING EXCELLENT RESULTS ACCELERATING IMPACT"
-              .split(" ")
-              .map((word, wIndex) => (
-                <React.Fragment key={wIndex}>
-                  <motion.span
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{
-                      duration: 0.3,
-                      delay: 1.4 + wIndex * 0.08,
-                      ease: [0.22, 1, 0.36, 1],
-                    }}
-                    style={{
-                      display: "inline-block",
-                    }}
-                  >
-                    <span style={{ color: "#E89161" }}>{word.charAt(0)}</span>
-                    <span style={{ color: "#0B5E6F" }}>{word.slice(1)}</span>
-                  </motion.span>{" "}
-                </React.Fragment>
-              ))}
-          </p>
+        {/* ETCETRA with Animation - Single Line */}
+        <div className="text-center mb-8 md:mb-12 mt-8 px-4">
+          <motion.p
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7, delay: 0.6 }}
+            className="text-base md:text-lg lg:text-xl max-w-5xl mx-auto"
+            style={{ whiteSpace: "wrap", overflow: "hidden" }}
+          >
+            <motion.span
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.8 }}
+              className="inline-block"
+            >
+              <span className="text-2xl md:text-3xl lg:text-4xl font-bold" style={{ color: "#E89161" }}>E</span>
+              <span className="text-sm md:text-base lg:text-lg" style={{ color: "#0B5E6F" }}>mpowering </span>
+              <span className="text-2xl md:text-3xl lg:text-4xl font-bold" style={{ color: "#E89161" }}>T</span>
+              <span className="text-sm md:text-base lg:text-lg" style={{ color: "#0B5E6F" }}>alent </span>
+              <span className="text-2xl md:text-3xl lg:text-4xl font-bold" style={{ color: "#E89161" }}>C</span>
+              <span className="text-sm md:text-base lg:text-lg" style={{ color: "#0B5E6F" }}>hannelizing </span>
+              <span className="text-2xl md:text-3xl lg:text-4xl font-bold" style={{ color: "#E89161" }}>E</span>
+              <span className="text-sm md:text-base lg:text-lg" style={{ color: "#0B5E6F" }}>fficiency </span>
+              <span className="text-2xl md:text-3xl lg:text-4xl font-bold" style={{ color: "#E89161" }}>T</span>
+              <span className="text-sm md:text-base lg:text-lg" style={{ color: "#0B5E6F" }}>argeting </span>
+              <span className="text-2xl md:text-3xl lg:text-4xl font-bold" style={{ color: "#E89161" }}>E</span>
+              <span className="text-sm md:text-base lg:text-lg" style={{ color: "#0B5E6F" }}>xcellent </span>
+              <span className="text-2xl md:text-3xl lg:text-4xl font-bold" style={{ color: "#E89161" }}>R</span>
+              <span className="text-sm md:text-base lg:text-lg" style={{ color: "#0B5E6F" }}>esults </span>
+              <span className="text-2xl md:text-3xl lg:text-4xl font-bold" style={{ color: "#E89161" }}>A</span>
+              <span className="text-sm md:text-base lg:text-lg" style={{ color: "#0B5E6F" }}>ccelerating Impact</span>
+              {/* <span className="text-3xl md:text-4xl lg:text-5xl font-bold" style={{ color: "#E89161" }}>I</span> */}
+              {/* <span className="text-sm md:text-base lg:text-lg" style={{ color: "#0B5E6F" }}>mpact</span> */}
+            </motion.span>
+          </motion.p>
         </div>
 
         {/* Desktop - Three Box Layout with Complex Animation */}
@@ -309,7 +297,7 @@ const HeroSection = () => {
                           {/* Overlay with text */}
                           <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-end h-full p-6">
                             <p className="text-white text-center max-w-xs leading-relaxed font-semibold mb-6">
-                              Beyond Operations And Business
+                              Beyond Operations And Business (BYOB)
                             </p>
                             <a
                               href="#byob"
@@ -419,7 +407,7 @@ const HeroSection = () => {
                             {/* Overlay with text */}
                             <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center h-full p-8">
                               <p className="text-white text-center max-w-xs leading-relaxed font-semibold mb-6">
-                                Beyond Operations And Business
+                                Beyond Operations And Business (BYOB)
                               </p>
                             </div>
                           </div>

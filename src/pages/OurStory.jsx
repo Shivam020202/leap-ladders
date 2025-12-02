@@ -554,10 +554,10 @@ export default function StoryPage() {
             <h2 className="text-5xl md:text-6xl font-semibold tracking-[-0.02em] text-[#0B5E6F] mb-4 leading-tight">
               Meet Our Experts
             </h2>
-            <p className="text-[15px] text-[#4A5568] max-w-3xl leading-relaxed">
+            {/* <p className="text-[15px] text-[#4A5568] max-w-3xl leading-relaxed">
               Four women with solid corporate pedigrees, stronger opinions, and
               diverse backgrounds who decided to take a leap together.
-            </p>
+            </p> */}
           </motion.div>
 
           {/* Tab Navigation */}

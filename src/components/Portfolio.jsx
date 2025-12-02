@@ -1,9 +1,7 @@
-import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
 const PortfolioSection = () => {
-  const [hoveredItem, setHoveredItem] = useState(null);
 
   const portfolioItems = [
     {
@@ -98,7 +96,7 @@ const PortfolioSection = () => {
             className="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight"
             style={{ color: "#0B5E6F" }}
           >
-            Beyond Operations And Business
+           BYOB  <span className="font-medium">(Beyond Operations And Business)</span>
           </h2>
         </motion.div>
 
@@ -115,140 +113,84 @@ const PortfolioSection = () => {
             className="hidden md:grid md:grid-cols-12 md:grid-rows-5 gap-6"
             style={{ height: "900px" }}
           >
-            {/* URBN - Large left image */}
+            {/* URBN - Large left image with text always visible */}
             <motion.div
               variants={itemVariants}
-              className="col-span-5 row-span-3 relative group overflow-hidden"
-              onMouseEnter={() => setHoveredItem("urbn")}
-              onMouseLeave={() => setHoveredItem(null)}
+              className="col-span-5 row-span-3 relative overflow-hidden"
             >
               <div className="w-full h-full relative">
                 <img
                   src={portfolioItems[0].image}
                   alt={portfolioItems[0].name}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-full object-cover"
                 />
-                {/* Hover Overlay */}
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: hoveredItem === "urbn" ? 1 : 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="absolute inset-0  flex flex-col justify-end p-6"
-                >
-                  <p className="text-white text-sm mb-3 leading-relaxed">
-                    {portfolioItems[0].description}
-                  </p>
-                  {/* <a
-                    href={portfolioItems[0].link}
-                    className="inline-flex items-center text-white text-sm font-medium hover:underline"
-                  >
-                    Know more <ArrowUpRight size={16} className="ml-1" />
-                  </a> */}
-                </motion.div>
+                {/* Text Overlay - Always Visible */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex flex-col justify-end p-6">
+                  <h3 className="text-white text-2xl font-bold mb-2">
+                    {portfolioItems[0].name}
+                  </h3>
+                  <div className="text-white/90 text-sm space-y-1">
+                    {portfolioItems[0].services.map((service, idx) => (
+                      <p key={idx}>{service}</p>
+                    ))}
+                  </div>
+                </div>
               </div>
-              {/* Label */}
             </motion.div>
 
-            {/* FRESH - Top right medium image */}
+            {/* Building Better Humans - Text box with solid background */}
             <motion.div
               variants={itemVariants}
-              className="col-span-5 col-start-8 row-span-2 relative group overflow-hidden"
-              onMouseEnter={() => setHoveredItem("fresh")}
-              onMouseLeave={() => setHoveredItem(null)}
+              className="col-span-5 col-start-8 row-span-2 relative overflow-hidden"
+              style={{ backgroundColor: "#0B5E6F" }}
             >
-              <div className="w-full h-full relative">
-                <img
-                  src={portfolioItems[1].image}
-                  alt={portfolioItems[1].name}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                {/* Hover Overlay */}
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: hoveredItem === "fresh" ? 1 : 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent flex flex-col justify-end p-6"
-                >
-                  <p className="text-white text-sm mb-3 leading-relaxed">
-                    {portfolioItems[1].description}
-                  </p>
-                  {/* <a
-                    href={portfolioItems[1].link}
-                    className="inline-flex items-center text-white text-sm font-medium hover:underline"
-                  >
-                    Know more <ArrowUpRight size={16} className="ml-1" />
-                  </a> */}
-                </motion.div>
+              <div className="w-full h-full p-8 flex flex-col justify-center">
+                <h3 className="text-white text-2xl font-bold mb-4 leading-tight">
+                  {portfolioItems[1].name}
+                </h3>
+                <p className="text-white/90 text-sm leading-relaxed">
+                  {portfolioItems[1].description}
+                </p>
               </div>
-              {/* Label positioned to the left */}
             </motion.div>
 
-            {/* WIN - Large right bottom image */}
+            {/* BYOB - Text box with solid background */}
             <motion.div
               variants={itemVariants}
-              className="col-span-6 col-start-7 row-span-3 row-start-3 relative group  overflow-hidden"
-              onMouseEnter={() => setHoveredItem("win")}
-              onMouseLeave={() => setHoveredItem(null)}
+              className="col-span-6 col-start-7 row-span-3 row-start-3 relative overflow-hidden"
+              style={{ backgroundColor: "#E89161" }}
             >
-              <div className="w-full h-full relative">
-                <img
-                  src={portfolioItems[2].image}
-                  alt={portfolioItems[2].name}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                {/* Hover Overlay */}
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: hoveredItem === "win" ? 1 : 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent flex flex-col justify-end p-6"
-                >
-                  <p className="text-white text-sm mb-3 leading-relaxed">
-                    {portfolioItems[2].description}
-                  </p>
-                  {/* <a
-                    href={portfolioItems[2].link}
-                    className="inline-flex items-center text-white text-sm font-medium hover:underline"
-                  >
-                    Know more <ArrowUpRight size={16} className="ml-1" />
-                  </a> */}
-                </motion.div>
+              <div className="w-full h-full p-8 flex flex-col justify-center">
+                <h3 className="text-white text-3xl font-bold mb-6 leading-tight">
+                  {portfolioItems[2].name}
+                </h3>
+                <p className="text-white/95 text-base leading-relaxed">
+                  {portfolioItems[2].description}
+                </p>
               </div>
-              {/* Label positioned to the left */}
             </motion.div>
 
-            {/* TAINA - Bottom left medium image */}
+            {/* K-12 Experience - Photo with heading underneath */}
             <motion.div
               variants={itemVariants}
-              className="col-span-4 row-span-2 row-start-4 relative group overflow-hidden"
-              onMouseEnter={() => setHoveredItem("taina")}
-              onMouseLeave={() => setHoveredItem(null)}
+              className="col-span-4 row-span-2 row-start-4 relative overflow-hidden bg-white"
             >
-              <div className="w-full h-full relative">
-                <img
-                  src={portfolioItems[3].image}
-                  alt={portfolioItems[3].name}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                {/* Hover Overlay */}
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: hoveredItem === "taina" ? 1 : 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent flex flex-col justify-end p-6"
-                >
-                  <p className="text-white text-sm mb-3 leading-relaxed whitespace-pre-line">
-                    {portfolioItems[3].description}
-                  </p>
-                  {/* <a
-                    href={portfolioItems[3].link}
-                    className="inline-flex items-center text-white text-sm font-medium hover:underline"
-                  >
-                    Know more <ArrowUpRight size={16} className="ml-1" />
-                  </a> */}
-                </motion.div>
+              <div className="w-full h-full flex flex-col">
+                {/* Image - 70% height */}
+                <div className="h-[70%] overflow-hidden">
+                  <img
+                    src={portfolioItems[3].image}
+                    alt={portfolioItems[3].name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                {/* Heading - 30% height */}
+                <div className="h-[30%] flex items-center justify-center px-6" style={{ backgroundColor: "#FFF8F3" }}>
+                  <h3 className="text-[#0B5E6F] text-xl font-bold text-center leading-tight">
+                    {portfolioItems[3].name}
+                  </h3>
+                </div>
               </div>
-              {/* Label */}
             </motion.div>
           </div>
 
