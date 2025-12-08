@@ -36,7 +36,7 @@ export default function StoryPage() {
     {
       name: "Roopali Suri",
       role: "Learning Strategist | HR Transformation | Talent Development | Experience Designer",
-      img: "/images/team/rupali-2.jpg",
+      img: "/images/team/Roopali.png",
       quote: "Coloring outside the lines because rules are boring.",
       bio: "Roopali brings 15+ years of HR transformation experience to every project. If you see magic in learning design, odds are it's hers.",
       achievements: [
@@ -116,7 +116,7 @@ export default function StoryPage() {
     {
       name: "Smritie Bhardwaj",
       role: "Business Graduate | Strategy & Learning Designer | Creative Problem-Solver",
-      img: "/images/team/rupali-2.jpg",
+      img: "/images/team/smritie.jpg",
       quote: "Work should wake you up, not wear you out.",
       bio: "A business graduate turned strategy and experience designer, Smritie blends financial discipline with modern creativity to help teams communicate, collaborate, and create better.",
       achievements: [
@@ -599,7 +599,7 @@ export default function StoryPage() {
               transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
               className="bg-white border-[2px] border-[#E7E7E7]"
             >
-              <div className="grid lg:grid-cols-2 gap-0">
+              <div className="grid lg:grid-cols-2 gap-0 max-h-[1000px]">
                 {/* LEFT — Image Side */}
                 <div className="relative bg-[#FFF8F5] overflow-hidden">
                   {/* Large Quote Mark */}
@@ -624,7 +624,7 @@ export default function StoryPage() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                    className="h-full min-h-[600px]"
+                    className="h-full min-h-[400px] max-h-fit"
                   >
                     <img
                       src={activeExpert.img}
