@@ -18,14 +18,13 @@ const PortfolioSection = () => {
       services: ["🧑‍🏫 Education & Development", "🤝 Community Programs"],
       image:
         "https://images.unsplash.com/photo-1590402494587-44b71d7772f6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      description: `<p classname="font-semibold">At Leap Ladder, we’re in the business of building better humans.</p>
-BYOB is where we step beyond boardrooms and performance dashboards, and get into the real work: purpose, possibility, and people.
-We design activity-based learning modules, hands-on skill workshops, and educator development programs that meet learners where they are.
-Sometimes, that’s a government school classroom in Bihar.
-Sometimes, it’s a teacher training circle in a small-town community center.
-This is our space for bold ideas, big-hearted projects, and high-impact work that grows from the ground up. Everything we do beyond the bottom line — from pro bono consulting to grassroots learning programs — is rooted in a simple belief:
-<p classname="font-semibold">Real change begins before the résumé. It begins in the classroom.</p>
-`,
+      description: {
+        firstLine:
+          "At Leap Ladder, we're in the business of building better humans.",
+        body: "BYOB is where we step beyond boardrooms and performance dashboards, and get into the real work: purpose, possibility, and people.\nWe design activity-based learning modules, hands-on skill workshops, and educator development programs that meet learners where they are.\nSometimes, that's a government school classroom in Bihar.\nSometimes, it's a teacher training circle in a small-town community center.\nThis is our space for bold ideas, big-hearted projects, and high-impact work that grows from the ground up. Everything we do beyond the bottom line — from pro bono consulting to grassroots learning programs — is rooted in a simple belief:",
+        lastLine:
+          "Real change begins before the résumé. It begins in the classroom.",
+      },
       link: "#building-better-humans",
       position: "top-right",
       size: "medium",
@@ -194,9 +193,17 @@ This is our space for bold ideas, big-hearted projects, and high-impact work tha
                   <h3 className="text-white text-2xl font-bold mb-4 leading-tight">
                     {portfolioItems[1].name}
                   </h3>
-                  <p className="text-white/95 text-sm leading-relaxed">
-                    {portfolioItems[1].description}
-                  </p>
+                  <div className="text-white/95 text-sm leading-relaxed">
+                    <p className="font-semibold mb-2">
+                      {portfolioItems[1].description.firstLine}
+                    </p>
+                    <p className="whitespace-pre-line mb-2">
+                      {portfolioItems[1].description.body}
+                    </p>
+                    <p className="font-semibold">
+                      {portfolioItems[1].description.lastLine}
+                    </p>
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -327,9 +334,17 @@ This is our space for bold ideas, big-hearted projects, and high-impact work tha
                     <h3 className="text-white text-lg sm:text-xl font-bold mb-2 sm:mb-3 leading-tight flex-shrink-0">
                       {portfolioItems[1].name}
                     </h3>
-                    <p className="text-white/95 text-xs sm:text-sm leading-relaxed">
-                      {portfolioItems[1].description}
-                    </p>
+                    <div className="text-white/95 text-xs sm:text-sm leading-relaxed">
+                      <p className="font-semibold mb-2">
+                        {portfolioItems[1].description.firstLine}
+                      </p>
+                      <p className="whitespace-pre-line mb-2">
+                        {portfolioItems[1].description.body}
+                      </p>
+                      <p className="font-semibold">
+                        {portfolioItems[1].description.lastLine}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </motion.div>
