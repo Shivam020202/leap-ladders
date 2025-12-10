@@ -48,6 +48,7 @@ export default function StoryPage() {
         "Roopali's strategic thinking and ability to navigate complex projects have made her a sought-after leader in the field of HR. She has a proven track record of building high-performing teams, managing large-scale initiatives, and driving tangible business results.\nShe's delivered over 2350 hours of training, which is more screen time than your favorite Netflix show.\nHer understanding of instructional design and knowledge management is so deep, Google once tried to index her brain.\nComplex projects? Roopali eats those for breakfast (with a side of Avocado of course) with a drizzle of change management.\nSo, if your organization is lost in the wilderness of disengaged employees and training modules that feel like 2003 PowerPoint trauma... fear not.\nRoopali's got the compass, the map, and probably a motivational quote to go with it.\nWatch out, HR Avengers. She's assembling.",
       tab: "Roopali Suri",
       color: "#E89161",
+      linkedin: "https://www.linkedin.com/in/roopali-suri-shrm-scp-68148521/",
     },
     {
       name: "Sanchita Banerjee",
@@ -64,6 +65,7 @@ export default function StoryPage() {
         "Sanchita has a proven track record of delivering innovative and impactful training solutions across diverse industries, making her a trusted partner for businesses aiming to elevate their performance and foster a culture of growth. And, of course, because one career wasn't enough to tickle her brains, she founded two companies — Decoding Happiness and FeedIn Services, which sounds like a tech startup but is really where innovation meets people development.\nAnd then, she still had more time in hand so she became an author. She's got books in two languages — English and Hindi including an international bestseller, Unstoppable Courage. That's right. She can inspire you in whichever language your inner critic speaks.\nSo, if you're looking for someone who can project manage a unicorn, coach a cactus into blooming, and still have time to edit a best-seller, Sanchita's your person.",
       tab: "Sanchita Banerjee",
       color: "#0B5E6F",
+      linkedin: "https://www.linkedin.com/in/sanchitabanerjee/",
     },
     {
       name: "Chumki Sen",
@@ -80,6 +82,7 @@ export default function StoryPage() {
         "With over two decades of experience spanning media, publishing, healthcare, and insurance, Chumki's pretty much worn every communication hat short of writing carrier pigeon manuals. From drafting white papers to ghostwriting for C-suite execs, she's played spokesperson, strategist, editor, and occasional sanity-restorer for brands like Max Life Insurance and GE Medical Systems. As Assistant Editor at Business World, she edited news with one eye, ran the desk with the other. Oh, and did we mention she researched, wrote, and roamed for travel guides at Dorling Kindersley?\n\nHobbies? Reading, traveling, and reminding people that yoga is more than just headstands — it's also how she handles project deadlines.\nWith a career that reads like a bookshelf and the agility to switch from internal comms to downward dog in 2.3 seconds, she's back in the game — strategic, centered, and creatively caffeinated.",
       tab: "Chumki Sen",
       color: "#E89161",
+      linkedin: "https://www.linkedin.com/in/chumki-sen-9689344/",
     },
     {
       name: "Sakshi Khurana",
@@ -96,6 +99,7 @@ export default function StoryPage() {
         "Sakshi tangoed with Talent Acquisition, and has been the secret spice behind Hiring. She has introduced Induction programs that don't induce naps, skip-level meetings that skip the embarrassment and HR reviews that didn't involve pocket cuts.\nSakshi has served a lot of 'a-ha' learning programs for field executives as well as client service teams, sales professionals and IT specialists. She's clocked training hours are more like HR version of a marathoner – 4500+ manhours.\nWhen she's not fine-tuning PowerPoint presentations, she's busy hitting high notes. She's a trained classical vocalist, who has lent her voice to e-learning modules for universities and participated in marketing and advertising collaborations with corporates and freelance organizations.\nBasically, she hits the right notes both in HR and from behind the mic.",
       tab: "Sakshi Khurana",
       color: "#0B5E6F",
+      linkedin: "https://www.linkedin.com/in/sakshi-sehgal-khurana-5a4620a/",
     },
     {
       name: "Payal Lath",
@@ -112,6 +116,7 @@ export default function StoryPage() {
         "Payal fully trilingual – fluent in Hindi, English, and Punjabi – whether the conversation turns academic, emotional, or just mildly dramatic, she can keep up with it.\nAfter finally washing her hands off the chalk dust, she has set her sights on something bigger – up-skilling teachers in small towns to help strengthen education right, where it matters most. These days, she designs creative, workshops on everything from education management to classroom delivery – sprinkled, of course, with practical tips for keeping students engaged and awake.\nShe believes that if teachers are given the right tools, a few creative nudges, and a strong cup of chai – they'll light up minds (without setting off the fire alarm).",
       tab: "Payal Lath",
       color: "#E89161",
+      linkedin: "",
     },
     {
       name: "Smritie Bhardwaj",
@@ -761,14 +766,17 @@ export default function StoryPage() {
                         Connect
                       </span>
                       <div className="flex gap-3">
-                        {["Be", "Db", "In", "Tw"].map((icon) => (
-                          <div
-                            key={icon}
-                            className="w-9 h-9 border-[1.5px] border-[#E7E7E7] bg-white flex items-center justify-center text-[11px] font-bold text-[#0B5E6F] opacity-60 hover:opacity-100 transition-opacity duration-300"
+                        {activeExpert.linkedin && (
+                          <a
+                            href={activeExpert.linkedin}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-9 h-9 border-[1.5px] border-[#E7E7E7] bg-white flex items-center justify-center text-[11px] font-bold text-[#0B5E6F] opacity-60 hover:opacity-100 transition-opacity duration-300 cursor-pointer"
+                            title="LinkedIn Profile"
                           >
-                            {icon}
-                          </div>
-                        ))}
+                            In
+                          </a>
+                        )}
                       </div>
                     </motion.div>
                   </motion.div>

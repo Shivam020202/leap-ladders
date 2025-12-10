@@ -194,13 +194,13 @@ const PortfolioSection = () => {
                     {portfolioItems[1].name}
                   </h3>
                   <div className="text-white/95 text-sm leading-relaxed">
-                    <p className="font-semibold mb-2">
+                    <p className="font-semibold text-md mb-2">
                       {portfolioItems[1].description.firstLine}
                     </p>
                     <p className="whitespace-pre-line mb-2">
                       {portfolioItems[1].description.body}
                     </p>
-                    <p className="font-semibold">
+                    <p className="font-semibold text-md">
                       {portfolioItems[1].description.lastLine}
                     </p>
                   </div>
