@@ -756,17 +756,17 @@ export default function StoryPage() {
                     )}
 
                     {/* Social Icons */}
-                    <motion.div
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ duration: 0.6, delay: 0.5 }}
-                      className="flex items-center gap-4 pt-6 border-t border-[#E7E7E7]"
-                    >
-                      <span className="text-[12px] uppercase tracking-[0.1em] text-[#4A5568]">
-                        Connect
-                      </span>
-                      <div className="flex gap-3">
-                        {activeExpert.linkedin && (
+                    {activeExpert.linkedin && (
+                      <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.6, delay: 0.5 }}
+                        className="flex items-center gap-4 pt-6 border-t border-[#E7E7E7]"
+                      >
+                        <span className="text-[12px] uppercase tracking-[0.1em] text-[#4A5568]">
+                          Connect
+                        </span>
+                        <div className="flex gap-3">
                           <a
                             href={activeExpert.linkedin}
                             target="_blank"
@@ -776,9 +776,9 @@ export default function StoryPage() {
                           >
                             In
                           </a>
-                        )}
-                      </div>
-                    </motion.div>
+                        </div>
+                      </motion.div>
+                    )}
                   </motion.div>
                 </div>
               </div>
