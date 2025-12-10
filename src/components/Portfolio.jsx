@@ -29,8 +29,13 @@ const PortfolioSection = () => {
       services: ["🔧 Capacity building", "🚀 Future building"],
       image:
         "https://images.unsplash.com/photo-1686771416282-3888ddaf249b?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      description:
-        "BYOB isn't charity. It's capacity-building. It's future-building. It's believing that talent is everywhere—opportunity just needs to catch up.",
+      description: `At Leap Ladder, we’re in the business of building better humans.
+This is where we step beyond boardrooms and performance dashboards, and get into the real work: purpose, possibility, and people.
+We design activity-based learning modules, hands-on skill workshops, and educator development programs that meet learners where they are.
+Sometimes, that’s a government school classroom in Bihar.
+Sometimes, it’s a teacher training circle in a small-town community center.
+This is our space for bold ideas, big-hearted projects, and high-impact work that grows from the ground up. Everything we do beyond the bottom line — from pro bono consulting to grassroots learning programs — is rooted in a simple belief:
+Real change begins before the résumé. It begins in the classroom.`,
       link: "#byob",
       position: "middle-right",
       size: "large",
