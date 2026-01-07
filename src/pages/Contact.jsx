@@ -1,25 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 
 export default function ContactSection() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    service: "",
-    company: "",
-    message: "",
-  });
-
-  const handleSubmit = () => {
-    console.log("Form submitted:", formData);
-    // Add your form submission logic here
-  };
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
   return (
     <section className="bg-[#FFF8F3] py-8 md:py-8">
       <div className="mx-auto max-w-7xl px-6">
@@ -71,7 +53,12 @@ export default function ContactSection() {
               {/* Corner accent */}
               <div className="absolute top-0 left-0 w-20 h-20 border-t-[3px] border-l-[3px] border-[#E89161]" />
 
-              <div className="space-y-4 mt-8">
+              <form
+                className="space-y-4 mt-8"
+                acceptCharset="UTF-8"
+                action="https://app.formester.com/forms/impqEw244/submissions"
+                method="POST"
+              >
                 {/* Name */}
                 <div>
                   <label className="block text-[13px] font-semibold text-[#0B5E6F] mb-2 uppercase tracking-wide">
@@ -80,8 +67,6 @@ export default function ContactSection() {
                   <input
                     type="text"
                     name="name"
-                    value={formData.name}
-                    onChange={handleChange}
                     placeholder="Your Name"
                     className="w-full px-4 py-2.5 border-[2px] border-[#E7E7E7] bg-[#FFF8F5] text-[15px] text-[#1a1a1a] placeholder-[#4A5568]/50 focus:border-[#E89161] focus:outline-none transition-colors duration-300"
                   />
@@ -95,8 +80,6 @@ export default function ContactSection() {
                   <input
                     type="email"
                     name="email"
-                    value={formData.email}
-                    onChange={handleChange}
                     placeholder="your.email@example.com"
                     className="w-full px-4 py-2.5 border-[2px] border-[#E7E7E7] bg-[#FFF8F5] text-[15px] text-[#1a1a1a] placeholder-[#4A5568]/50 focus:border-[#E89161] focus:outline-none transition-colors duration-300"
                   />
@@ -113,8 +96,6 @@ export default function ContactSection() {
                   <input
                     type="tel"
                     name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
                     placeholder="+1 (123) 456-7890"
                     className="w-full px-4 py-2.5 border-[2px] border-[#E7E7E7] bg-[#FFF8F5] text-[15px] text-[#1a1a1a] placeholder-[#4A5568]/50 focus:border-[#E89161] focus:outline-none transition-colors duration-300"
                   />
@@ -127,8 +108,6 @@ export default function ContactSection() {
                   </label>
                   <select
                     name="service"
-                    value={formData.service}
-                    onChange={handleChange}
                     className="w-full px-4 py-2.5 border-[2px] border-[#E7E7E7] bg-[#FFF8F5] text-[15px] text-[#1a1a1a] focus:border-[#E89161] focus:outline-none transition-colors duration-300"
                   >
                     <option value="">Select a service</option>
@@ -156,8 +135,6 @@ export default function ContactSection() {
                   <input
                     type="text"
                     name="company"
-                    value={formData.company}
-                    onChange={handleChange}
                     placeholder="Your Company"
                     className="w-full px-4 py-2.5 border-[2px] border-[#E7E7E7] bg-[#FFF8F5] text-[15px] text-[#1a1a1a] placeholder-[#4A5568]/50 focus:border-[#E89161] focus:outline-none transition-colors duration-300"
                   />
@@ -170,8 +147,6 @@ export default function ContactSection() {
                   </label>
                   <textarea
                     name="message"
-                    value={formData.message}
-                    onChange={handleChange}
                     placeholder="Tell us about your project..."
                     rows={4}
                     className="w-full px-4 py-2.5 border-[2px] border-[#E7E7E7] bg-[#FFF8F5] text-[15px] text-[#1a1a1a] placeholder-[#4A5568]/50 focus:border-[#E89161] focus:outline-none transition-colors duration-300 resize-none"
@@ -182,7 +157,7 @@ export default function ContactSection() {
                 <motion.button
                   whileHover={{ x: 4 }}
                   transition={{ duration: 0.2 }}
-                  onClick={handleSubmit}
+                  type="submit"
                   className="w-full px-8 py-3 bg-[#E89161] text-white text-[15px] font-semibold uppercase tracking-wide flex items-center justify-center gap-3 group transition-all duration-300"
                 >
                   Send Message
@@ -200,7 +175,7 @@ export default function ContactSection() {
                     />
                   </svg>
                 </motion.button>
-              </div>
+              </form>
             </div>
           </motion.div>
 
