@@ -133,6 +133,7 @@ export default function StoryPage() {
         "A business graduate by education, finance professional by early-career accident, and creative problem-solver by instinct – Smritie’s journey is proof that career paths don’t always have to be straight lines.\nAfter completing her degree in the UK and spending two years navigating London’s finance world, she learned a universal truth: spreadsheets weren’t the enemy… monotony was. That’s when she made the most logical Gen Z move – pivoting into learning, strategy, and experience design, where variety, creativity, and actual human connection finally made sense.\nShe’s the team’s unofficial SOS number for anything that needs simplifying, redesigning, or saving from aesthetic disaster. She gets things done faster than most people can send a calendar invite about getting things done. Her decks have that much-needed spark – structured, sharp, and impossible to ignore.\nLike any true Gen Z, she thrives in chaos, shifting priorities, and projects that shapeshift. With a blend of London’s corporate discipline and India’s fast-paced workplace energy, she balances structure with creativity, helping teams sharpen communication and collaborate better – without falling into the cut-copy-paste-and-hope-it-works mindset.\nShe’s happiest when mapping a fresh workshop experience, giving an outdated process a makeover, or gently reminding the team that yes – there *is* a better tool than the one they’ve been using forever.\nStrategic, curious, and unapologetically modern, she brings structure, creativity, and momentum to the team – often all at once, usually with a colour-coded planner to match.",
       tab: "Smritie Bhardwaj",
       color: "#E89161",
+      linkedin: "https://www.linkedin.com/",
     },
   ];
   const [activeIndex, setActiveIndex] = useState(0);
@@ -429,7 +430,7 @@ export default function StoryPage() {
                 </motion.div>
 
                 {/* Closing statement */}
-                <motion.p
+                {/* <motion.p
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-100px" }}
@@ -442,7 +443,7 @@ export default function StoryPage() {
                 >
                   So here we are – four women, one ladder, and plenty of leaps
                   ahead.
-                </motion.p>
+                </motion.p> */}
               </motion.div>
             </div>
 

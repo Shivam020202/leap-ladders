@@ -15,7 +15,7 @@ const FloatingActions = () => {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 20, scale: 0.8 }}
               transition={{ duration: 0.2, delay: 0.1 }}
-              href="https://calendly.com/your-calendly-link"
+              href="https://calendly.com/connect-leapladder"
               target="_blank"
               rel="noopener noreferrer"
               className="w-14 h-14 bg-[#0B5E6F] rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group"
@@ -36,7 +36,7 @@ const FloatingActions = () => {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 20, scale: 0.8 }}
               transition={{ duration: 0.2 }}
-              href="https://wa.me/your-whatsapp-number"
+              href="https://wa.me/+919311102408"
               target="_blank"
               rel="noopener noreferrer"
               className="w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
@@ -71,7 +71,11 @@ const FloatingActions = () => {
               stroke="currentColor"
               strokeWidth={2}
             >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
             </svg>
           ) : (
             <svg

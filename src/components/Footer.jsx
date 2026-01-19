@@ -49,7 +49,9 @@ const Footer = () => {
               {/* <p className="leading-relaxed text-white">New York, NY 10022</p> */}
             </div>
             <div>
-              <p className="text-white">Phone: (212) 555-7810</p>
+              <a href="tel:+919311102408" className="text-white">
+                Phone: +91 9311102408
+              </a>
             </div>
             <div>
               <p className="text-white">
@@ -58,7 +60,7 @@ const Footer = () => {
                   href="mailto:hello@leapladders.com"
                   className="hover:opacity-80 transition-opacity text-white"
                 >
-                  hello@leapladders.com
+                  connect@leapladders.pro
                 </a>
               </p>
             </div>
@@ -72,29 +74,31 @@ const Footer = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <ul className="space-y-2">
-              <li className="text-xl font-medium mb-3 text-white">Services</li>
+              <li className="text-xl font-medium mb-3 text-white">
+                Quick Links
+              </li>
               <li>
                 <a
-                  href="#portfolio"
+                  href="/blogs"
                   className="hover:opacity-70 transition-opacity text-white"
                 >
-                  Portfolio
+                  Blogs
                 </a>
               </li>
               <li>
                 <a
-                  href="#blog"
+                  href="/testimonials"
                   className="hover:opacity-70 transition-opacity text-white"
                 >
-                  Blog
+                  Testimonials
                 </a>
               </li>
               <li>
                 <a
-                  href="#about"
+                  href="/our-story"
                   className="hover:opacity-70 transition-opacity text-white"
                 >
-                  About
+                  Our Story
                 </a>
               </li>
             </ul>
@@ -111,7 +115,7 @@ const Footer = () => {
               <li className="text-xl font-medium mb-3 text-white">Socials</li>
               <li>
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/leap.ladder/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:opacity-70 transition-opacity text-white"
@@ -121,7 +125,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/company/leap-ladders/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:opacity-70 transition-opacity text-white"
@@ -131,12 +135,12 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="https://twitter.com"
+                  href="https://calendly.com/connect-leapladder"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:opacity-70 transition-opacity text-white"
                 >
-                  Twitter
+                  Calendly
                 </a>
               </li>
             </ul>
@@ -192,15 +196,15 @@ const Footer = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="flex flex-col md:flex-row justify-between items-start md:items-center text-sm pt-6 gap-4"
+          className="flex flex-col md:flex-row justify-center items-center text-sm pt-6 gap-4"
           style={{ borderTop: "1px solid rgba(255, 255, 255, 0.2)" }}
         >
-          <p className="text-white">©2025 LEAP LADDERS. All rights reserved</p>
+          <p className="text-white">©2026 LEAP LADDERS. All rights reserved</p>
 
           {/* Social Media Icons */}
-          <div className="flex items-center gap-4">
+          {/* <div className="flex items-center gap-4">
             <a
-              href="#"
+              href="https://wa.me/+919311102408"
               className="hover:opacity-70 transition-opacity"
               aria-label="WhatsApp"
             >
@@ -234,14 +238,14 @@ const Footer = () => {
             >
               <LinkedinIcon size={20} />
             </a>
-          </div>
+          </div> */}
 
-          <a
+          {/* <a
             href="#privacy"
             className="hover:opacity-70 transition-opacity text-white"
           >
             Privacy policy
-          </a>
+          </a> */}
         </motion.div>
       </div>
     </footer>

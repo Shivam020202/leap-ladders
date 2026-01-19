@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export default function ContactSection() {
   return (
-    <section className="bg-[#FFF8F3] py-8 md:py-8">
+    <section className="bg-[#FFF8F3] py-8 md:py-8" id="contact">
       <div className="mx-auto max-w-7xl px-6">
         {/* Header */}
 
@@ -189,7 +189,7 @@ export default function ContactSection() {
           >
             {/* LinkedIn DM */}
             <motion.a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/company/leap-ladders/"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ x: 4 }}
@@ -232,7 +232,7 @@ export default function ContactSection() {
 
             {/* WhatsApp */}
             <motion.a
-              href="https://wa.me/"
+              href="https://wa.me/+919311102408"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ x: 4 }}
@@ -273,7 +273,7 @@ export default function ContactSection() {
 
             {/* Calendly */}
             <motion.a
-              href="https://calendly.com"
+              href="https://calendly.com/leap-ladders"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ x: 4 }}

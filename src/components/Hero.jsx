@@ -141,7 +141,10 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-2"
-            style={{ color: "#0B5E6F", fontFamily: "'Times New Roman', Times, serif" }}
+            style={{
+              color: "#0B5E6F",
+              fontFamily: "'Times New Roman', Times, serif",
+            }}
           >
             LEAP LADDER
           </motion.h1>
@@ -150,7 +153,10 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-lg md:text-xl lg:text-2xl"
-            style={{ color: "black", fontFamily: "'Times New Roman', Times, serif" }}
+            style={{
+              color: "black",
+              fontFamily: "'Times New Roman', Times, serif",
+            }}
           >
             Smart HR for a Smarter Workforce
           </motion.p>
@@ -171,22 +177,102 @@ const HeroSection = () => {
               transition={{ duration: 0.5, delay: 0.8 }}
               className="inline-block"
             >
-              <span className="text-2xl md:text-3xl lg:text-4xl font-bold" style={{ color: "#E89161" }}>E</span>
-              <span className="text-sm md:text-base lg:text-lg" style={{ color: "#0B5E6F" }}>mpowering </span>
-              <span className="text-2xl md:text-3xl lg:text-4xl font-bold" style={{ color: "#E89161" }}>T</span>
-              <span className="text-sm md:text-base lg:text-lg" style={{ color: "#0B5E6F" }}>alent </span>
-              <span className="text-2xl md:text-3xl lg:text-4xl font-bold" style={{ color: "#E89161" }}>C</span>
-              <span className="text-sm md:text-base lg:text-lg" style={{ color: "#0B5E6F" }}>hannelizing </span>
-              <span className="text-2xl md:text-3xl lg:text-4xl font-bold" style={{ color: "#E89161" }}>E</span>
-              <span className="text-sm md:text-base lg:text-lg" style={{ color: "#0B5E6F" }}>fficiency </span>
-              <span className="text-2xl md:text-3xl lg:text-4xl font-bold" style={{ color: "#E89161" }}>T</span>
-              <span className="text-sm md:text-base lg:text-lg" style={{ color: "#0B5E6F" }}>argeting </span>
-              <span className="text-2xl md:text-3xl lg:text-4xl font-bold" style={{ color: "#E89161" }}>E</span>
-              <span className="text-sm md:text-base lg:text-lg" style={{ color: "#0B5E6F" }}>xcellent </span>
-              <span className="text-2xl md:text-3xl lg:text-4xl font-bold" style={{ color: "#E89161" }}>R</span>
-              <span className="text-sm md:text-base lg:text-lg" style={{ color: "#0B5E6F" }}>esults </span>
-              <span className="text-2xl md:text-3xl lg:text-4xl font-bold" style={{ color: "#E89161" }}>A</span>
-              <span className="text-sm md:text-base lg:text-lg" style={{ color: "#0B5E6F" }}>ccelerating Impact</span>
+              <span
+                className="text-2xl md:text-3xl lg:text-4xl font-bold"
+                style={{ color: "#E89161" }}
+              >
+                E
+              </span>
+              <span
+                className="text-sm md:text-base lg:text-lg"
+                style={{ color: "#0B5E6F" }}
+              >
+                mpowering{" "}
+              </span>
+              <span
+                className="text-2xl md:text-3xl lg:text-4xl font-bold"
+                style={{ color: "#E89161" }}
+              >
+                T
+              </span>
+              <span
+                className="text-sm md:text-base lg:text-lg"
+                style={{ color: "#0B5E6F" }}
+              >
+                alent{" "}
+              </span>
+              <span
+                className="text-2xl md:text-3xl lg:text-4xl font-bold"
+                style={{ color: "#E89161" }}
+              >
+                C
+              </span>
+              <span
+                className="text-sm md:text-base lg:text-lg"
+                style={{ color: "#0B5E6F" }}
+              >
+                hannelizing{" "}
+              </span>
+              <span
+                className="text-2xl md:text-3xl lg:text-4xl font-bold"
+                style={{ color: "#E89161" }}
+              >
+                E
+              </span>
+              <span
+                className="text-sm md:text-base lg:text-lg"
+                style={{ color: "#0B5E6F" }}
+              >
+                fficiency{" "}
+              </span>
+              <span
+                className="text-2xl md:text-3xl lg:text-4xl font-bold"
+                style={{ color: "#E89161" }}
+              >
+                T
+              </span>
+              <span
+                className="text-sm md:text-base lg:text-lg"
+                style={{ color: "#0B5E6F" }}
+              >
+                argeting{" "}
+              </span>
+              <span
+                className="text-2xl md:text-3xl lg:text-4xl font-bold"
+                style={{ color: "#E89161" }}
+              >
+                E
+              </span>
+              <span
+                className="text-sm md:text-base lg:text-lg"
+                style={{ color: "#0B5E6F" }}
+              >
+                xcellent{" "}
+              </span>
+              <span
+                className="text-2xl md:text-3xl lg:text-4xl font-bold"
+                style={{ color: "#E89161" }}
+              >
+                R
+              </span>
+              <span
+                className="text-sm md:text-base lg:text-lg"
+                style={{ color: "#0B5E6F" }}
+              >
+                esults{" "}
+              </span>
+              <span
+                className="text-2xl md:text-3xl lg:text-4xl font-bold"
+                style={{ color: "#E89161" }}
+              >
+                A
+              </span>
+              <span
+                className="text-sm md:text-base lg:text-lg"
+                style={{ color: "#0B5E6F" }}
+              >
+                ccelerating Impact
+              </span>
               {/* <span className="text-3xl md:text-4xl lg:text-5xl font-bold" style={{ color: "#E89161" }}>I</span> */}
               {/* <span className="text-sm md:text-base lg:text-lg" style={{ color: "#0B5E6F" }}>mpact</span> */}
             </motion.span>
@@ -211,8 +297,8 @@ const HeroSection = () => {
                     animationPhase === "complete"
                       ? "spreading"
                       : animationPhase === "stacking"
-                      ? "stacking"
-                      : "initial"
+                        ? "stacking"
+                        : "initial"
                   }
                   variants={getCardVariants(index)}
                   style={{
@@ -241,10 +327,10 @@ const HeroSection = () => {
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                         <div className="absolute inset-0 flex flex-col justify-end p-6">
-                          <h3 className="text-white text-center text-lg md:text-xl font-bold mb-3">
+                          {/* <h3 className="text-white text-center text-lg md:text-xl font-bold mb-3">
                             Services
-                          </h3>
-                          <p className="text-white/90 text-center text-sm md:text-base leading-relaxed mb-4">
+                          </h3> */}
+                          <p className="text-white/90 text-center font-semibold text-sm md:text-base leading-relaxed mb-4">
                             Strategy, coaching, and custom learning experiences
                             designed to move your teams forward.
                           </p>
@@ -253,7 +339,7 @@ const HeroSection = () => {
                             className="inline-flex items-center mx-auto font-medium hover:opacity-70 transition-opacity"
                             style={{ color: "#E89161" }}
                           >
-                            Read more
+                            Know more
                             <span className="ml-1">→</span>
                           </a>
                         </div>
@@ -350,10 +436,10 @@ const HeroSection = () => {
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
                             <div className="absolute inset-0 flex flex-col items-center justify-end p-8">
-                              <h3 className="text-white text-lg font-bold mb-3">
+                              {/* <h3 className="text-white text-lg font-bold mb-3">
                                 Services
-                              </h3>
-                              <p className="text-white/90 text-sm leading-relaxed text-center mb-4">
+                              </h3> */}
+                              <p className="text-white/90 text-sm leading-relaxed font-semibold text-center mb-4">
                                 Strategy, coaching, and custom learning
                                 experiences designed to move your teams forward.
                               </p>
@@ -362,7 +448,7 @@ const HeroSection = () => {
                                 className="inline-flex items-center font-medium hover:opacity-70 transition-opacity"
                                 style={{ color: "#E89161" }}
                               >
-                                Read more
+                                Know more
                                 <span className="ml-1">→</span>
                               </a>
                             </div>

@@ -178,7 +178,7 @@ const PortfolioSection = () => {
                   alt={portfolioItems[1].name}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-tl from-[#0B5E6F]/95 via-[#0B5E6F]/75 to-[#0B5E6F]/25" />
+                <div className="absolute inset-0 bg-gradient-to-tl from-[#00313b] via-[#0B5E6F]/85 to-[#0B5E6F]/65" />
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(0,0,0,0.4)_0%,transparent_50%)]" />
                 <div
                   className="absolute inset-0 bg-gradient-to-t from-[#043915]/20 to-transparent backdrop-blur-[2px]"
@@ -380,24 +380,6 @@ const PortfolioSection = () => {
               </motion.div>
             </div>
           </div>
-
-          {/* View All Link */}
-          {/* <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-            className="mt-6 sm:mt-8 md:mt-2 md:-mt-20 px-4 md:px-0"
-          >
-            <a
-              href="#portfolio"
-              className="inline-flex items-center text-base sm:text-lg font-medium hover:opacity-70 transition-opacity"
-              style={{ color: "#E89161" }}
-            >
-              View all
-              <ArrowUpRight size={18} className="ml-2 sm:ml-3" />
-            </a>
-          </motion.div> */}
         </motion.div>
       </div>
     </secction>
