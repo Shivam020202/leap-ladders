@@ -69,9 +69,7 @@ const Navbar = () => {
               to="/"
               className={({ isActive }) =>
                 `${navLinkStyle} ${
-                  isActive
-                    ? "after:w-full"
-                    : "after:w-0 hover:after:w-full"
+                  isActive ? "after:w-full" : "after:w-0 hover:after:w-full"
                 }`
               }
             >
@@ -81,9 +79,7 @@ const Navbar = () => {
               to="/our-story"
               className={({ isActive }) =>
                 `${navLinkStyle} ${
-                  isActive
-                    ? "after:w-full"
-                    : "after:w-0 hover:after:w-full"
+                  isActive ? "after:w-full" : "after:w-0 hover:after:w-full"
                 }`
               }
             >
@@ -93,9 +89,7 @@ const Navbar = () => {
               to="/services"
               className={({ isActive }) =>
                 `${navLinkStyle} ${
-                  isActive
-                    ? "after:w-full"
-                    : "after:w-0 hover:after:w-full"
+                  isActive ? "after:w-full" : "after:w-0 hover:after:w-full"
                 }`
               }
             >
@@ -108,19 +102,17 @@ const Navbar = () => {
               Toolbox
             </a> */}
 
-                     <NavLink
-              to="/blogs"
+            <NavLink
+              to="/blogs/"
               className={({ isActive }) =>
                 `${navLinkStyle} ${
-                  isActive
-                    ? "after:w-full"
-                    : "after:w-0 hover:after:w-full"
+                  isActive ? "after:w-full" : "after:w-0 hover:after:w-full"
                 }`
               }
             >
               Blogs
             </NavLink>
-    
+
             {/* <NavLink
               to="/byob"
               className={({ isActive }) =>
@@ -137,9 +129,7 @@ const Navbar = () => {
               to="/testimonials"
               className={({ isActive }) =>
                 `${navLinkStyle} ${
-                  isActive
-                    ? "after:w-full"
-                    : "after:w-0 hover:after:w-full"
+                  isActive ? "after:w-full" : "after:w-0 hover:after:w-full"
                 }`
               }
             >
@@ -167,7 +157,7 @@ const Navbar = () => {
               el.style.color = "#FFF8F3";
             }}
           >
-           TAKE THE LEAP 
+            TAKE THE LEAP
           </button>
 
           {/* Mobile Menu Button */}
@@ -178,7 +168,9 @@ const Navbar = () => {
           >
             <div className="w-6 h-5 flex flex-col justify-between">
               <motion.span
-                animate={isMobileMenuOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }}
+                animate={
+                  isMobileMenuOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }
+                }
                 transition={{ duration: 0.3 }}
                 className="w-full h-0.5 bg-[#E89161] rounded-full"
               />
@@ -188,7 +180,11 @@ const Navbar = () => {
                 className="w-full h-0.5 bg-[#E89161] rounded-full"
               />
               <motion.span
-                animate={isMobileMenuOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }}
+                animate={
+                  isMobileMenuOpen
+                    ? { rotate: -45, y: -8 }
+                    : { rotate: 0, y: 0 }
+                }
                 transition={{ duration: 0.3 }}
                 className="w-full h-0.5 bg-[#E89161] rounded-full"
               />
@@ -232,8 +228,18 @@ const Navbar = () => {
                   className="p-2 rounded-full hover:bg-[#E89161]/10 transition-colors duration-200"
                   aria-label="Close menu"
                 >
-                  <svg className="w-6 h-6 text-[#E89161]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  <svg
+                    className="w-6 h-6 text-[#E89161]"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
                   </svg>
                 </button>
               </div>
@@ -251,8 +257,18 @@ const Navbar = () => {
                     }`
                   }
                 >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                  <svg
+                    className="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                    />
                   </svg>
                   <span>Home</span>
                 </NavLink>
@@ -267,8 +283,18 @@ const Navbar = () => {
                     }`
                   }
                 >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                  <svg
+                    className="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                    />
                   </svg>
                   <span>Our Story</span>
                 </NavLink>
@@ -283,8 +309,18 @@ const Navbar = () => {
                     }`
                   }
                 >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  <svg
+                    className="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    />
                   </svg>
                   <span>Services</span>
                 </NavLink>
@@ -299,12 +335,22 @@ const Navbar = () => {
                   <span>Toolbox</span>
                 </a> */}
                 <a
-                  href="/blogs"
+                  href="/blogs/"
                   onClick={closeMobileMenu}
                   className="relative text-gray-700 text-base tracking-wide py-3 px-6 block hover:bg-[#E89161]/5 transition-all duration-200 flex items-center gap-3"
                 >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                  <svg
+                    className="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"
+                    />
                   </svg>
                   <span>Blogs</span>
                 </a>
@@ -335,8 +381,18 @@ const Navbar = () => {
                     }`
                   }
                 >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                  <svg
+                    className="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"
+                    />
                   </svg>
                   <span>Testimonials</span>
                 </NavLink>
@@ -352,8 +408,18 @@ const Navbar = () => {
                       color: "#FFF8F3",
                     }}
                   >
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    <svg
+                      className="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                      />
                     </svg>
                     <span>TAKE THE LEAP</span>
                   </button>

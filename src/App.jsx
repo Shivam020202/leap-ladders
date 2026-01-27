@@ -23,7 +23,7 @@ export default function App() {
       } else {
         setTimeout(() => {
           const element = document.getElementById(
-            location.hash.replace("#", "")
+            location.hash.replace("#", ""),
           );
           if (element) {
             element.scrollIntoView({ behavior: "smooth" });
@@ -46,7 +46,7 @@ export default function App() {
           <Route path="/services" element={<ServicesSection />} />
           <Route path="/testimonials" element={<TestimonialsSection />} />
           <Route path="/byob" element={<BYOBSection />} />
-          <Route path="/blogs" element={<BlogPage />} />
+          <Route path="/bloggs" element={<BlogPage />} />
           <Route path="/thank-you" element={<ThankYou />} />
         </Routes>
       </main>
