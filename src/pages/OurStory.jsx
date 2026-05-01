@@ -36,7 +36,7 @@ export default function StoryPage() {
     {
       name: "Roopali Suri",
       role: "Learning Strategist | HR Transformation | Talent Development | Experience Designer",
-      img: "/images/team/Roopali.png",
+      img: "/images/team/roopali.jpeg",
       quote: "Coloring outside the lines because rules are boring.",
       bio: "Roopali brings 15+ years of HR transformation experience to every project. If you see magic in learning design, odds are it's hers.",
       achievements: [
@@ -53,7 +53,8 @@ export default function StoryPage() {
     {
       name: "Sanchita Banerjee",
       role: "Certified Happiness Coach | Published Author | L&D Specialist | Content Curator",
-      img: "/images/team/Sanchita.png",
+      img: "/images/team/sanchita.jpeg",
+      imgPos: "center 35%",
       quote: "Spreading happiness one training session at a time.",
       bio: "Popularly known as the corporate fairy godmother, Sanchita has 15+ years of creating measurable growth and genuine workplace joy.",
       achievements: [
@@ -70,7 +71,7 @@ export default function StoryPage() {
     {
       name: "Chumki Sen",
       role: "Communication Strategist | Brand Messaging | Internal & External Comms | Soft Skills Training",
-      img: "/images/team/chumki.png",
+      img: "/images/team/chumki.jpeg",
       quote: "Words matter. Clarity matters more.",
       bio: "A communication powerhouse with 20+ years of narrative leadership. HR strategist by day, grammar ninja by legacy.",
       achievements: [
@@ -87,7 +88,8 @@ export default function StoryPage() {
     {
       name: "Sakshi Khurana",
       role: "L&D Specialist | OD Transformation | Talent Development | Employee Experience Designer",
-      img: "/images/team/sakshi2.png",
+      img: "/images/team/sakshi.jpeg",
+      imgPos: "center 15%",
       quote: "From boardroom to microphone, hitting all the right notes.",
       bio: "Sakshi's 18 years span TA, HRBP, L&D, and OD — like a playlist of HR hits that actually delivers results.",
       achievements: [
@@ -104,7 +106,8 @@ export default function StoryPage() {
     {
       name: "Payal Lath",
       role: "Educator | Mentor | Teacher Trainer | Curriculum Designer",
-      img: "/images/team/payal2.png",
+      img: "/images/team/payal.jpeg",
+      imgPos: "center 35%",
       quote: "Making learning fizz, pop, and bubble with purpose.",
       bio: "Armed with a Master's in Chemistry and 10+ years in education, Payal transforms complex concepts into engaging experiences.",
       achievements: [
@@ -605,6 +608,7 @@ export default function StoryPage() {
                       src={activeExpert.img}
                       alt={activeExpert.name}
                       className="w-full h-full object-cover  transition-all duration-500"
+                      style={{ objectPosition: activeExpert.imgPos || "center center" }}
                     />
                     {/* Tight Accent Border */}
                     <div
