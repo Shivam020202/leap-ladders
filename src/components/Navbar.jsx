@@ -102,16 +102,12 @@ const Navbar = () => {
               Toolbox
             </a> */}
 
-            <NavLink
-              to="/blogs/"
-              className={({ isActive }) =>
-                `${navLinkStyle} ${
-                  isActive ? "after:w-full" : "after:w-0 hover:after:w-full"
-                }`
-              }
+            <a
+              href="/blogs/"
+              className={navLinkStyle + " after:w-0 hover:after:w-full"}
             >
               Blogs
-            </NavLink>
+            </a>
 
             {/* <NavLink
               to="/byob"

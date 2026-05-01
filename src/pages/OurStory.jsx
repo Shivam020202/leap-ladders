@@ -87,7 +87,7 @@ export default function StoryPage() {
     {
       name: "Sakshi Khurana",
       role: "L&D Specialist | OD Transformation | Talent Development | Employee Experience Designer",
-      img: "/images/team/sakshi.png",
+      img: "/images/team/sakshi2.png",
       quote: "From boardroom to microphone, hitting all the right notes.",
       bio: "Sakshi's 18 years span TA, HRBP, L&D, and OD — like a playlist of HR hits that actually delivers results.",
       achievements: [
@@ -104,7 +104,7 @@ export default function StoryPage() {
     {
       name: "Payal Lath",
       role: "Educator | Mentor | Teacher Trainer | Curriculum Designer",
-      img: "/images/team/payal.jpg",
+      img: "/images/team/payal2.png",
       quote: "Making learning fizz, pop, and bubble with purpose.",
       bio: "Armed with a Master's in Chemistry and 10+ years in education, Payal transforms complex concepts into engaging experiences.",
       achievements: [
@@ -542,49 +542,36 @@ export default function StoryPage() {
       </section>
 
       {/* SECTION 3 – Meet Our Experts */}
-      <section className="bg-[#FAFAFA] py-8 md:py-16 border-b-[2px] border-[#E7E7E7]">
-        <div className="mx-auto max-w-7xl px-4 md:px-8 lg:px-20">
-          {/* Section Header */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="mb-12"
-          >
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-16 h-[2px] bg-[#E89161]" />
-              <span className="text-[11px] uppercase tracking-[0.15em] text-[#E89161] font-semibold">
-                The Dream Team
-              </span>
-            </div>
-            <h2 className="text-5xl md:text-6xl font-semibold tracking-[-0.02em] text-[#0B5E6F] mb-4 leading-tight">
-              Meet Our Experts
-            </h2>
-            {/* <p className="text-[15px] text-[#4A5568] max-w-3xl leading-relaxed">
-              Four women with solid corporate pedigrees, stronger opinions, and
-              diverse backgrounds who decided to take a leap together.
-            </p> */}
-          </motion.div>
-
-          {/* Tab Navigation */}
+      <section className="bg-[#FAFAFA] py-8 md:py-12 border-b-[2px] border-[#E7E7E7]">
+        <div className="mx-auto max-w-6xl px-4 md:px-8">
+          {/* Section Header - More Compact */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="flex flex-wrap gap-4 mb-8 justify-center"
+            className="mb-8"
           >
+            <div className="flex items-center gap-3 mb-2">
+              <div className="w-12 h-[2px] bg-[#E89161]" />
+              <span className="text-[10px] uppercase tracking-[0.15em] text-[#E89161] font-bold">
+                The Dream Team
+              </span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-[#0B5E6F]">
+              Meet Our Experts
+            </h2>
+          </motion.div>
+
+          {/* Tab Navigation - Smaller Margins */}
+          <motion.div className="flex flex-wrap gap-2 mb-6 justify-start">
             {experts.map((expert, index) => (
-              <motion.button
+              <button
                 key={expert.tab}
                 onClick={() => setActiveIndex(index)}
-                whileHover={{ y: -2 }}
-                transition={{ duration: 0.2 }}
-                className={`px-6 py-3 text-[13px] font-medium tracking-wide transition-all duration-300 border-[2px] ${
+                className={`px-5 py-2 text-[12px] font-medium transition-all duration-300 border-[1.5px] ${
                   activeIndex === index
                     ? "text-white border-transparent"
-                    : "text-[#4A5568] border-[#E7E7E7] bg-white"
+                    : "text-[#4A5568] border-[#E7E7E7] bg-white hover:border-[#E89161]"
                 }`}
                 style={{
                   backgroundColor:
@@ -592,233 +579,140 @@ export default function StoryPage() {
                 }}
               >
                 {expert.tab}
-              </motion.button>
+              </button>
             ))}
           </motion.div>
 
-          {/* Content Card */}
+          {/* Content Card - Optimized for Height */}
           <AnimatePresence mode="wait">
             <motion.div
               key={activeIndex}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -30 }}
-              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              className="bg-white border-[2px] border-[#E7E7E7]"
+              initial={{ opacity: 0, scale: 0.98 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.98 }}
+              transition={{ duration: 0.4 }}
+              className="bg-white border-[1px] border-[#E7E7E7] overflow-hidden shadow-sm"
             >
-              <div className="grid lg:grid-cols-2 gap-0 max-h-[1000px]">
-                {/* LEFT — Image Side */}
-                <div className="relative bg-[#FFF8F5] overflow-hidden">
-                  {/* Large Quote Mark */}
-                  <div className="absolute top-12 left-8 text-[200px] font-serif text-[#0B5E6F] opacity-[0.03] leading-none pointer-events-none">
-                    "
-                  </div>
-
-                  {/* Quote Text Overlay */}
-                  {/* <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
-                  className="absolute top-24 left-8 right-8 max-w-md z-10"
-                >
-                  <p className="text-[18px] leading-[1.6] text-[#0B5E6F] font-medium italic">
-                    {activeExpert.quote}
-                  </p>
-                </motion.div> */}
-
-                  {/* Image */}
+              <div className="grid lg:grid-cols-5 gap-0">
+                {/* LEFT — Image Side (Contained & Square) */}
+                <div className="lg:col-span-2 relative bg-[#F9F9F9] flex items-center justify-center p-6 md:p-8">
                   <motion.div
+                    className="relative w-full aspect-square max-w-[320px] shadow-xl"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                    className="h-full min-h-[400px] max-h-fit"
                   >
                     <img
                       src={activeExpert.img}
                       alt={activeExpert.name}
-                      className="w-full h-full object-cover object-center"
+                      className="w-full h-full object-cover  transition-all duration-500"
+                    />
+                    {/* Tight Accent Border */}
+                    <div
+                      className="absolute -bottom-2 -right-2 w-16 h-16 border-r-4 border-b-4 pointer-events-none"
+                      style={{ borderColor: activeExpert.color }}
                     />
                   </motion.div>
-
-                  {/* Corner Accent */}
-                  <motion.div
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    transition={{ duration: 0.4, delay: 0.3 }}
-                    className="absolute bottom-0 right-0 w-24 h-24 border-r-[3px] border-b-[3px]"
-                    style={{ borderColor: activeExpert.color }}
-                  />
                 </div>
 
-                {/* RIGHT — Content Side */}
-                <div className="p-10 lg:p-12 flex flex-col justify-center relative">
-                  {/* Corner Accent */}
+                {/* RIGHT — Content Side (Compact Layout) */}
+                <div className="lg:col-span-3 p-8 lg:p-10 flex flex-col justify-center">
                   <motion.div
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    transition={{ duration: 0.4, delay: 0.3 }}
-                    className="absolute top-0 left-0 w-20 h-20 border-t-[3px] border-l-[3px] border-[#0B5E6F]"
-                  />
-
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.1 }}
+                    initial={{ opacity: 0, x: 10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.1 }}
                   >
-                    {/* Name */}
-                    <h3 className="text-4xl md:text-5xl font-bold text-[#1a1a1a] mb-3 tracking-tight">
+                    <h3 className="text-3xl font-bold text-[#1a1a1a] mb-1">
                       {activeExpert.name}
                     </h3>
-
-                    {/* Role */}
-                    <p className="text-[14px] text-[#4A5568] mb-6 leading-relaxed">
+                    <p className="text-[13px] font-semibold uppercase tracking-wider text-[#E89161] mb-4">
                       {activeExpert.role}
                     </p>
 
-                    {/* Bio */}
-                    <p className="text-[15px] text-[#4A5568] leading-[1.8] mb-8">
-                      {activeExpert.bio}
+                    <p className="text-[14px] text-[#4A5568] leading-relaxed mb-6 italic">
+                      "{activeExpert.bio}"
                     </p>
 
-                    {/* Divider */}
-                    <div
-                      className="w-20 h-[2px] mb-8"
-                      style={{ backgroundColor: activeExpert.color }}
-                    />
-
-                    {/* Achievements Header */}
-                    <h4 className="text-[13px] uppercase tracking-[0.12em] text-[#0B5E6F] font-bold mb-6">
-                      {activeExpert.name.split(" ")[0]}'s Achievements
-                    </h4>
-
-                    {/* Achievements List */}
-                    <div className="space-y-4 mb-8">
+                    {/* Achievements Grid - Two Columns for Space Saving */}
+                    <div className="grid sm:grid-cols-2 gap-3 mb-6">
                       {activeExpert.achievements.map((achievement, i) => (
-                        <motion.div
-                          key={i}
-                          initial={{ opacity: 0, x: -20 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          transition={{
-                            duration: 0.5,
-                            delay: 0.2 + i * 0.1,
-                            ease: [0.22, 1, 0.36, 1],
-                          }}
-                          className="flex items-start gap-3"
-                        >
-                          {/* Checkmark Circle */}
+                        <div key={i} className="flex items-start gap-2">
                           <div
-                            className="flex-shrink-0 w-6 h-6 flex items-center justify-center mt-0.5"
+                            className="flex-shrink-0 w-5 h-5 flex items-center justify-center mt-0.5 rounded-full"
                             style={{ backgroundColor: activeExpert.color }}
                           >
                             <svg
-                              className="w-3.5 h-3.5 text-white"
+                              className="w-3 h-3 text-white"
                               fill="none"
                               viewBox="0 0 24 24"
                               stroke="currentColor"
-                              strokeWidth="3"
+                              strokeWidth="4"
                             >
                               <path
-                                strokeLinecap="square"
-                                strokeLinejoin="miter"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
                                 d="M5 13l4 4L19 7"
                               />
                             </svg>
                           </div>
-                          <p className="text-[15px] leading-[1.7] text-[#4A5568] flex-1">
+                          <p className="text-[12px] leading-tight text-[#4A5568]">
                             {achievement}
                           </p>
-                        </motion.div>
+                        </div>
                       ))}
                     </div>
 
-                    {/* Know More Button */}
-                    {activeExpert.expandedContent && (
-                      <motion.button
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 0.6, delay: 0.5 }}
-                        onClick={() =>
-                          setExpandedExpert(
-                            expandedExpert === activeIndex ? null : activeIndex,
-                          )
-                        }
-                        className="inline-flex items-center gap-2 text-[14px] font-medium transition-all duration-300 hover:gap-3 mb-8"
-                        style={{ color: activeExpert.color }}
-                      >
-                        Know more
-                        <motion.span
-                          animate={{
-                            rotate: expandedExpert === activeIndex ? 180 : 0,
-                          }}
-                          transition={{ duration: 0.3 }}
+                    <div className="flex items-center gap-6 pt-6 border-t border-[#F0F0F0]">
+                      {activeExpert.expandedContent && (
+                        <button
+                          onClick={() =>
+                            setExpandedExpert(
+                              expandedExpert === activeIndex
+                                ? null
+                                : activeIndex,
+                            )
+                          }
+                          className="text-[13px] font-bold uppercase tracking-tighter flex items-center gap-1 hover:opacity-70 transition-opacity"
+                          style={{ color: activeExpert.color }}
                         >
-                          ↓
-                        </motion.span>
-                      </motion.button>
-                    )}
+                          {expandedExpert === activeIndex
+                            ? "Read Less"
+                            : "Read Full Bio"}
+                          <span>
+                            {expandedExpert === activeIndex ? "↑" : "↓"}
+                          </span>
+                        </button>
+                      )}
 
-                    {/* Social Icons */}
-                    {activeExpert.linkedin && (
-                      <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 0.6, delay: 0.5 }}
-                        className="flex items-center gap-4 pt-6 border-t border-[#E7E7E7]"
-                      >
-                        <span className="text-[12px] uppercase tracking-[0.1em] text-[#4A5568]">
-                          Connect
-                        </span>
-                        <div className="flex gap-3">
-                          <a
-                            href={activeExpert.linkedin}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="w-9 h-9 border-[1.5px] border-[#E7E7E7] bg-white flex items-center justify-center text-[11px] font-bold text-[#0B5E6F] opacity-60 hover:opacity-100 transition-opacity duration-300 cursor-pointer"
-                            title="LinkedIn Profile"
-                          >
-                            In
-                          </a>
-                        </div>
-                      </motion.div>
-                    )}
+                      {activeExpert.linkedin && (
+                        <a
+                          href={activeExpert.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[11px] font-bold text-[#0B5E6F] hover:underline"
+                        >
+                          LINKEDIN ↗
+                        </a>
+                      )}
+                    </div>
                   </motion.div>
                 </div>
               </div>
 
-              {/* Expanded Content - Full Width Below Grid */}
-              {activeExpert.expandedContent && (
-                <AnimatePresence>
-                  {expandedExpert === activeIndex && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                      className="overflow-hidden border-t-[2px] border-[#E7E7E7]"
-                    >
-                      <div className="p-10 lg:p-12 bg-[#FFF8F5]">
-                        <h3
-                          className="text-2xl md:text-3xl font-bold mb-6"
-                          style={{ color: activeExpert.color }}
-                        >
-                          About {activeExpert.name.split(" ")[0]}
-                        </h3>
-                        {activeExpert.expandedContent.split("\n").map(
-                          (paragraph, i) =>
-                            paragraph.trim() && (
-                              <p
-                                key={i}
-                                className="text-[15px] leading-[1.8] text-[#4A5568] mb-4"
-                              >
-                                {paragraph}
-                              </p>
-                            ),
-                        )}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              )}
+              {/* Expandable Section */}
+              <AnimatePresence>
+                {expandedExpert === activeIndex && (
+                  <motion.div
+                    initial={{ height: 0 }}
+                    animate={{ height: "auto" }}
+                    exit={{ height: 0 }}
+                    className="overflow-hidden bg-[#FFF8F5] border-t border-[#E7E7E7]"
+                  >
+                    <div className="p-8 lg:px-12 text-[14px] text-[#4A5568] leading-[1.6] columns-1 md:columns-2 gap-8">
+                      {activeExpert.expandedContent}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </motion.div>
           </AnimatePresence>
         </div>

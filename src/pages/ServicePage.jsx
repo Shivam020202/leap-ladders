@@ -179,7 +179,7 @@ export default function ServicesSection() {
                   {service.features
                     .slice(
                       0,
-                      expandedService === index ? service.features.length : 3
+                      expandedService === index ? service.features.length : 3,
                     )
                     .map((feature, i) => (
                       <motion.div
@@ -216,7 +216,7 @@ export default function ServicesSection() {
                   <button
                     onClick={() =>
                       setExpandedService(
-                        expandedService === index ? null : index
+                        expandedService === index ? null : index,
                       )
                     }
                     className="text-[#E89161] font-medium text-[14px] mb-8 hover:underline inline-flex items-center"
@@ -261,12 +261,12 @@ export default function ServicesSection() {
                     />
                   </svg>
                 </a>
-                <p className="text-[12px] text-[#4A5568] text-center mt-3">
+                {/* <p className="text-[12px] text-[#4A5568] text-center mt-3">
                   Connect with{" "}
                   <span className="font-semibold text-[#0B5E6F]">
                     {service.expert}
                   </span>
-                </p>
+                </p> */}
               </motion.div>
 
               {/* Decorative Corner Accent */}
