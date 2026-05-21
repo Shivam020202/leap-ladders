@@ -125,7 +125,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="https://www.linkedin.com/company/leap-ladders/"
+                  href="https://www.linkedin.com/company/leapladder/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:opacity-70 transition-opacity text-white"
