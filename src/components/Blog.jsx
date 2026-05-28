@@ -5,24 +5,27 @@ const BlogGrid = () => {
   const blogPosts = [
     {
       id: 1,
-      category: "Digital",
-      date: "11.05.2025",
-      title:
-        "The future of digital marketing: trends every business should watch",
+      category: "Work-Life Balance",
+      date: "21.05.2026",
+      title: "Women don't take breaks, they rebalance life",
+      image: "/images/blog3.jpeg",
+      link: "https://leapladder.pro/blogs/2026/05/21/women-dont-take-breaks-they-rebalance-life/",
     },
     {
       id: 2,
-      category: "Branding",
-      date: "21.06.2025",
-      title:
-        "Beyond the logo: how branding and packaging drive consumer choice",
+      category: "Leadership",
+      date: "21.05.2026",
+      title: "From compliance to conscious leadership",
+      image: "/images/blog1.jpeg",
+      link: "https://leapladder.pro/blogs/2026/05/21/from-compliance-to-conscious-leadership/",
     },
     {
       id: 3,
-      category: "Success Stories",
-      date: "28.05.2025",
-      title:
-        "Case study: strategic rebranding to revitalize market presence for streetwear brand GO",
+      category: "Learning",
+      date: "21.05.2026",
+      title: "The rhythm of learning",
+      image: "/images/blog2.jpeg",
+      link: "https://leapladder.pro/blogs/2026/05/21/the-rhythm-of-learning/",
     },
   ];
 
@@ -73,11 +76,11 @@ const BlogGrid = () => {
             >
               <div className="flex flex-col h-full">
                 {/* Square image at top of card */}
-                <div className="mb-3 overflow-hidden aspect-video">
+                <div className="mb-3 w-full">
                   <img
-                    src={`https://picsum.photos/seed/${post.id}/600/600`}
+                    src={post.image}
                     alt={post.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-auto object-contain"
                   />
                 </div>
                 {/* Category and Date */}
@@ -94,10 +97,15 @@ const BlogGrid = () => {
                 </h3>
 
                 {/* Read More Link */}
-                <button className="self-start text-[#E89161] font-semibold text-sm hover:text-[#0B5E6F] transition-colors duration-300 flex items-center group-hover:translate-x-1 transform">
+                <a
+                  href={post.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="self-start text-[#E89161] font-semibold text-sm hover:text-[#0B5E6F] transition-colors duration-300 flex items-center group-hover:translate-x-1 transform"
+                >
                   Read more
                   <span className="ml-1">→</span>
-                </button>
+                </a>
               </div>
             </motion.div>
           ))}

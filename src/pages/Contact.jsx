@@ -189,7 +189,7 @@ export default function ContactSection() {
           >
             {/* LinkedIn DM */}
             <motion.a
-              href="https://www.linkedin.com/company/leap-ladders/"
+              href="https://www.linkedin.com/company/leapladder/"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ x: 4 }}
